@@ -121,21 +121,30 @@ function StatCard({ value, label, delay }: { value: string; label: string; delay
   );
 }
 
-function FaqItem({ question, answer }: { question: string; answer: string }) {
+function FaqItem({ question, answer, index }: { question: string; answer: string; index: number }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="py-5">
+    <div
+      className={`rounded-2xl border transition-all duration-300 overflow-hidden ${open ? "border-neon/40 bg-card shadow-sm" : "border-border bg-card/60 hover:border-border/80"}`}
+    >
       <button
-        className="w-full flex items-center justify-between gap-4 text-left group"
+        className="w-full flex items-center gap-5 text-left px-7 py-5 group"
         onClick={() => setOpen(!open)}
       >
-        <span className="font-display text-xl font-bold group-hover:text-neon transition-colors">{question}</span>
-        <span className={`flex-shrink-0 w-8 h-8 rounded-full border border-border flex items-center justify-center transition-transform duration-300 ${open ? "rotate-45 border-neon text-neon" : ""}`}>
-          <Icon name="Plus" size={16} />
+        <span className={`flex-shrink-0 font-display text-sm font-bold w-7 transition-colors duration-200 ${open ? "text-neon" : "text-muted-foreground/50"}`}>
+          {String(index).padStart(2, "0")}
+        </span>
+        <span className={`flex-1 font-display text-lg font-bold transition-colors duration-200 ${open ? "text-neon" : "group-hover:text-foreground"}`}>
+          {question}
+        </span>
+        <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${open ? "bg-neon text-white rotate-45" : "bg-[#c04000]/10 text-neon"}`}>
+          <Icon name="Plus" size={14} />
         </span>
       </button>
-      <div className={`overflow-hidden transition-all duration-300 ${open ? "max-h-96 mt-4" : "max-h-0"}`}>
-        <p className="font-body text-foreground/70 leading-relaxed">{answer}</p>
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? "max-h-96" : "max-h-0"}`}>
+        <p className="font-body text-foreground/70 leading-relaxed px-7 pb-6 border-t border-border/50 pt-4 ml-12">
+          {answer}
+        </p>
       </div>
     </div>
   );
@@ -372,6 +381,27 @@ export default function Index() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-24 bg-card/30">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <span className="font-body text-xs text-neon uppercase tracking-widest">Частые вопросы</span>
+            <h2 className="font-display text-5xl font-bold mt-3">ВОПРОСЫ И ОТВЕТЫ</h2>
+          </div>
+          <div className="flex flex-col gap-3">
+            {[
+              { q: "Вопрос 1", a: "Ответ на вопрос 1 — текст появится позже." },
+              { q: "Вопрос 2", a: "Ответ на вопрос 2 — текст появится позже." },
+              { q: "Вопрос 3", a: "Ответ на вопрос 3 — текст появится позже." },
+              { q: "Вопрос 4", a: "Ответ на вопрос 4 — текст появится позже." },
+              { q: "Вопрос 5", a: "Ответ на вопрос 5 — текст появится позже." },
+            ].map((item, i) => (
+              <FaqItem key={i} question={item.q} answer={item.a} index={i + 1} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="py-24 max-w-7xl mx-auto px-6">
         <div className="relative bg-card border border-neon/20 rounded-3xl p-10 md:p-16 overflow-hidden grain">
@@ -422,25 +452,6 @@ export default function Index() {
               </button>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-24 max-w-4xl mx-auto px-6">
-        <div className="mb-12">
-          <span className="font-body text-xs text-neon uppercase tracking-widest">FAQ</span>
-          <h2 className="font-display text-5xl font-bold mt-3">ВОПРОСЫ И ОТВЕТЫ</h2>
-        </div>
-        <div className="flex flex-col divide-y divide-border">
-          {[
-            { q: "Вопрос 1", a: "Ответ на вопрос 1 — текст появится позже." },
-            { q: "Вопрос 2", a: "Ответ на вопрос 2 — текст появится позже." },
-            { q: "Вопрос 3", a: "Ответ на вопрос 3 — текст появится позже." },
-            { q: "Вопрос 4", a: "Ответ на вопрос 4 — текст появится позже." },
-            { q: "Вопрос 5", a: "Ответ на вопрос 5 — текст появится позже." },
-          ].map((item, i) => (
-            <FaqItem key={i} question={item.q} answer={item.a} />
-          ))}
         </div>
       </section>
 
