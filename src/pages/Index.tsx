@@ -137,17 +137,23 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo("home")} className="flex items-center gap-2">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Буква П как дверная арка */}
-              <rect x="3" y="28" width="4" height="14" rx="1" fill="currentColor" transform="rotate(-90 3 28)" />
-              <path d="M5 28 L5 12 Q5 5 12.5 5 Q20 5 20 12 L20 28" stroke="currentColor" strokeWidth="3.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-              <rect x="18" y="14" width="3.5" height="14" rx="1" fill="currentColor"/>
-              <rect x="3" y="14" width="3.5" height="14" rx="1" fill="currentColor"/>
+          <button onClick={() => scrollTo("home")} className="flex items-center gap-1">
+            {/* Логотип: красный прямоугольник с дверным проёмом = буква П */}
+            <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Красный прямоугольник — тело буквы П */}
+              <rect x="0" y="0" width="30" height="34" rx="1" fill="#D02020"/>
+              {/* Дверной проём — вырез снизу по центру */}
+              <rect x="7" y="10" width="16" height="24" rx="1" fill="white"/>
+              {/* Перекладина буквы П сверху */}
+              <rect x="0" y="0" width="30" height="10" rx="1" fill="#D02020"/>
+              {/* Левая стойка */}
+              <rect x="0" y="0" width="7" height="34" fill="#D02020"/>
+              {/* Правая стойка */}
+              <rect x="23" y="0" width="7" height="34" fill="#D02020"/>
               {/* Ручка двери */}
-              <circle cx="15.5" cy="22" r="1.5" fill="var(--color-neon, #00f0ff)"/>
+              <circle cx="20" cy="22" r="1.8" fill="#D02020"/>
             </svg>
-            <span className="font-display text-xl font-bold tracking-wider">ЕРСПЕКТИВА</span>
+            <span className="font-display text-xl font-bold tracking-wider text-foreground">ерспектива</span>
           </button>
 
           <div className="hidden md:flex items-center gap-8">
