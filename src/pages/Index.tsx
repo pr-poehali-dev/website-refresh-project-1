@@ -137,8 +137,17 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo("home")} className="font-display text-xl font-bold tracking-wider">
-            HR<span className="text-neon">·</span>ИРК
+          <button onClick={() => scrollTo("home")} className="flex items-center gap-2">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Буква П как дверная арка */}
+              <rect x="3" y="28" width="4" height="14" rx="1" fill="currentColor" transform="rotate(-90 3 28)" />
+              <path d="M5 28 L5 12 Q5 5 12.5 5 Q20 5 20 12 L20 28" stroke="currentColor" strokeWidth="3.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              <rect x="18" y="14" width="3.5" height="14" rx="1" fill="currentColor"/>
+              <rect x="3" y="14" width="3.5" height="14" rx="1" fill="currentColor"/>
+              {/* Ручка двери */}
+              <circle cx="15.5" cy="22" r="1.5" fill="var(--color-neon, #00f0ff)"/>
+            </svg>
+            <span className="font-display text-xl font-bold tracking-wider">ЕРСПЕКТИВА</span>
           </button>
 
           <div className="hidden md:flex items-center gap-8">
@@ -190,7 +199,7 @@ export default function Index() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 border border-neon/40 rounded-full px-4 py-1.5 mb-8 animate-fade-up">
               <span className="w-2 h-2 rounded-full bg-neon animate-pulse" />
-              <span className="font-body text-xs text-neon uppercase tracking-widest">Рекрутинговое агентство · Иркутск</span>
+              <span className="font-body text-xs text-neon uppercase tracking-widest">Агентство Перспектива · Иркутск</span>
             </div>
 
             <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6 animate-fade-up-delay-1">
