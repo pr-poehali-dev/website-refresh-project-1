@@ -137,25 +137,23 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo("home")} className="flex items-center gap-1">
-            {/* Логотип: красный прямоугольник с дверным проёмом = буква П */}
-            <svg width="32" height="36" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Красный прямоугольник — вся буква П */}
-              <rect x="0" y="0" width="32" height="36" rx="1" fill="#c04000"/>
-              {/* Белый проём — арка двери */}
-              <rect x="5" y="4" width="22" height="32" rx="0" fill="white"/>
-              {/* Верхняя перекладина П (перекрывает верх проёма) */}
-              <rect x="0" y="0" width="32" height="8" fill="#c04000"/>
-              {/* Левая стойка П */}
-              <rect x="0" y="0" width="5" height="36" fill="#c04000"/>
-              {/* Правая стойка П */}
-              <rect x="27" y="0" width="5" height="36" fill="#c04000"/>
-              {/* Открытая дверь — тёмное полотно прислонено к левому краю проёма (в перспективе) */}
-              <polygon points="5,8 12,9 12,36 5,36" fill="#7a1a00"/>
-              {/* Ручка двери — справа на полотне */}
-              <circle cx="11" cy="23" r="1.3" fill="white"/>
+          <button onClick={() => scrollTo("home")} className="flex items-center gap-2">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Левая стойка */}
+              <rect x="2" y="4" width="5" height="28" rx="2.5" fill="#c04000"/>
+              {/* Правая стойка */}
+              <rect x="29" y="4" width="5" height="28" rx="2.5" fill="#c04000"/>
+              {/* Перекладина */}
+              <rect x="2" y="4" width="32" height="5" rx="2.5" fill="#c04000"/>
+              {/* Стрелка-человек идёт вперёд — две диагонали = движение */}
+              <path d="M14 32 L18 20 L22 32" stroke="#c04000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              {/* Голова */}
+              <circle cx="18" cy="16" r="3" fill="#c04000"/>
             </svg>
-            <span className="font-display text-xl font-bold tracking-wider text-foreground">ерспектива</span>
+            <div className="flex flex-col leading-none">
+              <span className="font-display text-xl font-bold tracking-wide text-foreground">ПЕРСПЕКТИВА</span>
+              <span className="font-body text-[9px] tracking-[0.2em] text-muted-foreground uppercase mt-0.5">кадровый центр</span>
+            </div>
           </button>
 
           <div className="hidden md:flex items-center gap-8">
