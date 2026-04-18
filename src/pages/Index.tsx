@@ -208,7 +208,7 @@ export default function Index() {
               <span className="text-neon neon-glow">ДАЖЕ В УСЛОВИЯХ ШТОРМА.</span>
             </h1>
 
-            <p className="font-body text-lg text-muted-foreground max-w-xl leading-relaxed mb-10 animate-fade-up-delay-2">
+            <p className="font-body text-lg text-foreground/75 max-w-xl leading-relaxed mb-10 animate-fade-up-delay-2">
               Подбираем команду, которая не подведет даже при критических изменениях рынка. Работаем с оплатой за результат.
             </p>
 
