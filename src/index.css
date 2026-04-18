@@ -4,38 +4,38 @@
 
 @layer base {
   :root {
-    --background: 220 20% 6%;
-    --foreground: 0 0% 96%;
+    --background: 30 20% 97%;
+    --foreground: 20 15% 12%;
 
-    --card: 220 18% 9%;
-    --card-foreground: 0 0% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 15% 12%;
 
-    --popover: 220 18% 9%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 15% 12%;
 
     --primary: 20 100% 38%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 0 0% 96%;
+    --secondary: 30 15% 91%;
+    --secondary-foreground: 20 15% 12%;
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 30 15% 91%;
+    --muted-foreground: 20 10% 45%;
 
     --accent: 20 100% 38%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
+    --border: 30 15% 84%;
+    --input: 30 15% 84%;
     --ring: 20 100% 38%;
 
     --radius: 0.75rem;
 
     --neon: #c04000;
-    --neon-glow: rgba(192, 64, 0, 0.4);
+    --neon-glow: rgba(192, 64, 0, 0.2);
   }
 }
 
@@ -93,7 +93,7 @@
 
   .card-hover:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 60px rgba(192, 64, 0, 0.2);
+    box-shadow: 0 20px 60px rgba(192, 64, 0, 0.12);
   }
 
   .grain {

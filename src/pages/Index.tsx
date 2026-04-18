@@ -141,7 +141,7 @@ export default function Index() {
             {/* Логотип: красный прямоугольник с дверным проёмом = буква П */}
             <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="0" y="0" width="30" height="34" rx="1" fill="#C04000"/>
-              <rect x="7" y="10" width="16" height="24" rx="1" fill="white"/>
+              <rect x="7" y="10" width="16" height="24" rx="1" fill="hsl(30,20%,97%)"/>
               <rect x="0" y="0" width="30" height="10" rx="1" fill="#C04000"/>
               <rect x="0" y="0" width="7" height="34" fill="#C04000"/>
               <rect x="23" y="0" width="7" height="34" fill="#C04000"/>
