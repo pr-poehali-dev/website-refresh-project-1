@@ -187,25 +187,28 @@ export default function Index() {
 
       {/* HERO */}
       <section id="home" className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+        {/* Фоновое фото — затемнённое, как тёмный слой поверх кремового */}
         <div className="absolute inset-0">
-          <img src={HERO_BG} alt="" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/60 to-background" />
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover opacity-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
         </div>
 
-        <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-orange-500/10 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/3 -right-32 w-80 h-80 rounded-full bg-orange-500/8 blur-3xl pointer-events-none" />
+        {/* Терракотовые акценты */}
+        <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] rounded-full bg-[#c04000]/10 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-20 left-1/4 w-80 h-80 rounded-full bg-[#c04000]/7 blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 border border-neon/40 rounded-full px-4 py-1.5 mb-8 animate-fade-up">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 bg-[#c04000]/10 border border-[#c04000]/30 rounded-full px-4 py-1.5 mb-8 animate-fade-up">
               <span className="w-2 h-2 rounded-full bg-neon animate-pulse" />
               <span className="font-body text-xs text-neon uppercase tracking-widest">Агентство Перспектива · Иркутск</span>
             </div>
 
             <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6 animate-fade-up-delay-1">
               РАЗВИВАЙТЕ БИЗНЕС<br />
-              С ЛУЧШИМИ СОТРУДНИКАМИ<br />
-              <span className="text-neon neon-glow">ДАЖЕ В УСЛОВИЯХ ШТОРМА.</span>
+              С ЛУЧШИМИ<br />
+              <span className="text-neon">СОТРУДНИКАМИ.</span>
             </h1>
 
             <p className="font-body text-lg text-muted-foreground max-w-xl leading-relaxed mb-10 animate-fade-up-delay-2">
@@ -215,17 +218,28 @@ export default function Index() {
             <div className="flex flex-wrap gap-4 animate-fade-up-delay-3">
               <button
                 onClick={() => scrollTo("contact")}
-                className="bg-neon text-white font-body font-semibold px-8 py-4 rounded-full hover:opacity-90 transition-all hover:scale-105 text-base"
+                className="bg-neon text-white font-body font-semibold px-8 py-4 rounded-full hover:opacity-90 transition-all hover:scale-105 text-base shadow-lg shadow-[#c04000]/20"
               >
                 Обсудить вакансию
               </button>
               <button
                 onClick={() => scrollTo("cases")}
-                className="border border-border text-foreground font-body font-medium px-8 py-4 rounded-full hover:border-neon/60 transition-all text-base"
+                className="border-2 border-foreground/20 text-foreground font-body font-medium px-8 py-4 rounded-full hover:border-neon hover:text-neon transition-all text-base"
               >
                 Смотреть кейсы
               </button>
             </div>
+          </div>
+
+          {/* Фото справа */}
+          <div className="hidden md:block relative">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#c04000]/15 to-transparent" />
+            <img
+              src={HERO_BG}
+              alt="Команда Перспектива"
+              className="w-full h-[520px] object-cover rounded-2xl shadow-2xl shadow-[#c04000]/15"
+            />
+            <div className="absolute inset-0 rounded-2xl ring-1 ring-[#c04000]/20" />
           </div>
         </div>
       </section>
