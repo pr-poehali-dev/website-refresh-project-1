@@ -140,18 +140,12 @@ export default function Index() {
           <button onClick={() => scrollTo("home")} className="flex items-center gap-1">
             {/* Логотип: красный прямоугольник с дверным проёмом = буква П */}
             <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Красный прямоугольник — тело буквы П */}
-              <rect x="0" y="0" width="30" height="34" rx="1" fill="#D02020"/>
-              {/* Дверной проём — вырез снизу по центру */}
+              <rect x="0" y="0" width="30" height="34" rx="1" fill="#C04000"/>
               <rect x="7" y="10" width="16" height="24" rx="1" fill="white"/>
-              {/* Перекладина буквы П сверху */}
-              <rect x="0" y="0" width="30" height="10" rx="1" fill="#D02020"/>
-              {/* Левая стойка */}
-              <rect x="0" y="0" width="7" height="34" fill="#D02020"/>
-              {/* Правая стойка */}
-              <rect x="23" y="0" width="7" height="34" fill="#D02020"/>
-              {/* Ручка двери */}
-              <circle cx="20" cy="22" r="1.8" fill="#D02020"/>
+              <rect x="0" y="0" width="30" height="10" rx="1" fill="#C04000"/>
+              <rect x="0" y="0" width="7" height="34" fill="#C04000"/>
+              <rect x="23" y="0" width="7" height="34" fill="#C04000"/>
+              <circle cx="20" cy="22" r="1.8" fill="#C04000"/>
             </svg>
             <span className="font-display text-xl font-bold tracking-wider text-foreground">ерспектива</span>
           </button>
