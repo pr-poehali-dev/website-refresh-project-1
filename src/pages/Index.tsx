@@ -194,9 +194,9 @@ export default function Index() {
             </div>
 
             <h1 className="font-display text-6xl md:text-8xl font-bold leading-none mb-6 animate-fade-up-delay-1">
-              НАХОДИМ<br />
-              <span className="text-neon neon-glow">ЛУЧШИХ.</span><br />
-              БЫСТРО.
+              РАЗВИВАЙТЕ<br />
+              БИЗНЕС ДАЖЕ<br />
+              <span className="text-neon neon-glow">В ШТОРМ.</span>
             </h1>
 
             <p className="font-body text-lg text-muted-foreground max-w-xl leading-relaxed mb-10 animate-fade-up-delay-2">
