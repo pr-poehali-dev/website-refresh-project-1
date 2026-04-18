@@ -139,24 +139,21 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <button onClick={() => scrollTo("home")} className="flex items-center gap-1">
             {/* Логотип: красный прямоугольник с дверным проёмом = буква П */}
-            <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Тело буквы П — терракотовый прямоугольник */}
-              <rect x="0" y="0" width="30" height="34" rx="1" fill="#c04000"/>
-              {/* Перекладина сверху */}
-              <rect x="0" y="0" width="30" height="9" fill="#c04000"/>
-              {/* Левая стойка */}
-              <rect x="0" y="0" width="7" height="34" fill="#c04000"/>
-              {/* Правая стойка */}
-              <rect x="23" y="0" width="7" height="34" fill="#c04000"/>
-              {/* Проём двери — фон */}
-              <rect x="7" y="9" width="16" height="25" fill="hsl(30,30%,95%)"/>
-              {/* Белая рамка проёма */}
-              <rect x="7" y="9" width="16" height="25" fill="none" stroke="white" strokeWidth="1.2"/>
-              {/* Открытое полотно двери в перспективе (трапеция) */}
-              <polygon points="7,9 18,11 18,32 7,34" fill="white" opacity="0.85"/>
-              <polygon points="7,9 18,11 18,32 7,34" fill="none" stroke="white" strokeWidth="0.8" opacity="0.5"/>
-              {/* Ручка на полотне двери */}
-              <circle cx="16" cy="22" r="1.4" fill="#c04000"/>
+            <svg width="32" height="36" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Красный прямоугольник — вся буква П */}
+              <rect x="0" y="0" width="32" height="36" rx="1" fill="#c04000"/>
+              {/* Белый проём — арка двери */}
+              <rect x="5" y="4" width="22" height="32" rx="0" fill="white"/>
+              {/* Верхняя перекладина П (перекрывает верх проёма) */}
+              <rect x="0" y="0" width="32" height="8" fill="#c04000"/>
+              {/* Левая стойка П */}
+              <rect x="0" y="0" width="5" height="36" fill="#c04000"/>
+              {/* Правая стойка П */}
+              <rect x="27" y="0" width="5" height="36" fill="#c04000"/>
+              {/* Открытая дверь — тёмное полотно прислонено к левому краю проёма (в перспективе) */}
+              <polygon points="5,8 12,9 12,36 5,36" fill="#7a1a00"/>
+              {/* Ручка двери — справа на полотне */}
+              <circle cx="11" cy="23" r="1.3" fill="white"/>
             </svg>
             <span className="font-display text-xl font-bold tracking-wider text-foreground">ерспектива</span>
           </button>
