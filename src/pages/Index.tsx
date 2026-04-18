@@ -193,10 +193,10 @@ export default function Index() {
               <span className="font-body text-xs text-neon uppercase tracking-widest">Рекрутинговое агентство · Иркутск</span>
             </div>
 
-            <h1 className="font-display text-6xl md:text-8xl font-bold leading-none mb-6 animate-fade-up-delay-1">
-              НАДЕЖНЫЕ<br />
-              ЛЮДИ.<br />
-              <span className="text-neon neon-glow">УВЕРЕННЫЙ КУРС.</span>
+            <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6 animate-fade-up-delay-1">
+              РАЗВИВАЙТЕ БИЗНЕС<br />
+              С ЛУЧШИМИ СОТРУДНИКАМИ<br />
+              <span className="text-neon neon-glow">ДАЖЕ В УСЛОВИЯХ ШТОРМА.</span>
             </h1>
 
             <p className="font-body text-lg text-muted-foreground max-w-xl leading-relaxed mb-10 animate-fade-up-delay-2">
