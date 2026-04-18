@@ -121,6 +121,26 @@ function StatCard({ value, label, delay }: { value: string; label: string; delay
   );
 }
 
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="py-5">
+      <button
+        className="w-full flex items-center justify-between gap-4 text-left group"
+        onClick={() => setOpen(!open)}
+      >
+        <span className="font-display text-xl font-bold group-hover:text-neon transition-colors">{question}</span>
+        <span className={`flex-shrink-0 w-8 h-8 rounded-full border border-border flex items-center justify-center transition-transform duration-300 ${open ? "rotate-45 border-neon text-neon" : ""}`}>
+          <Icon name="Plus" size={16} />
+        </span>
+      </button>
+      <div className={`overflow-hidden transition-all duration-300 ${open ? "max-h-96 mt-4" : "max-h-0"}`}>
+        <p className="font-body text-foreground/70 leading-relaxed">{answer}</p>
+      </div>
+    </div>
+  );
+}
+
 export default function Index() {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -402,6 +422,25 @@ export default function Index() {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 max-w-4xl mx-auto px-6">
+        <div className="mb-12">
+          <span className="font-body text-xs text-neon uppercase tracking-widest">FAQ</span>
+          <h2 className="font-display text-5xl font-bold mt-3">ВОПРОСЫ И ОТВЕТЫ</h2>
+        </div>
+        <div className="flex flex-col divide-y divide-border">
+          {[
+            { q: "Вопрос 1", a: "Ответ на вопрос 1 — текст появится позже." },
+            { q: "Вопрос 2", a: "Ответ на вопрос 2 — текст появится позже." },
+            { q: "Вопрос 3", a: "Ответ на вопрос 3 — текст появится позже." },
+            { q: "Вопрос 4", a: "Ответ на вопрос 4 — текст появится позже." },
+            { q: "Вопрос 5", a: "Ответ на вопрос 5 — текст появится позже." },
+          ].map((item, i) => (
+            <FaqItem key={i} question={item.q} answer={item.a} />
+          ))}
         </div>
       </section>
 
