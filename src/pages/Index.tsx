@@ -194,13 +194,13 @@ export default function Index() {
             </div>
 
             <h1 className="font-display text-6xl md:text-8xl font-bold leading-none mb-6 animate-fade-up-delay-1">
-              РАЗВИВАЙТЕ<br />
-              БИЗНЕС ДАЖЕ<br />
-              <span className="text-neon neon-glow">В ШТОРМ.</span>
+              НАДЕЖНЫЕ<br />
+              ЛЮДИ.<br />
+              <span className="text-neon neon-glow">УВЕРЕННЫЙ КУРС.</span>
             </h1>
 
             <p className="font-body text-lg text-muted-foreground max-w-xl leading-relaxed mb-10 animate-fade-up-delay-2">
-              Закрываем вакансии от линейного персонала до топ-менеджмента. Работаем с бизнесом Иркутска и Байкальского региона с 2016 года.
+              Подбираем команду, которая не подведет даже при критических изменениях рынка. Работаем с оплатой за результат.
             </p>
 
             <div className="flex flex-wrap gap-4 animate-fade-up-delay-3">
