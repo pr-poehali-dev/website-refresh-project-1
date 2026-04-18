@@ -145,10 +145,9 @@ export default function Index() {
               <rect x="29" y="4" width="5" height="28" rx="2.5" fill="#c04000"/>
               {/* Перекладина */}
               <rect x="2" y="4" width="32" height="5" rx="2.5" fill="#c04000"/>
-              {/* Стрелка-человек идёт вперёд — две диагонали = движение */}
-              <path d="M14 32 L18 20 L22 32" stroke="#c04000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              {/* Голова */}
-              <circle cx="18" cy="16" r="3" fill="#c04000"/>
+              {/* Стрелка вперёд — движение, перспектива */}
+              <path d="M12 26 L18 14 L24 26" stroke="#c04000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M15 26 L18 19 L21 26" fill="#c04000" opacity="0.25"/>
             </svg>
             <div className="flex flex-col leading-none">
               <span className="font-display text-xl font-bold tracking-wide text-foreground">ПЕРСПЕКТИВА</span>
