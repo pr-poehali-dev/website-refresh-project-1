@@ -156,7 +156,7 @@ export default function Index() {
           </button>
 
           <div className="hidden md:flex items-center gap-8">
-            {[["home", "Главная"], ["cases", "Кейсы"], ["services", "Услуги"], ["contact", "Контакты"]].map(([id, label]) => (
+            {[["home", "Главная"], ["about", "О нас"], ["cases", "Кейсы"], ["services", "Услуги"], ["contact", "Контакты"]].map(([id, label]) => (
               <button
                 key={id}
                 onClick={() => scrollTo(id)}
@@ -242,6 +242,52 @@ export default function Index() {
             {stats.map((s, i) => (
               <StatCard key={i} value={s.value} label={s.label} delay={i * 0.1} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="py-24 max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="font-body text-xs text-neon uppercase tracking-widest">О нас</span>
+            <h2 className="font-display text-5xl font-bold mt-3 mb-6">МЫ — ПЕРСПЕКТИВА</h2>
+            <p className="font-body text-lg text-foreground/75 leading-relaxed mb-4">
+              Кадровый центр в Иркутске с 2016 года. Мы подбираем людей, которые становятся опорой бизнеса — от линейного персонала до топ-менеджмента.
+            </p>
+            <p className="font-body text-lg text-foreground/75 leading-relaxed mb-8">
+              Не передаём резюме пачками — погружаемся в бизнес клиента, понимаем культуру компании и находим тех, кто останется надолго. Оплата только за результат.
+            </p>
+            <div className="flex flex-col gap-4">
+              {[
+                { icon: "Target", text: "Работаем с компаниями всех отраслей: производство, IT, торговля, медицина" },
+                { icon: "ShieldCheck", text: "Гарантийный период — бесплатная замена, если кандидат не подошёл" },
+                { icon: "Clock", text: "Средний срок закрытия вакансии — 30 дней" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div className="mt-0.5 flex-shrink-0 w-8 h-8 rounded-full bg-[#c04000]/10 flex items-center justify-center">
+                    <Icon name={item.icon} size={16} className="text-neon" />
+                  </div>
+                  <p className="font-body text-foreground/80 leading-snug">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { value: "2016", label: "год основания" },
+                { value: "500+", label: "закрытых вакансий" },
+                { value: "94%", label: "клиентов возвращаются" },
+                { value: "6", label: "отраслей экспертизы" },
+              ].map((item, i) => (
+                <div key={i} className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-1">
+                  <span className="font-display text-4xl font-bold text-neon">{item.value}</span>
+                  <span className="font-body text-sm text-muted-foreground">{item.label}</span>
+                </div>
+              ))}
+            </div>
+            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-[#c04000]/8 blur-3xl" />
           </div>
         </div>
       </section>
