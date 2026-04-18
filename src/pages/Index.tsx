@@ -140,12 +140,23 @@ export default function Index() {
           <button onClick={() => scrollTo("home")} className="flex items-center gap-1">
             {/* Логотип: красный прямоугольник с дверным проёмом = буква П */}
             <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Тело буквы П — терракотовый прямоугольник */}
               <rect x="0" y="0" width="30" height="34" rx="1" fill="#c04000"/>
-              <rect x="7" y="10" width="16" height="24" rx="1" fill="hsl(30,30%,95%)"/>
-              <rect x="0" y="0" width="30" height="10" rx="1" fill="#c04000"/>
+              {/* Перекладина сверху */}
+              <rect x="0" y="0" width="30" height="9" fill="#c04000"/>
+              {/* Левая стойка */}
               <rect x="0" y="0" width="7" height="34" fill="#c04000"/>
+              {/* Правая стойка */}
               <rect x="23" y="0" width="7" height="34" fill="#c04000"/>
-              <circle cx="20" cy="22" r="1.8" fill="#c04000"/>
+              {/* Проём двери — фон */}
+              <rect x="7" y="9" width="16" height="25" fill="hsl(30,30%,95%)"/>
+              {/* Белая рамка проёма */}
+              <rect x="7" y="9" width="16" height="25" fill="none" stroke="white" strokeWidth="1.2"/>
+              {/* Открытое полотно двери в перспективе (трапеция) */}
+              <polygon points="7,9 18,11 18,32 7,34" fill="white" opacity="0.85"/>
+              <polygon points="7,9 18,11 18,32 7,34" fill="none" stroke="white" strokeWidth="0.8" opacity="0.5"/>
+              {/* Ручка на полотне двери */}
+              <circle cx="16" cy="22" r="1.4" fill="#c04000"/>
             </svg>
             <span className="font-display text-xl font-bold tracking-wider text-foreground">ерспектива</span>
           </button>
