@@ -5,7 +5,7 @@ const HERO_BG = "https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970
 
 const stats = [
   { value: "2300+", label: "закрытых вакансий — от малого бизнеса до крупных корпораций", icon: "Briefcase", desc: "с 2008 года" },
-  { value: "18 лет", label: "на рынке Иркутска", icon: "MapPin", desc: "экспертиза региона" },
+  { value: "18 лет", label: "локальной экспертизы — знаем где искать и чем мотивировать", icon: "MapPin", desc: "на рынке Иркутска" },
   { value: "94%", label: "клиентов возвращаются", icon: "RefreshCw", desc: "высокий NPS" },
   { value: "30 дней", label: "средний срок подбора", icon: "Timer", desc: "от заявки до оффера" },
 ];
