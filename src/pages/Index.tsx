@@ -116,15 +116,15 @@ function StatCard({ value, label, delay, icon, desc }: { value: string; label: s
       style={{ animationDelay: `${delay}s`, animationFillMode: "both" }}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-neon/0 to-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
-      <div className="flex items-center justify-between">
+      <div className="flex items-center">
         <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
           <Icon name={icon} size={18} className="text-neon" fallback="Star" />
         </div>
-        <span className="font-body text-xs text-muted-foreground/60 uppercase tracking-wider">{desc}</span>
       </div>
       <div>
         <div className="font-display text-5xl font-bold text-neon neon-glow leading-none mb-2">{count}</div>
-        <div className="font-body text-sm text-foreground/70 leading-tight">{label}</div>
+        <div className="font-body text-sm text-foreground/70 leading-tight mb-3">{label}</div>
+        <div className="font-body text-xs text-muted-foreground/60 uppercase tracking-wider">{desc}</div>
       </div>
     </div>
   );
