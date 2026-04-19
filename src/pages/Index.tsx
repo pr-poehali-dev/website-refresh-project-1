@@ -4,10 +4,10 @@ import Icon from "@/components/ui/icon";
 const HERO_BG = "https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/files/0ab03755-f179-4741-8a6f-18114a72a3d4.jpg";
 
 const stats = [
-  { value: "500+", label: "закрытых вакансий" },
-  { value: "8 лет", label: "на рынке Иркутска" },
-  { value: "94%", label: "клиентов возвращаются" },
-  { value: "30 дней", label: "средний срок подбора" },
+  { value: "500+", label: "закрытых вакансий", icon: "Briefcase", desc: "с 2016 года" },
+  { value: "8 лет", label: "на рынке Иркутска", icon: "MapPin", desc: "экспертиза региона" },
+  { value: "94%", label: "клиентов возвращаются", icon: "RefreshCw", desc: "высокий NPS" },
+  { value: "30 дней", label: "средний срок подбора", icon: "Timer", desc: "от заявки до оффера" },
 ];
 
 const cases = [
@@ -108,15 +108,24 @@ function useCountUp(target: string, duration = 1500) {
   return display;
 }
 
-function StatCard({ value, label, delay }: { value: string; label: string; delay: number }) {
+function StatCard({ value, label, delay, icon, desc }: { value: string; label: string; delay: number; icon: string; desc: string }) {
   const count = useCountUp(value);
   return (
     <div
-      className="text-center animate-fade-up"
+      className="group relative flex flex-col gap-4 p-7 rounded-2xl bg-card border border-border hover:border-neon/30 transition-all duration-300 hover:shadow-lg animate-fade-up overflow-hidden"
       style={{ animationDelay: `${delay}s`, animationFillMode: "both" }}
     >
-      <div className="font-display text-5xl font-bold text-neon neon-glow mb-2">{count}</div>
-      <div className="text-sm text-muted-foreground uppercase tracking-widest font-body">{label}</div>
+      <div className="absolute inset-0 bg-gradient-to-br from-neon/0 to-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
+      <div className="flex items-center justify-between">
+        <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
+          <Icon name={icon} size={18} className="text-neon" fallback="Star" />
+        </div>
+        <span className="font-body text-xs text-muted-foreground/60 uppercase tracking-wider">{desc}</span>
+      </div>
+      <div>
+        <div className="font-display text-5xl font-bold text-neon neon-glow leading-none mb-2">{count}</div>
+        <div className="font-body text-sm text-foreground/70 leading-tight">{label}</div>
+      </div>
     </div>
   );
 }
@@ -265,11 +274,11 @@ export default function Index() {
       </section>
 
       {/* STATS */}
-      <section className="border-y border-border py-16 bg-card/40">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((s, i) => (
-              <StatCard key={i} value={s.value} label={s.label} delay={i * 0.1} />
+              <StatCard key={i} value={s.value} label={s.label} icon={s.icon} desc={s.desc} delay={i * 0.12} />
             ))}
           </div>
         </div>
