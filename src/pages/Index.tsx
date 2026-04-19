@@ -4,7 +4,7 @@ import Icon from "@/components/ui/icon";
 const HERO_BG = "https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/files/0ab03755-f179-4741-8a6f-18114a72a3d4.jpg";
 
 const stats = [
-  { value: "2300+", label: "закрытых вакансий — от малого бизнеса до крупных корпораций", icon: "Briefcase", desc: "с 2016 года" },
+  { value: "2300+", label: "закрытых вакансий — от малого бизнеса до крупных корпораций", icon: "Briefcase", desc: "с 2008 года" },
   { value: "18 лет", label: "на рынке Иркутска", icon: "MapPin", desc: "экспертиза региона" },
   { value: "94%", label: "клиентов возвращаются", icon: "RefreshCw", desc: "высокий NPS" },
   { value: "30 дней", label: "средний срок подбора", icon: "Timer", desc: "от заявки до оффера" },
