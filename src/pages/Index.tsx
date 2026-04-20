@@ -332,22 +332,9 @@ export default function Index() {
               ))}
             </div>
           </div>
-          <div className="relative">
-            <h2 className="font-display text-5xl font-bold mb-8">С нами процесс найма выглядит иначе:</h2>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { value: "2016", label: "год основания" },
-                { value: "500+", label: "закрытых вакансий" },
-                { value: "94%", label: "клиентов возвращаются" },
-                { value: "6", label: "отраслей экспертизы" },
-              ].map((item, i) => (
-                <div key={i} className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-1">
-                  <span className="font-display text-4xl font-bold text-neon">{item.value}</span>
-                  <span className="font-body text-sm text-muted-foreground">{item.label}</span>
-                </div>
-              ))}
-            </div>
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-[#c04000]/8 blur-3xl" />
+          <div>
+            <span className="font-body text-xs text-neon uppercase tracking-widest opacity-0 select-none">О нас</span>
+            <h2 className="font-display text-5xl font-bold mt-3 mb-8">С нами процесс найма выглядит иначе:</h2>
           </div>
         </div>
       </section>
