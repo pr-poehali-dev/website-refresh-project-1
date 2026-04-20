@@ -333,6 +333,7 @@ export default function Index() {
             </div>
           </div>
           <div className="relative">
+            <h2 className="font-display text-5xl font-bold mb-8">С нами процесс найма выглядит иначе:</h2>
             <div className="grid grid-cols-2 gap-4">
               {[
                 { value: "2016", label: "год основания" },
