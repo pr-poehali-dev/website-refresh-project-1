@@ -326,7 +326,7 @@ export default function Index() {
                   </div>
                   <div>
                     <p className="font-body font-semibold text-foreground mb-1">{item.title}</p>
-                    <p className="font-body text-sm text-foreground/65 leading-relaxed">{item.text}</p>
+                    <p className="font-body text-base text-foreground/65 leading-relaxed">{item.text}</p>
                   </div>
                 </div>
               ))}
