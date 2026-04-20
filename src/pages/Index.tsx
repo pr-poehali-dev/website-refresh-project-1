@@ -335,6 +335,45 @@ export default function Index() {
           <div>
             <span className="font-body text-xs text-neon uppercase tracking-widest opacity-0 select-none">О нас</span>
             <h2 className="font-display text-5xl font-bold mt-3 mb-8">С нами процесс найма выглядит иначе:</h2>
+            <div className="flex flex-col gap-5">
+              {[
+                {
+                  icon: "BadgeCheck",
+                  title: "Проверяем кандидатов лично",
+                  text: "Каждый кандидат проходит живое интервью с нашим специалистом. Вы получаете только тех, кто реально соответствует требованиям — без нейросетевых резюме.",
+                },
+                {
+                  icon: "Search",
+                  title: "Сами ищем нужных людей",
+                  text: "Не ждём откликов — активно хантим подходящих специалистов. Работаем с закрытыми базами и выходим на кандидатов, которые не размещают резюме в открытом доступе.",
+                },
+                {
+                  icon: "BarChart2",
+                  title: "Даём аналитику по рынку з/п",
+                  text: "Перед стартом предоставляем актуальные данные по зарплатам в вашей отрасли и регионе — чтобы вы предложили конкурентные условия и не переплатили.",
+                },
+                {
+                  icon: "ClipboardCheck",
+                  title: "Оцениваем реальные компетенции",
+                  text: "Используем профессиональные методики оценки: кейсы, тесты, структурированное интервью. Вы видите не «хорошего рассказчика», а человека с доказанными навыками.",
+                },
+                {
+                  icon: "Zap",
+                  title: "Действуем быстро и держим темп",
+                  text: "Первые кандидаты — уже через несколько дней после старта. Мы ведём процесс без пауз, чтобы сильные специалисты не ушли к конкурентам.",
+                },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4 bg-card border border-border rounded-2xl p-5">
+                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#c04000]/10 flex items-center justify-center mt-0.5">
+                    <Icon name={item.icon} size={18} className="text-neon" />
+                  </div>
+                  <div>
+                    <p className="font-body font-semibold text-foreground mb-1">{item.title}</p>
+                    <p className="font-body text-base text-foreground/65 leading-relaxed">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
