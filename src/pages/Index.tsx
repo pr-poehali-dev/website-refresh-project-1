@@ -466,6 +466,9 @@ export default function Index() {
 
       {/* FOOTER */}
       <footer className="border-t border-border py-8">
+        <div className="max-w-7xl mx-auto px-6 mb-4">
+          <p className="font-body text-xs text-muted-foreground">* Срок на поиск линейного специалиста при условии, что условия по оплате не ниже среднерыночных.</p>
+        </div>
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="font-display text-lg font-bold">
             HR<span className="text-neon">·</span>ИРК
