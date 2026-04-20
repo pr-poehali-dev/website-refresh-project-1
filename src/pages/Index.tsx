@@ -7,7 +7,7 @@ const stats = [
   { value: "2300+", label: "закрытых вакансий — от малого бизнеса до крупных корпораций", icon: "Briefcase", desc: "с 2008 года" },
   { value: "18 лет", label: "локальной экспертизы — знаем где искать и чем мотивировать", icon: "MapPin", desc: "на рынке Иркутска" },
   { value: "96%", label: "клиентов выбирают нас снова. Строим партнёрство на годы", icon: "RefreshCw", desc: "высокий NPS" },
-  { value: "14 дней", label: "средний срок подбора, старт поиска в день обращения*", icon: "Timer", desc: "от заявки до оффера" },
+  { value: "14 дней", label: "средний срок подбора, старт поиска в день обращения", icon: "Timer", desc: "от заявки до оффера", footnote: true },
 ];
 
 const cases = [
@@ -108,7 +108,7 @@ function useCountUp(target: string, duration = 1500) {
   return display;
 }
 
-function StatCard({ value, label, delay, icon, desc }: { value: string; label: string; delay: number; icon: string; desc: string }) {
+function StatCard({ value, label, delay, icon, desc, footnote }: { value: string; label: string; delay: number; icon: string; desc: string; footnote?: boolean }) {
   const count = useCountUp(value);
   return (
     <div
@@ -124,7 +124,7 @@ function StatCard({ value, label, delay, icon, desc }: { value: string; label: s
       </div>
       <div>
         <div className="font-display text-5xl font-bold text-neon neon-glow leading-none mb-2">{count}</div>
-        <div className="font-body text-sm text-foreground/70 leading-tight">{label}</div>
+        <div className="font-body text-sm text-foreground/70 leading-tight">{label}{footnote && <sup className="text-neon ml-0.5">*</sup>}</div>
       </div>
     </div>
   );
@@ -278,7 +278,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((s, i) => (
-              <StatCard key={i} value={s.value} label={s.label} icon={s.icon} desc={s.desc} delay={i * 0.12} />
+              <StatCard key={i} value={s.value} label={s.label} icon={s.icon} desc={s.desc} delay={i * 0.12} footnote={s.footnote} />
             ))}
           </div>
         </div>
