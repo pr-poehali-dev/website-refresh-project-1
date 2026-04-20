@@ -291,24 +291,43 @@ export default function Index() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <span className="font-body text-xs text-neon uppercase tracking-widest">О нас</span>
-            <h2 className="font-display text-5xl font-bold mt-3 mb-6">Ищете надёжного сотрудника, но при этом :</h2>
-            <p className="font-body text-lg text-foreground/75 leading-relaxed mb-4">
-              Кадровый центр в Иркутске с 2016 года. Мы подбираем людей, которые становятся опорой бизнеса — от линейного персонала до топ-менеджмента.
-            </p>
-            <p className="font-body text-lg text-foreground/75 leading-relaxed mb-8">
-              Не передаём резюме пачками — погружаемся в бизнес клиента, понимаем культуру компании и находим тех, кто останется надолго. Оплата только за результат.
-            </p>
-            <div className="flex flex-col gap-4">
+            <h2 className="font-display text-5xl font-bold mt-3 mb-8">Ищете надёжного сотрудника, но при этом :</h2>
+            <div className="flex flex-col gap-5">
               {[
-                { icon: "Target", text: "Работаем с компаниями всех отраслей: производство, IT, торговля, медицина" },
-                { icon: "ShieldCheck", text: "Гарантийный период — бесплатная замена, если кандидат не подошёл" },
-                { icon: "Clock", text: "Средний срок закрытия вакансии — 30 дней" },
+                {
+                  icon: "Bot",
+                  title: "Резюме написано ChatGPT",
+                  text: "Кандидат красиво расписал свой опыт, а на собеседовании выясняется, что резюме за него сделала нейросеть. Сам он не помнит половины терминов. Время потрачено зря.",
+                },
+                {
+                  icon: "UserX",
+                  title: "Профильные кандидаты не откликаются вообще",
+                  text: "Вы разместили вакансию на HH, за неделю пришло 40 откликов. 38 — мимо (нет опыта, хотят удалёнку, не читали требования). А те двое, кто подходит, не ответили на звонок.",
+                },
+                {
+                  icon: "TrendingUp",
+                  title: "Нет объективных данных по уровню з/п",
+                  text: "Не знаете, сколько платить: боитесь продешевить и упустить лучших — или переплатить просто «хорошему рассказчику».",
+                },
+                {
+                  icon: "ShieldQuestion",
+                  title: "Сложно проверить компетенции кандидата",
+                  text: "Трудно понять, кто реально справится с задачами, а кто просто прошёл курс «как пройти собеседование».",
+                },
+                {
+                  icon: "Timer",
+                  title: "Вы теряете сильных кандидатов из-за пауз",
+                  text: "Пока вы взвешиваете, сравниваете и назначаете ещё одно собеседование — сильный кандидат уже принял предложение от другой компании.",
+                },
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className="mt-0.5 flex-shrink-0 w-8 h-8 rounded-full bg-[#c04000]/10 flex items-center justify-center">
-                    <Icon name={item.icon} size={16} className="text-neon" />
+                <div key={i} className="flex items-start gap-4 bg-card border border-border rounded-2xl p-5">
+                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#c04000]/10 flex items-center justify-center mt-0.5">
+                    <Icon name={item.icon} size={18} className="text-neon" />
                   </div>
-                  <p className="font-body text-foreground/80 leading-snug">{item.text}</p>
+                  <div>
+                    <p className="font-body font-semibold text-foreground mb-1">{item.title}</p>
+                    <p className="font-body text-sm text-foreground/65 leading-relaxed">{item.text}</p>
+                  </div>
                 </div>
               ))}
             </div>
