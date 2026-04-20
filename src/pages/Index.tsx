@@ -291,7 +291,7 @@ export default function Index() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <span className="font-body text-xs text-neon uppercase tracking-widest">О нас</span>
-            <h2 className="font-display text-5xl font-bold mt-3 mb-6">МЫ — ПЕРСПЕКТИВА</h2>
+            <h2 className="font-display text-5xl font-bold mt-3 mb-6">Нужен надежный сотрудник но при этом :</h2>
             <p className="font-body text-lg text-foreground/75 leading-relaxed mb-4">
               Кадровый центр в Иркутске с 2016 года. Мы подбираем людей, которые становятся опорой бизнеса — от линейного персонала до топ-менеджмента.
             </p>
