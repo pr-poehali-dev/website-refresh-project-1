@@ -291,7 +291,7 @@ export default function Index() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <span className="font-body text-xs text-neon uppercase tracking-widest">О нас</span>
-            <h2 className="font-display text-5xl font-bold mt-3 mb-8 whitespace-nowrap">Ищете надёжного сотрудника, но при этом :</h2>
+            <h2 className="font-display text-5xl font-bold mt-3 mb-8">Ищете надёжного сотрудника, но при этом :</h2>
             <div className="flex flex-col gap-5">
               {[
                 {
