@@ -124,7 +124,9 @@ function StatCard({ value, label, delay, icon, desc, footnote }: { value: string
       </div>
       <div>
         <div className="font-display text-5xl font-bold text-neon neon-glow leading-none mb-2">{count}</div>
-        <div className="font-body text-sm text-foreground/70 leading-tight">{label}{footnote && <sup className="text-neon ml-0.5">*</sup>}</div>
+        <div className="font-body text-sm text-foreground/70 leading-tight">
+          {footnote ? <>средний срок подбора<sup className="text-neon ml-0.5">*</sup>, старт поиска в день обращения</> : label}
+        </div>
       </div>
     </div>
   );
