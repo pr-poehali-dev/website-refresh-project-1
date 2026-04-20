@@ -291,7 +291,7 @@ export default function Index() {
         <span className="font-body text-xs text-neon uppercase tracking-widest">О нас</span>
         <div className="grid md:grid-cols-2 gap-8 mt-3 mb-16">
           <h2 className="font-display text-5xl font-bold">Ищете надёжного сотрудника, но при этом :</h2>
-          <h2 className="font-display text-5xl font-bold">С нами процесс найма выглядит иначе:</h2>
+          <h2 className="font-display text-5xl font-bold text-neon">С нами процесс найма выглядит иначе:</h2>
         </div>
         <div className="flex flex-col gap-6">
           {[
