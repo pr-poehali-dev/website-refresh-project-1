@@ -288,7 +288,7 @@ export default function Index() {
 
       {/* ABOUT */}
       <section id="about" className="py-24 max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
             <span className="font-body text-xs text-neon uppercase tracking-widest">О нас</span>
             <h2 className="font-display text-5xl font-bold mt-3 mb-8">Ищете надёжного сотрудника, но при этом :</h2>
