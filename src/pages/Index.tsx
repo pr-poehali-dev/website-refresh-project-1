@@ -376,8 +376,8 @@ export default function Index() {
               <Icon name="AlertCircle" size={20} className="text-red-500" />
             </div>
             <div>
-              <p className="font-body font-semibold text-foreground mb-2">Каждый день без сотрудника — это упущенная выгода</p>
-              <p className="font-body text-sm text-foreground/75 leading-relaxed">Сейчас как никогда важно не тратить время на пустые собеседования и срывы. Мы забираем поиск на себя. Вы платите только за результат.</p>
+              <p className="font-body font-semibold text-foreground mb-2">В результате:</p>
+              <p className="font-body text-sm text-foreground/75 leading-relaxed">Вы тратите время на бесконечный отбор, упускаете лучших и рискуете взять того, кто красиво говорит, но не приносит результата.</p>
             </div>
           </div>
         </div>
