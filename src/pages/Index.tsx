@@ -370,6 +370,15 @@ export default function Index() {
               <p className="font-body text-sm text-foreground/65 leading-relaxed">Кто реально справится с задачами, а кто просто прошёл курс «как пройти собеседование»?</p>
             </div>
           </div>
+          {/* Акцентная карточка */}
+          <div className="col-span-1 flex flex-col gap-4 bg-red-500 rounded-2xl p-7">
+            <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+              <Icon name="AlertCircle" size={20} className="text-white" />
+            </div>
+            <div>
+              <p className="font-body text-sm text-white/90 leading-relaxed">Сейчас как никогда важно не тратить время на пустые собеседования и срывы. Каждый день без сотрудника — это упущенная выгода. Мы забираем поиск на себя. Вы платите только за результат.</p>
+            </div>
+          </div>
         </div>
 
         {/* Блок решений — bento grid */}
