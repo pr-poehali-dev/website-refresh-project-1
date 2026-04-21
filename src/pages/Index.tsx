@@ -353,7 +353,7 @@ export default function Index() {
             </div>
             <div>
               <p className="font-body font-semibold text-foreground mb-2">Кандидаты пишут резюме с помощью ChatGPT</p>
-              <p className="font-body text-sm text-foreground/65 leading-relaxed">Красивое резюме — а на деле человек не помнит половины терминов. Время потрачено зря.</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Красивое резюме — а на деле человек не помнит половины терминов. Время потрачено зря.</p>
             </div>
           </div>
           {/* Узкая карточка */}
@@ -363,7 +363,7 @@ export default function Index() {
             </div>
             <div>
               <p className="font-body font-semibold text-foreground mb-2">Нет объективных данных по уровню з/п</p>
-              <p className="font-body text-sm text-foreground/65 leading-relaxed">Боитесь продешевить и упустить лучших — или переплатить просто «хорошему рассказчику».</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Боитесь продешевить и упустить лучших — или переплатить просто «хорошему рассказчику».</p>
             </div>
           </div>
           {/* Широкая карточка — на 2 колонки */}
@@ -383,7 +383,7 @@ export default function Index() {
             </div>
             <div>
               <p className="font-body font-semibold text-foreground mb-2">Сложно проверить компетенции кандидата</p>
-              <p className="font-body text-sm text-foreground/65 leading-relaxed">Кто реально справится с задачами, а кто просто прошёл курс «как пройти собеседование»?</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Кто реально справится с задачами, а кто просто прошёл курс «как пройти собеседование»?</p>
             </div>
           </div>
           {/* Акцентная карточка */}
@@ -393,7 +393,7 @@ export default function Index() {
             </div>
             <div>
               <UnderlineText>В результате:</UnderlineText>
-              <p className="font-body text-sm text-foreground/75 leading-relaxed">Вы тратите время на бесконечный отбор, упускаете лучших и рискуете взять того, кто красиво говорит, но не приносит результата.</p>
+              <p className="font-body text-base text-foreground/75 leading-relaxed">Вы тратите время на бесконечный отбор, упускаете лучших и рискуете взять того, кто красиво говорит, но не приносит результата.</p>
             </div>
           </div>
         </div>
@@ -408,7 +408,7 @@ export default function Index() {
             </div>
             <div>
               <p className="font-body font-semibold text-foreground mb-2">Оцениваем реальный опыт кандидата</p>
-              <p className="font-body text-sm text-foreground/65 leading-relaxed">Глубинные интервью, тестовые задания и проверка фактов — вы встречаетесь только с теми, чей опыт подтверждён.</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Глубинные интервью, тестовые задания и проверка фактов — вы встречаетесь только с теми, чей опыт подтверждён.</p>
             </div>
           </div>
           {/* Широкая — на 2 колонки */}
@@ -438,7 +438,7 @@ export default function Index() {
             </div>
             <div>
               <p className="font-body font-semibold text-foreground mb-2">Даём актуальную аналитику по зарплатам</p>
-              <p className="font-body text-sm text-foreground/65 leading-relaxed">Знаем реальные вилки и ожидания кандидатов в Иркутске — через нас ежемесячно проходят десятки офферов.</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Знаем реальные вилки и ожидания кандидатов в Иркутске — через нас ежемесячно проходят десятки офферов.</p>
             </div>
           </div>
           {/* Узкая */}
@@ -448,7 +448,7 @@ export default function Index() {
             </div>
             <div>
               <p className="font-body font-semibold text-foreground mb-2">Находим тех, кто приносит результат</p>
-              <p className="font-body text-sm text-foreground/65 leading-relaxed">Ориентируемся не на «красивый опыт», а на способность решать ваши бизнес-задачи.</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Ориентируемся не на «красивый опыт», а на способность решать ваши бизнес-задачи.</p>
             </div>
           </div>
           {/* Широкая финальная */}
@@ -458,7 +458,7 @@ export default function Index() {
             </div>
             <div>
               <p className="font-body font-semibold text-white mb-2">Готовы начать?</p>
-              <p className="font-body text-sm text-white/80 leading-relaxed mb-4">Расскажите о вакансии — стартуем в день обращения.</p>
+              <p className="font-body text-base text-white/80 leading-relaxed mb-4">Расскажите о вакансии — стартуем в день обращения.</p>
             </div>
           </div>
         </div>
