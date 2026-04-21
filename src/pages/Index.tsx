@@ -354,7 +354,7 @@ export default function Index() {
                 <Icon name={item.icon} size={18} className="text-neon" />
               </div>
               <div>
-                <p className="font-body font-semibold text-foreground mb-1">{item.title}</p>
+                <p className="font-body font-semibold text-neon mb-1">{item.title}</p>
                 <p className="font-body text-base text-foreground/65 leading-relaxed">{item.text}</p>
               </div>
             </div>
