@@ -349,8 +349,8 @@ export default function Index() {
             { icon: "ClipboardCheck", title: "Находим тех, кто приносит результат", text: "Ориентируемся не на «красивый опыт», а на способность решать ваши бизнес-задачи. Подбираем сотрудников, которые усиливают команду и влияют на прибыль." },
             { icon: "Zap", title: "Не даём потерять финалиста на финише", text: "Держим постоянный контакт с финалистом, первыми узнаём о встречных предложениях и их условиях. Помогаем найти компромисс, чтобы сделка состоялась на выгодных для вас условиях." },
           ].map((item, i) => (
-            <div key={i} className="flex items-start gap-4 rounded-2xl p-5" style={{background: "#F2EAE0"}}>
-              <div className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center mt-0.5" style={{background: "rgba(192,64,0,0.12)"}}>
+            <div key={i} className="flex items-start gap-4 bg-card rounded-2xl p-5" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+              <div className="flex-shrink-0 w-9 h-9 rounded-full bg-neon/10 flex items-center justify-center mt-0.5">
                 <Icon name={item.icon} size={18} className="text-neon" />
               </div>
               <div>
