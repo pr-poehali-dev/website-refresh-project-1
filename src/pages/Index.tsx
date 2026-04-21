@@ -344,17 +344,17 @@ export default function Index() {
             },
           ].map((pair, i) => (
             <div key={i} className="grid md:grid-cols-2 gap-4">
-              <div className="flex items-start gap-4 bg-card border border-border rounded-2xl p-5">
-                <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#c04000]/10 flex items-center justify-center mt-0.5">
-                  <Icon name={pair.problem.icon} size={18} className="text-neon" />
+              <div className="flex items-start gap-4 bg-card border-2 border-red-500/40 rounded-2xl p-5" style={{boxShadow: "0 0 0 1px rgba(239,68,68,0.08), inset 0 0 20px rgba(239,68,68,0.04)"}}>
+                <div className="flex-shrink-0 w-9 h-9 rounded-full bg-red-500/10 flex items-center justify-center mt-0.5">
+                  <Icon name={pair.problem.icon} size={18} className="text-red-400" />
                 </div>
                 <div>
                   <p className="font-body font-semibold text-foreground mb-1">{pair.problem.title}</p>
                   <p className="font-body text-base text-foreground/65 leading-relaxed">{pair.problem.text}</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 bg-card border border-border rounded-2xl p-5">
-                <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#c04000]/10 flex items-center justify-center mt-0.5">
+              <div className="flex items-start gap-4 bg-card border-2 border-neon/40 rounded-2xl p-5" style={{boxShadow: "0 0 0 1px rgba(192,64,0,0.08), inset 0 0 20px rgba(192,64,0,0.04)"}}>
+                <div className="flex-shrink-0 w-9 h-9 rounded-full bg-neon/10 flex items-center justify-center mt-0.5">
                   <Icon name={pair.solution.icon} size={18} className="text-neon" />
                 </div>
                 <div>
