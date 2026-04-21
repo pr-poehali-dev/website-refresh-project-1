@@ -334,7 +334,7 @@ export default function Index() {
         <h2 className="font-display text-5xl font-bold mt-3 mb-8">Ищете надёжного сотрудника, но при этом :</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-20" style={{gridTemplateRows: "auto"}}>
           {/* Широкая карточка — на 2 колонки */}
-          <div className="col-span-2 flex gap-5 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(239,68,68,0.1), 0 2px 8px rgba(239,68,68,0.05)"}}>
+          <div className="col-span-2 flex gap-5 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mt-0.5">
               <Icon name="UserX" size={20} className="text-red-400" />
             </div>
@@ -344,7 +344,7 @@ export default function Index() {
             </div>
           </div>
           {/* Узкая карточка */}
-          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(239,68,68,0.1), 0 2px 8px rgba(239,68,68,0.05)"}}>
+          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="Bot" size={20} className="text-red-400" />
             </div>
@@ -354,7 +354,7 @@ export default function Index() {
             </div>
           </div>
           {/* Узкая карточка */}
-          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(239,68,68,0.1), 0 2px 8px rgba(239,68,68,0.05)"}}>
+          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="TrendingUp" size={20} className="text-red-400" />
             </div>
@@ -364,7 +364,7 @@ export default function Index() {
             </div>
           </div>
           {/* Широкая карточка — на 2 колонки */}
-          <div className="col-span-2 flex gap-5 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(239,68,68,0.1), 0 2px 8px rgba(239,68,68,0.05)"}}>
+          <div className="col-span-2 flex gap-5 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mt-0.5">
               <Icon name="Timer" size={20} className="text-red-400" />
             </div>
@@ -374,7 +374,7 @@ export default function Index() {
             </div>
           </div>
           {/* Узкая карточка */}
-          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(239,68,68,0.1), 0 2px 8px rgba(239,68,68,0.05)"}}>
+          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="ShieldQuestion" size={20} className="text-red-400" />
             </div>
@@ -384,7 +384,7 @@ export default function Index() {
             </div>
           </div>
           {/* Акцентная карточка */}
-          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(239,68,68,0.1), 0 2px 8px rgba(239,68,68,0.05)"}}>
+          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="AlertCircle" size={20} className="text-red-500" />
             </div>
