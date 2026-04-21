@@ -317,48 +317,124 @@ export default function Index() {
       <section id="about" className="py-24 max-w-7xl mx-auto px-6">
         <span className="font-body text-xs text-neon uppercase tracking-widest">О нас</span>
 
-        {/* Блок проблем */}
+        {/* Блок проблем — bento grid */}
         <h2 className="font-display text-5xl font-bold mt-3 mb-8">Ищете надёжного сотрудника, но при этом :</h2>
-        <div className="flex flex-col gap-4 mb-20">
-          {[
-            { icon: "Bot", title: "Кандидаты пишут резюме с помощью ChatGPT", text: "Кандидат красиво расписал свой опыт, а на собеседовании выясняется, что резюме за него сделала нейросеть. Сам он не помнит половины терминов. Время потрачено зря." },
-            { icon: "UserX", title: "Профильные кандидаты не откликаются вообще", text: "Вы разместили вакансию на HH, за неделю пришло 40 откликов. 38 — мимо (нет опыта, хотят удалёнку, не читали требования). А те двое, кто подходит, не ответили на звонок." },
-            { icon: "TrendingUp", title: "Нет объективных данных по уровню з/п", text: "Не знаете, сколько платить: боитесь продешевить и упустить лучших — или переплатить просто «хорошему рассказчику»." },
-            { icon: "ShieldQuestion", title: "Сложно проверить компетенции кандидата", text: "Трудно понять, кто реально справится с задачами, а кто просто прошёл курс «как пройти собеседование»." },
-            { icon: "Timer", title: "Вы теряете сильных кандидатов из-за пауз", text: "Пока вы взвешиваете, сравниваете и назначаете ещё одно собеседование — сильный кандидат уже принял предложение от другой компании." },
-          ].map((item, i) => (
-            <div key={i} className="flex items-start gap-4 bg-card rounded-2xl p-5" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
-              <div className="flex-shrink-0 w-9 h-9 rounded-full bg-red-500/10 flex items-center justify-center mt-0.5">
-                <Icon name={item.icon} size={18} className="text-red-400" />
-              </div>
-              <div>
-                <p className="font-body font-semibold text-foreground mb-1">{item.title}</p>
-                <p className="font-body text-base text-foreground/65 leading-relaxed">{item.text}</p>
-              </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-20" style={{gridTemplateRows: "auto"}}>
+          {/* Широкая карточка — на 2 колонки */}
+          <div className="col-span-2 flex gap-5 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(239,68,68,0.1), 0 2px 8px rgba(239,68,68,0.05)"}}>
+            <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mt-0.5">
+              <Icon name="UserX" size={20} className="text-red-400" />
             </div>
-          ))}
+            <div>
+              <p className="font-body font-semibold text-foreground mb-2 text-lg">Профильные кандидаты не откликаются вообще</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Вы разместили вакансию на HH, за неделю пришло 40 откликов. 38 — мимо (нет опыта, хотят удалёнку, не читали требования). А те двое, кто подходит, не ответили на звонок.</p>
+            </div>
+          </div>
+          {/* Узкая карточка */}
+          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(239,68,68,0.1), 0 2px 8px rgba(239,68,68,0.05)"}}>
+            <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
+              <Icon name="Bot" size={20} className="text-red-400" />
+            </div>
+            <div>
+              <p className="font-body font-semibold text-foreground mb-2">Кандидаты пишут резюме с помощью ChatGPT</p>
+              <p className="font-body text-sm text-foreground/65 leading-relaxed">Красивое резюме — а на деле человек не помнит половины терминов. Время потрачено зря.</p>
+            </div>
+          </div>
+          {/* Узкая карточка */}
+          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(239,68,68,0.1), 0 2px 8px rgba(239,68,68,0.05)"}}>
+            <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
+              <Icon name="TrendingUp" size={20} className="text-red-400" />
+            </div>
+            <div>
+              <p className="font-body font-semibold text-foreground mb-2">Нет объективных данных по уровню з/п</p>
+              <p className="font-body text-sm text-foreground/65 leading-relaxed">Боитесь продешевить и упустить лучших — или переплатить просто «хорошему рассказчику».</p>
+            </div>
+          </div>
+          {/* Широкая карточка — на 2 колонки */}
+          <div className="col-span-2 flex gap-5 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(239,68,68,0.1), 0 2px 8px rgba(239,68,68,0.05)"}}>
+            <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mt-0.5">
+              <Icon name="Timer" size={20} className="text-red-400" />
+            </div>
+            <div>
+              <p className="font-body font-semibold text-foreground mb-2 text-lg">Вы теряете сильных кандидатов из-за пауз</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Пока вы взвешиваете, сравниваете и назначаете ещё одно собеседование — сильный кандидат уже принял предложение от другой компании.</p>
+            </div>
+          </div>
+          {/* Узкая карточка */}
+          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(239,68,68,0.1), 0 2px 8px rgba(239,68,68,0.05)"}}>
+            <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
+              <Icon name="ShieldQuestion" size={20} className="text-red-400" />
+            </div>
+            <div>
+              <p className="font-body font-semibold text-foreground mb-2">Сложно проверить компетенции кандидата</p>
+              <p className="font-body text-sm text-foreground/65 leading-relaxed">Кто реально справится с задачами, а кто просто прошёл курс «как пройти собеседование»?</p>
+            </div>
+          </div>
         </div>
 
-        {/* Блок решений */}
+        {/* Блок решений — bento grid */}
         <h2 className="font-display text-5xl font-bold text-neon mb-8">Наймите сотрудников, в которых не ошибетесь</h2>
-        <div className="flex flex-col gap-4">
-          {[
-            { icon: "BadgeCheck", title: "Оцениваем реальный опыт кандидата", text: "Проводим глубинные интервью, тестовые задания и проверку фактов. Вы встречаетесь с кандидатами, чей опыт подтверждён делами, а не нейросетью." },
-            { icon: "Search", title: "Привлекаем лучших через «упаковку» вакансии", text: "Используем маркетинговые инструменты и прямой поиск, чтобы выходить на пассивных кандидатов. Умеем так презентовать вакансию, что откликаются даже те, кто не планировал менять место." },
-            { icon: "BarChart2", title: "Даём актуальную аналитику по зарплатам", text: "Через нас ежемесячно проходят десятки офферов. Знаем реальные вилки, ожидания кандидатов и рыночные условия в Иркутске." },
-            { icon: "ClipboardCheck", title: "Находим тех, кто приносит результат", text: "Ориентируемся не на «красивый опыт», а на способность решать ваши бизнес-задачи. Подбираем сотрудников, которые усиливают команду и влияют на прибыль." },
-            { icon: "Zap", title: "Не даём потерять финалиста на финише", text: "Держим постоянный контакт с финалистом, первыми узнаём о встречных предложениях и их условиях. Помогаем найти компромисс, чтобы сделка состоялась на выгодных для вас условиях." },
-          ].map((item, i) => (
-            <div key={i} className="flex items-start gap-4 bg-card rounded-2xl p-5" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
-              <div className="flex-shrink-0 w-9 h-9 rounded-full bg-neon/10 flex items-center justify-center mt-0.5">
-                <Icon name={item.icon} size={18} className="text-neon" />
-              </div>
-              <div>
-                <p className="font-body font-semibold text-foreground mb-1">{item.title}</p>
-                <p className="font-body text-base text-foreground/65 leading-relaxed">{item.text}</p>
-              </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {/* Узкая */}
+          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+            <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
+              <Icon name="BadgeCheck" size={20} className="text-neon" />
             </div>
-          ))}
+            <div>
+              <p className="font-body font-semibold text-foreground mb-2">Оцениваем реальный опыт кандидата</p>
+              <p className="font-body text-sm text-foreground/65 leading-relaxed">Глубинные интервью, тестовые задания и проверка фактов — вы встречаетесь только с теми, чей опыт подтверждён.</p>
+            </div>
+          </div>
+          {/* Широкая — на 2 колонки */}
+          <div className="col-span-2 flex gap-5 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+            <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center mt-0.5">
+              <Icon name="Search" size={20} className="text-neon" />
+            </div>
+            <div>
+              <p className="font-body font-semibold text-foreground mb-2 text-lg">Привлекаем лучших через «упаковку» вакансии</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Используем маркетинговые инструменты и прямой поиск, чтобы выходить на пассивных кандидатов. Умеем так презентовать вакансию, что откликаются даже те, кто не планировал менять место.</p>
+            </div>
+          </div>
+          {/* Широкая — на 2 колонки */}
+          <div className="col-span-2 flex gap-5 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+            <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center mt-0.5">
+              <Icon name="Zap" size={20} className="text-neon" />
+            </div>
+            <div>
+              <p className="font-body font-semibold text-foreground mb-2 text-lg">Не даём потерять финалиста на финише</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Держим постоянный контакт с финалистом, первыми узнаём о встречных предложениях. Помогаем найти компромисс, чтобы сделка состоялась на выгодных для вас условиях.</p>
+            </div>
+          </div>
+          {/* Узкая */}
+          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+            <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
+              <Icon name="BarChart2" size={20} className="text-neon" />
+            </div>
+            <div>
+              <p className="font-body font-semibold text-foreground mb-2">Даём актуальную аналитику по зарплатам</p>
+              <p className="font-body text-sm text-foreground/65 leading-relaxed">Знаем реальные вилки и ожидания кандидатов в Иркутске — через нас ежемесячно проходят десятки офферов.</p>
+            </div>
+          </div>
+          {/* Узкая */}
+          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+            <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
+              <Icon name="ClipboardCheck" size={20} className="text-neon" />
+            </div>
+            <div>
+              <p className="font-body font-semibold text-foreground mb-2">Находим тех, кто приносит результат</p>
+              <p className="font-body text-sm text-foreground/65 leading-relaxed">Ориентируемся не на «красивый опыт», а на способность решать ваши бизнес-задачи.</p>
+            </div>
+          </div>
+          {/* Широкая финальная */}
+          <div className="col-span-1 md:col-span-1 flex flex-col gap-4 bg-neon rounded-2xl p-7">
+            <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+              <Icon name="ArrowRight" size={20} className="text-white" />
+            </div>
+            <div>
+              <p className="font-body font-semibold text-white mb-2">Готовы начать?</p>
+              <p className="font-body text-sm text-white/80 leading-relaxed mb-4">Расскажите о вакансии — стартуем в день обращения.</p>
+            </div>
+          </div>
         </div>
       </section>
 
