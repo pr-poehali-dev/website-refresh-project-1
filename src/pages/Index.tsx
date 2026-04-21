@@ -181,6 +181,19 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
   );
 }
 
+function UnderlineText({ children }: { children: React.ReactNode }) {
+  const { ref, inView } = useInView(0.5);
+  return (
+    <p ref={ref} className="font-body font-semibold text-neon mb-2 relative inline-block">
+      {children}
+      <span
+        className="absolute left-0 bottom-0 h-[2px] bg-neon rounded-full transition-all duration-700 ease-out"
+        style={{ width: inView ? "100%" : "0%" }}
+      />
+    </p>
+  );
+}
+
 function StatsSection() {
   const { ref, inView } = useInView(0.15);
   return (
@@ -376,7 +389,7 @@ export default function Index() {
               <Icon name="AlertCircle" size={20} className="text-red-500" />
             </div>
             <div>
-              <p className="font-body font-semibold text-neon mb-2">В результате:</p>
+              <UnderlineText>В результате:</UnderlineText>
               <p className="font-body text-sm text-foreground/75 leading-relaxed">Вы тратите время на бесконечный отбор, упускаете лучших и рискуете взять того, кто красиво говорит, но не приносит результата.</p>
             </div>
           </div>
