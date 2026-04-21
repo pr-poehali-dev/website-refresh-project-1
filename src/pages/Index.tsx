@@ -327,7 +327,10 @@ export default function Index() {
       <StatsSection />
 
       {/* ABOUT */}
-      <section id="about" className="py-24 max-w-7xl mx-auto px-6">
+      <section id="about" className="py-24 relative overflow-hidden">
+        <div className="absolute top-0 -left-48 w-[600px] h-[600px] rounded-full bg-[#c04000]/8 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 -right-48 w-[500px] h-[500px] rounded-full bg-[#c04000]/6 blur-3xl pointer-events-none" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
         <span className="font-body text-xs text-neon uppercase tracking-widest">О нас</span>
 
         {/* Блок проблем — bento grid */}
@@ -458,6 +461,7 @@ export default function Index() {
               <p className="font-body text-sm text-white/80 leading-relaxed mb-4">Расскажите о вакансии — стартуем в день обращения.</p>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
