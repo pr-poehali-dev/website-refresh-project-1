@@ -371,12 +371,12 @@ export default function Index() {
             </div>
           </div>
           {/* Акцентная карточка */}
-          <div className="col-span-1 flex flex-col gap-4 bg-red-500 rounded-2xl p-7">
-            <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
-              <Icon name="AlertCircle" size={20} className="text-white" />
+          <div className="col-span-1 flex flex-col gap-4 bg-card border-2 border-red-500 rounded-2xl p-7">
+            <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
+              <Icon name="AlertCircle" size={20} className="text-red-500" />
             </div>
             <div>
-              <p className="font-body text-sm text-white/90 leading-relaxed">Сейчас как никогда важно не тратить время на пустые собеседования и срывы. Каждый день без сотрудника — это упущенная выгода. Мы забираем поиск на себя. Вы платите только за результат.</p>
+              <p className="font-body text-sm text-foreground/75 leading-relaxed">Сейчас как никогда важно не тратить время на пустые собеседования и срывы. Каждый день без сотрудника — это упущенная выгода. Мы забираем поиск на себя. Вы платите только за результат.</p>
             </div>
           </div>
         </div>
