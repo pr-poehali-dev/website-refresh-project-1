@@ -353,9 +353,9 @@ export default function Index() {
                   <p className="font-body text-base text-foreground/65 leading-relaxed">{pair.problem.text}</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 bg-card border-2 border-neon/40 rounded-2xl p-5" style={{boxShadow: "0 0 0 1px rgba(192,64,0,0.08), inset 0 0 20px rgba(192,64,0,0.04)"}}>
-                <div className="flex-shrink-0 w-9 h-9 rounded-full bg-neon/10 flex items-center justify-center mt-0.5">
-                  <Icon name={pair.solution.icon} size={18} className="text-neon" />
+              <div className="flex items-start gap-4 bg-card border-2 rounded-2xl p-5" style={{borderColor: "rgba(107,127,107,0.5)", boxShadow: "0 0 0 1px rgba(107,127,107,0.08), inset 0 0 20px rgba(107,127,107,0.05)"}}>
+                <div className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center mt-0.5" style={{backgroundColor: "rgba(107,127,107,0.15)"}}>
+                  <Icon name={pair.solution.icon} size={18} style={{color: "#6B7F6B"}} />
                 </div>
                 <div>
                   <p className="font-body font-semibold text-foreground mb-1">{pair.solution.title}</p>
