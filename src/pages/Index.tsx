@@ -327,7 +327,7 @@ export default function Index() {
             { icon: "ShieldQuestion", title: "Сложно проверить компетенции кандидата", text: "Трудно понять, кто реально справится с задачами, а кто просто прошёл курс «как пройти собеседование»." },
             { icon: "Timer", title: "Вы теряете сильных кандидатов из-за пауз", text: "Пока вы взвешиваете, сравниваете и назначаете ещё одно собеседование — сильный кандидат уже принял предложение от другой компании." },
           ].map((item, i) => (
-            <div key={i} className="flex items-start gap-4 rounded-2xl p-5" style={{background: "#F2EAE0"}}>
+            <div key={i} className="flex items-start gap-4 bg-card rounded-2xl p-5" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
               <div className="flex-shrink-0 w-9 h-9 rounded-full bg-red-500/10 flex items-center justify-center mt-0.5">
                 <Icon name={item.icon} size={18} className="text-red-400" />
               </div>
