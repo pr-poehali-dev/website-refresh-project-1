@@ -342,7 +342,7 @@ export default function Index() {
               <Icon name="UserX" size={20} className="text-red-400" />
             </div>
             <div>
-              <p className="font-body font-semibold text-foreground mb-2 text-lg">Профильные кандидаты не откликаются вообще</p>
+              <p className="font-body font-semibold text-foreground mb-2">Профильные кандидаты не откликаются вообще</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Вы разместили вакансию на HH, за неделю пришло 40 откликов. 38 — мимо (нет опыта, хотят удалёнку, не читали требования). А те двое, кто подходит, не ответили на звонок.</p>
             </div>
           </div>
@@ -372,7 +372,7 @@ export default function Index() {
               <Icon name="Timer" size={20} className="text-red-400" />
             </div>
             <div>
-              <p className="font-body font-semibold text-foreground mb-2 text-lg">Вы теряете сильных кандидатов из-за пауз</p>
+              <p className="font-body font-semibold text-foreground mb-2">Вы теряете сильных кандидатов из-за пауз</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Пока вы взвешиваете, сравниваете и назначаете ещё одно собеседование — сильный кандидат уже принял предложение от другой компании.</p>
             </div>
           </div>
@@ -417,7 +417,7 @@ export default function Index() {
               <Icon name="Search" size={20} className="text-neon" />
             </div>
             <div>
-              <p className="font-body font-semibold text-foreground mb-2 text-lg">Привлекаем лучших через «упаковку» вакансии</p>
+              <p className="font-body font-semibold text-foreground mb-2">Привлекаем лучших через «упаковку» вакансии</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Используем маркетинговые инструменты и прямой поиск, чтобы выходить на пассивных кандидатов. Умеем так презентовать вакансию, что откликаются даже те, кто не планировал менять место.</p>
             </div>
           </div>
@@ -427,7 +427,7 @@ export default function Index() {
               <Icon name="Zap" size={20} className="text-neon" />
             </div>
             <div>
-              <p className="font-body font-semibold text-foreground mb-2 text-lg">Не даём потерять финалиста на финише</p>
+              <p className="font-body font-semibold text-foreground mb-2">Не даём потерять финалиста на финише</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Держим постоянный контакт с финалистом, первыми узнаём о встречных предложениях. Помогаем найти компромисс, чтобы сделка состоялась на выгодных для вас условиях.</p>
             </div>
           </div>
