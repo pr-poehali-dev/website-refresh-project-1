@@ -316,51 +316,46 @@ export default function Index() {
       {/* ABOUT */}
       <section id="about" className="py-24 max-w-7xl mx-auto px-6">
         <span className="font-body text-xs text-neon uppercase tracking-widest">О нас</span>
-        <div className="grid md:grid-cols-2 gap-8 mt-3 mb-16">
-          <h2 className="font-display text-5xl font-bold">Ищете надёжного сотрудника, но при этом :</h2>
-          <h2 className="font-display text-5xl font-bold text-neon">Наймите сотрудников, в которых не ошибетесь</h2>
-        </div>
-        <div className="flex flex-col gap-6">
+
+        {/* Блок проблем */}
+        <h2 className="font-display text-5xl font-bold mt-3 mb-8">Ищете надёжного сотрудника, но при этом :</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
           {[
-            {
-              problem: { icon: "Bot", title: "Резюме написано ChatGPT", text: "Кандидат красиво расписал свой опыт, а на собеседовании выясняется, что резюме за него сделала нейросеть. Сам он не помнит половины терминов. Время потрачено зря." },
-              solution: { icon: "BadgeCheck", title: "Оцениваем реальный опыт кандидата", text: "Проводим глубинные интервью, тестовые задания и проверку фактов. Вы встречаетесь с кандидатами, чей опыт подтверждён делами, а не нейросетью." },
-            },
-            {
-              problem: { icon: "UserX", title: "Профильные кандидаты не откликаются вообще", text: "Вы разместили вакансию на HH, за неделю пришло 40 откликов. 38 — мимо (нет опыта, хотят удалёнку, не читали требования). А те двое, кто подходит, не ответили на звонок." },
-              solution: { icon: "Search", title: "Привлекаем лучших через «упаковку» вакансии", text: "Используем маркетинговые инструменты и прямой поиск, чтобы выходить на пассивных кандидатов. Умеем так презентовать вакансию, что откликаются даже те, кто не планировал менять место." },
-            },
-            {
-              problem: { icon: "TrendingUp", title: "Нет объективных данных по уровню з/п", text: "Не знаете, сколько платить: боитесь продешевить и упустить лучших — или переплатить просто «хорошему рассказчику»." },
-              solution: { icon: "BarChart2", title: "Даём актуальную аналитику по зарплатам", text: "Через нас ежемесячно проходят десятки офферов. Знаем реальные вилки, ожидания кандидатов и рыночные условия в Иркутске." },
-            },
-            {
-              problem: { icon: "ShieldQuestion", title: "Сложно проверить компетенции кандидата", text: "Трудно понять, кто реально справится с задачами, а кто просто прошёл курс «как пройти собеседование»." },
-              solution: { icon: "ClipboardCheck", title: "Находим тех, кто приносит результат", text: "Ориентируемся не на «красивый опыт», а на способность решать ваши бизнес-задачи. Подбираем сотрудников, которые усиливают команду и влияют на прибыль." },
-            },
-            {
-              problem: { icon: "Timer", title: "Вы теряете сильных кандидатов из-за пауз", text: "Пока вы взвешиваете, сравниваете и назначаете ещё одно собеседование — сильный кандидат уже принял предложение от другой компании." },
-              solution: { icon: "Zap", title: "Не даём потерять финалиста на финише", text: "Держим постоянный контакт с финалистом, первыми узнаём о встречных предложениях и их условиях. Помогаем найти компромисс, чтобы сделка состоялась на выгодных для вас условиях." },
-            },
-          ].map((pair, i) => (
-            <div key={i} className="grid md:grid-cols-2 gap-4">
-              <div className="flex items-start gap-4 bg-card border-2 border-red-500/40 rounded-2xl p-5" style={{boxShadow: "0 0 0 1px rgba(239,68,68,0.08), inset 0 0 20px rgba(239,68,68,0.04)"}}>
-                <div className="flex-shrink-0 w-9 h-9 rounded-full bg-red-500/10 flex items-center justify-center mt-0.5">
-                  <Icon name={pair.problem.icon} size={18} className="text-red-400" />
-                </div>
-                <div>
-                  <p className="font-body font-semibold text-foreground mb-1">{pair.problem.title}</p>
-                  <p className="font-body text-base text-foreground/65 leading-relaxed">{pair.problem.text}</p>
-                </div>
+            { icon: "Bot", title: "Резюме написано ChatGPT", text: "Кандидат красиво расписал свой опыт, а на собеседовании выясняется, что резюме за него сделала нейросеть. Сам он не помнит половины терминов. Время потрачено зря." },
+            { icon: "UserX", title: "Профильные кандидаты не откликаются вообще", text: "Вы разместили вакансию на HH, за неделю пришло 40 откликов. 38 — мимо (нет опыта, хотят удалёнку, не читали требования). А те двое, кто подходит, не ответили на звонок." },
+            { icon: "TrendingUp", title: "Нет объективных данных по уровню з/п", text: "Не знаете, сколько платить: боитесь продешевить и упустить лучших — или переплатить просто «хорошему рассказчику»." },
+            { icon: "ShieldQuestion", title: "Сложно проверить компетенции кандидата", text: "Трудно понять, кто реально справится с задачами, а кто просто прошёл курс «как пройти собеседование»." },
+            { icon: "Timer", title: "Вы теряете сильных кандидатов из-за пауз", text: "Пока вы взвешиваете, сравниваете и назначаете ещё одно собеседование — сильный кандидат уже принял предложение от другой компании." },
+          ].map((item, i) => (
+            <div key={i} className="flex items-start gap-4 bg-card border-2 border-red-500/40 rounded-2xl p-5" style={{boxShadow: "0 0 0 1px rgba(239,68,68,0.08), inset 0 0 20px rgba(239,68,68,0.04)"}}>
+              <div className="flex-shrink-0 w-9 h-9 rounded-full bg-red-500/10 flex items-center justify-center mt-0.5">
+                <Icon name={item.icon} size={18} className="text-red-400" />
               </div>
-              <div className="flex items-start gap-4 bg-card border-2 border-neon/40 rounded-2xl p-5" style={{boxShadow: "0 0 0 1px rgba(192,64,0,0.08), inset 0 0 20px rgba(192,64,0,0.04)"}}>
-                <div className="flex-shrink-0 w-9 h-9 rounded-full bg-neon/10 flex items-center justify-center mt-0.5">
-                  <Icon name={pair.solution.icon} size={18} className="text-neon" />
-                </div>
-                <div>
-                  <p className="font-body font-semibold text-foreground mb-1">{pair.solution.title}</p>
-                  <p className="font-body text-base text-foreground/65 leading-relaxed">{pair.solution.text}</p>
-                </div>
+              <div>
+                <p className="font-body font-semibold text-foreground mb-1">{item.title}</p>
+                <p className="font-body text-base text-foreground/65 leading-relaxed">{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Блок решений */}
+        <h2 className="font-display text-5xl font-bold text-neon mb-8">Наймите сотрудников, в которых не ошибетесь</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { icon: "BadgeCheck", title: "Оцениваем реальный опыт кандидата", text: "Проводим глубинные интервью, тестовые задания и проверку фактов. Вы встречаетесь с кандидатами, чей опыт подтверждён делами, а не нейросетью." },
+            { icon: "Search", title: "Привлекаем лучших через «упаковку» вакансии", text: "Используем маркетинговые инструменты и прямой поиск, чтобы выходить на пассивных кандидатов. Умеем так презентовать вакансию, что откликаются даже те, кто не планировал менять место." },
+            { icon: "BarChart2", title: "Даём актуальную аналитику по зарплатам", text: "Через нас ежемесячно проходят десятки офферов. Знаем реальные вилки, ожидания кандидатов и рыночные условия в Иркутске." },
+            { icon: "ClipboardCheck", title: "Находим тех, кто приносит результат", text: "Ориентируемся не на «красивый опыт», а на способность решать ваши бизнес-задачи. Подбираем сотрудников, которые усиливают команду и влияют на прибыль." },
+            { icon: "Zap", title: "Не даём потерять финалиста на финише", text: "Держим постоянный контакт с финалистом, первыми узнаём о встречных предложениях и их условиях. Помогаем найти компромисс, чтобы сделка состоялась на выгодных для вас условиях." },
+          ].map((item, i) => (
+            <div key={i} className="flex items-start gap-4 bg-card border-2 border-neon/40 rounded-2xl p-5" style={{boxShadow: "0 0 0 1px rgba(192,64,0,0.08), inset 0 0 20px rgba(192,64,0,0.04)"}}>
+              <div className="flex-shrink-0 w-9 h-9 rounded-full bg-neon/10 flex items-center justify-center mt-0.5">
+                <Icon name={item.icon} size={18} className="text-neon" />
+              </div>
+              <div>
+                <p className="font-body font-semibold text-foreground mb-1">{item.title}</p>
+                <p className="font-body text-base text-foreground/65 leading-relaxed">{item.text}</p>
               </div>
             </div>
           ))}
