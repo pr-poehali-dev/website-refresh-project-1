@@ -13,29 +13,29 @@
     --popover: 30 25% 98%;
     --popover-foreground: 20 20% 10%;
 
-    --primary: 20 100% 38%;
+    --primary: 270 72% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 20% 88%;
-    --secondary-foreground: 20 20% 10%;
+    --secondary: 270 15% 88%;
+    --secondary-foreground: 270 20% 10%;
 
-    --muted: 25 20% 88%;
-    --muted-foreground: 20 12% 42%;
+    --muted: 270 15% 88%;
+    --muted-foreground: 270 10% 42%;
 
-    --accent: 20 100% 38%;
+    --accent: 270 72% 40%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 25 18% 82%;
-    --input: 25 18% 82%;
-    --ring: 20 100% 38%;
+    --border: 270 12% 82%;
+    --input: 270 12% 82%;
+    --ring: 270 72% 40%;
 
     --radius: 0.75rem;
 
-    --neon: #c04000;
-    --neon-glow: rgba(192, 64, 0, 0.2);
+    --neon: #6b21a8;
+    --neon-glow: rgba(107, 33, 168, 0.2);
   }
 }
 
@@ -93,7 +93,7 @@
 
   .card-hover:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 60px rgba(192, 64, 0, 0.12);
+    box-shadow: 0 20px 60px rgba(107, 33, 168, 0.12);
   }
 
   .grain {
@@ -215,7 +215,7 @@
   background: linear-gradient(
     135deg,
     transparent 60%,
-    rgba(192, 64, 0, 0.07) 100%
+    rgba(107, 33, 168, 0.07) 100%
   );
   opacity: 0;
   transition: opacity 0.3s;
