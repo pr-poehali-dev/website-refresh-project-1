@@ -85,12 +85,28 @@ const services = [
   },
 ];
 
-function useCountUp(target: string, duration = 1500) {
+function useInView(threshold = 0.2) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect(); } },
+      { threshold }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  return { ref, inView };
+}
+
+function useCountUp(target: string, duration = 1500, active = false) {
   const [display, setDisplay] = useState("0");
   const started = useRef(false);
 
   useEffect(() => {
-    if (started.current) return;
+    if (!active || started.current) return;
     started.current = true;
     const num = parseInt(target.replace(/\D/g, ""));
     if (!num) { setDisplay(target); return; }
@@ -103,17 +119,21 @@ function useCountUp(target: string, duration = 1500) {
       if (start >= num) clearInterval(timer);
     }, 16);
     return () => clearInterval(timer);
-  }, []);
+  }, [active]);
 
   return display;
 }
 
-function StatCard({ value, label, delay, icon, desc, footnote }: { value: string; label: string; delay: number; icon: string; desc: string; footnote?: boolean }) {
-  const count = useCountUp(value);
+function StatCard({ value, label, delay, icon, desc, footnote, inView }: { value: string; label: string; delay: number; icon: string; desc: string; footnote?: boolean; inView: boolean }) {
+  const count = useCountUp(value, 1500, inView);
   return (
     <div
-      className="group relative flex flex-col gap-4 p-7 rounded-2xl bg-card border border-border hover:border-neon/30 transition-all duration-300 hover:shadow-lg animate-fade-up overflow-hidden"
-      style={{ animationDelay: `${delay}s`, animationFillMode: "both" }}
+      className="group relative flex flex-col gap-4 p-7 rounded-2xl bg-card border border-border hover:border-neon/30 transition-all duration-500 hover:shadow-lg overflow-hidden"
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0)" : "translateY(40px)",
+        transition: `opacity 0.6s ease ${delay}s, transform 0.6s ease ${delay}s, box-shadow 0.3s, border-color 0.3s`,
+      }}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-neon/0 to-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
       <div className="flex items-center justify-between">
@@ -158,6 +178,21 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
         </p>
       </div>
     </div>
+  );
+}
+
+function StatsSection() {
+  const { ref, inView } = useInView(0.15);
+  return (
+    <section className="py-16">
+      <div className="max-w-7xl mx-auto px-6">
+        <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((s, i) => (
+            <StatCard key={i} value={s.value} label={s.label} icon={s.icon} desc={s.desc} delay={i * 0.15} footnote={s.footnote} inView={inView} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -276,15 +311,7 @@ export default function Index() {
       </section>
 
       {/* STATS */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {stats.map((s, i) => (
-              <StatCard key={i} value={s.value} label={s.label} icon={s.icon} desc={s.desc} delay={i * 0.12} footnote={s.footnote} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsSection />
 
       {/* ABOUT */}
       <section id="about" className="py-24 max-w-7xl mx-auto px-6">
