@@ -449,7 +449,7 @@ export default function Index() {
             </div>
           </div>
           {/* Широкая финальная */}
-          <div className="col-span-1 md:col-span-1 flex flex-col gap-4 bg-neon rounded-2xl p-7">
+          <div className="col-span-1 md:col-span-1 flex flex-col gap-4 bg-neon rounded-2xl p-7 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
             <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
               <Icon name="ArrowRight" size={20} className="text-white" />
             </div>
