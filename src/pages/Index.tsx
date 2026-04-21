@@ -376,7 +376,7 @@ export default function Index() {
               <Icon name="AlertCircle" size={20} className="text-red-500" />
             </div>
             <div>
-              <p className="font-body font-semibold text-foreground mb-2">В результате:</p>
+              <p className="font-body font-semibold text-neon mb-2">В результате:</p>
               <p className="font-body text-sm text-foreground/75 leading-relaxed">Вы тратите время на бесконечный отбор, упускаете лучших и рискуете взять того, кто красиво говорит, но не приносит результата.</p>
             </div>
           </div>
