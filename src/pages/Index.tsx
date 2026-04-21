@@ -340,7 +340,7 @@ export default function Index() {
         </div>
 
         {/* Блок решений */}
-        <h2 className="font-display text-5xl font-bold text-neon mb-8">Наймите сотрудников, в которых не ошибетесь</h2>
+        <h2 className="font-display text-5xl font-bold mb-8" style={{color: "#2C4C3B"}}>Наймите сотрудников, в которых не ошибетесь</h2>
         <div className="flex flex-col gap-4">
           {[
             { icon: "BadgeCheck", title: "Оцениваем реальный опыт кандидата", text: "Проводим глубинные интервью, тестовые задания и проверку фактов. Вы встречаетесь с кандидатами, чей опыт подтверждён делами, а не нейросетью." },
@@ -349,9 +349,9 @@ export default function Index() {
             { icon: "ClipboardCheck", title: "Находим тех, кто приносит результат", text: "Ориентируемся не на «красивый опыт», а на способность решать ваши бизнес-задачи. Подбираем сотрудников, которые усиливают команду и влияют на прибыль." },
             { icon: "Zap", title: "Не даём потерять финалиста на финише", text: "Держим постоянный контакт с финалистом, первыми узнаём о встречных предложениях и их условиях. Помогаем найти компромисс, чтобы сделка состоялась на выгодных для вас условиях." },
           ].map((item, i) => (
-            <div key={i} className="flex items-start gap-4 bg-card rounded-2xl p-5" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
-              <div className="flex-shrink-0 w-9 h-9 rounded-full bg-neon/10 flex items-center justify-center mt-0.5">
-                <Icon name={item.icon} size={18} className="text-neon" />
+            <div key={i} className="flex items-start gap-4 bg-card rounded-2xl p-5" style={{boxShadow: "0 8px 32px rgba(44,76,59,0.14), 0 2px 8px rgba(44,76,59,0.07)"}}>
+              <div className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center mt-0.5" style={{background: "rgba(44,76,59,0.1)"}}>
+                <Icon name={item.icon} size={18} style={{color: "#2C4C3B"}} />
               </div>
               <div>
                 <p className="font-body font-semibold text-foreground mb-1">{item.title}</p>
