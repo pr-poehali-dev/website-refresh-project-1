@@ -168,7 +168,7 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
         <span className={`flex-1 font-display text-lg font-bold transition-colors duration-200 ${open ? "text-neon" : "group-hover:text-foreground"}`}>
           {question}
         </span>
-        <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${open ? "bg-neon text-white rotate-45" : "bg-[#6B21A8]/10 text-neon"}`}>
+        <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${open ? "bg-neon text-white rotate-45" : "bg-[#c04000]/10 text-neon"}`}>
           <Icon name="Plus" size={14} />
         </span>
       </button>
@@ -215,14 +215,14 @@ export default function Index() {
           <button onClick={() => scrollTo("home")} className="flex items-center gap-2">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
               {/* Левая стойка */}
-              <rect x="2" y="4" width="5" height="28" rx="2.5" fill="#6B21A8"/>
+              <rect x="2" y="4" width="5" height="28" rx="2.5" fill="#c04000"/>
               {/* Правая стойка */}
-              <rect x="29" y="4" width="5" height="28" rx="2.5" fill="#6B21A8"/>
+              <rect x="29" y="4" width="5" height="28" rx="2.5" fill="#c04000"/>
               {/* Перекладина */}
-              <rect x="2" y="4" width="32" height="5" rx="2.5" fill="#6B21A8"/>
+              <rect x="2" y="4" width="32" height="5" rx="2.5" fill="#c04000"/>
               {/* Стрелка вперёд — движение, перспектива */}
-              <path d="M12 26 L18 14 L24 26" stroke="#6B21A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <path d="M15 26 L18 19 L21 26" fill="#6B21A8" opacity="0.25"/>
+              <path d="M12 26 L18 14 L24 26" stroke="#c04000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M15 26 L18 19 L21 26" fill="#c04000" opacity="0.25"/>
             </svg>
             <div className="flex flex-col leading-none">
               <span className="font-display text-xl font-bold tracking-wide text-foreground">ПЕРСПЕКТИВА</span>
@@ -272,12 +272,12 @@ export default function Index() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/60 to-background" />
         </div>
 
-        <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#6B21A8]/10 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/3 -right-32 w-80 h-80 rounded-full bg-[#6B21A8]/8 blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#c04000]/10 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/3 -right-32 w-80 h-80 rounded-full bg-[#c04000]/8 blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 bg-[#6B21A8]/10 border border-[#6B21A8]/30 rounded-full px-4 py-1.5 mb-8 animate-fade-up">
+            <div className="inline-flex items-center gap-2 bg-[#c04000]/10 border border-[#c04000]/30 rounded-full px-4 py-1.5 mb-8 animate-fade-up">
               <span className="w-2 h-2 rounded-full bg-neon animate-pulse" />
               <span className="font-body text-xs text-neon uppercase tracking-widest">Агентство Перспектива · Иркутск</span>
             </div>
