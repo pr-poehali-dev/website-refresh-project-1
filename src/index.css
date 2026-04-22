@@ -207,7 +207,6 @@
 
 .case-card {
   position: relative;
-  overflow: hidden;
 }
 
 .case-card::before {
