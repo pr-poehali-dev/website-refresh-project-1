@@ -51,18 +51,13 @@ export default function AboutAnimation() {
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center min-h-[420px] select-none">
-      <div className="mb-5 text-xs font-body uppercase tracking-widest text-foreground/35 flex items-center gap-2">
-        <span className="w-8 h-px bg-foreground/20 inline-block" />
-        поток кандидатов
-        <span className="w-8 h-px bg-foreground/20 inline-block" />
-      </div>
-
       <div
-        className="relative w-full max-w-[320px] overflow-hidden"
+        className="relative w-full max-w-[320px]"
         style={{
           height: containerH,
           maskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
           WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+          overflow: "visible",
         }}
       >
         <div
