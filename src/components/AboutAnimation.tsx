@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
 const CARDS = [
-  { name: "Алексей М.", role: "Менеджер по продажам", exp: "5 лет" },
-  { name: "Ирина К.", role: "Бухгалтер", exp: "8 лет" },
-  { name: "Дмитрий Р.", role: "Инженер-технолог", exp: "3 года" },
-  { name: "Наталья С.", role: "HR-специалист", exp: "6 лет" },
-  { name: "Сергей В.", role: "Руководитель отдела", exp: "10 лет" },
-  { name: "Юлия Т.", role: "Финансовый аналитик", exp: "4 года" },
-  { name: "Павел Н.", role: "Главный бухгалтер", exp: "12 лет" },
+  { name: "Алексей М.", role: "Менеджер по продажам", exp: "5 лет", photo: "https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/files/586134e2-1eac-4619-9370-a22dd180ba37.jpg" },
+  { name: "Ирина К.", role: "Бухгалтер", exp: "8 лет", photo: "https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/files/e134c85d-c21f-4a51-b49b-13546170b8ca.jpg" },
+  { name: "Дмитрий Р.", role: "Инженер-технолог", exp: "3 года", photo: "https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/files/3218c667-5cca-4213-a26e-a0063762f405.jpg" },
+  { name: "Наталья С.", role: "HR-специалист", exp: "6 лет", photo: "https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/files/57e90962-0c51-469d-b36e-2c72d6a0fff2.jpg" },
+  { name: "Сергей В.", role: "Руководитель отдела", exp: "10 лет", photo: "https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/files/530d72cc-3a63-4f61-9de6-fb78b4f2ba4a.jpg" },
+  { name: "Юлия Т.", role: "Финансовый аналитик", exp: "4 года", photo: "https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/files/235d313a-d956-4406-b337-29eb781b6a9f.jpg" },
+  { name: "Павел Н.", role: "Главный бухгалтер", exp: "12 лет", photo: "https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/files/af0b14ed-7604-49d9-8f34-1d988b52f613.jpg" },
 ];
 
 const CARD_H = 72;
@@ -82,10 +82,10 @@ export default function AboutAnimation() {
                 }}
               >
                 <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 transition-all duration-300"
-                  style={isChosen ? { background: "rgba(192,64,0,0.15)", color: "#c04000" } : { background: "hsl(var(--muted))", color: "hsl(var(--muted-foreground))" }}
+                  className="w-9 h-9 rounded-full flex-shrink-0 overflow-hidden transition-all duration-300"
+                  style={isChosen ? { outline: "2px solid #c04000", outlineOffset: "1px" } : {}}
                 >
-                  {card.name[0]}{card.name.split(" ")[1][0]}
+                  <img src={card.photo} alt={card.name} className="w-full h-full object-cover" />
                 </div>
 
                 <div className="flex-1 min-w-0">
