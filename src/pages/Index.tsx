@@ -385,7 +385,7 @@ export default function Index() {
             </div>
             <div>
               <p className="font-body font-semibold text-foreground mb-2">Кандидаты пишут резюме с помощью ChatGPT</p>
-              <p className="font-body text-base text-foreground/65 leading-relaxed">Кандидаты красиво расписывают свой опыт, а на собеседовании выясняется, что резюме за них сделала нейросеть. Сами они не помнят половины терминов. Вы уже потратили немало времени на звонки, согласование и ожидание — и снова начинаете с нуля.</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Кандидат красиво расписал свой опыт, а на собеседовании выясняется, что резюме за него сделала нейросеть. Сам он уже не помнит половины терминов. Время в очередной раз потрачено зря.</p>
             </div>
           </FadeCard>
           <FadeCard delay={0.1} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
