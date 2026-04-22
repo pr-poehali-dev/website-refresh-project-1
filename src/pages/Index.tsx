@@ -496,23 +496,44 @@ export default function Index() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* ABOUT */}
       <section id="services" className="py-24 max-w-7xl mx-auto px-6">
         <div className="mb-16">
-          <span className="font-body text-xs text-neon uppercase tracking-widest">Что мы делаем</span>
-          <h2 className="font-display text-5xl font-bold mt-3">НАШИ УСЛУГИ</h2>
+          <span className="font-body text-xs uppercase tracking-widest" style={{color: '#c04000'}}>О нас</span>
+          <h2 className="font-display text-5xl font-bold mt-3">Почему наш подход работает</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <p className="font-body text-lg text-foreground/75 leading-relaxed">
+            Рынок труда за последние годы изменился до неузнаваемости. Кандидаты стали требовательнее, скорость принятия решений выросла, а старые методы поиска перестали давать результат. Мы прошли через все эти изменения и научились работать в новых условиях.
+          </p>
+          <p className="font-body text-lg text-foreground/75 leading-relaxed">
+            Сегодня мы совмещаем 18-летнюю экспертизу иркутского рынка с современными инструментами маркетинга и продаж. Не просто размещаем вакансию — мы её «продаём» нужным кандидатам. Упаковываем преимущества, работаем с воронкой, выходим на пассивных специалистов через точечные каналы. Это позволяет находить тех, кто даже не ищет работу, и убеждать их рассмотреть ваше предложение.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {services.map((s, i) => (
-            <div key={i} className="case-card card-hover bg-card border border-border rounded-2xl p-8 group">
-              <div className="w-12 h-12 rounded-xl bg-neon/10 border border-neon/20 flex items-center justify-center mb-6 group-hover:bg-neon/20 transition-colors">
-                <Icon name={s.icon} size={22} className="text-neon" fallback="Star" />
-              </div>
-              <h3 className="font-display text-2xl font-bold mb-3">{s.title}</h3>
-              <p className="font-body text-muted-foreground leading-relaxed text-sm">{s.desc}</p>
+          <div className="bg-card rounded-2xl p-8" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.08)"}}>
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{background: 'rgba(192,64,0,0.08)'}}>
+              <Icon name="MapPin" size={22} fallback="Star" style={{color: '#c04000'}} />
             </div>
-          ))}
+            <h3 className="font-display text-xl font-bold mb-3">Глубокое знание локального рынка</h3>
+            <p className="font-body text-muted-foreground leading-relaxed text-sm">Мы понимаем, кто, где и за сколько работает в Иркутске и области. Это экономит ваше время на старте.</p>
+          </div>
+          <div className="bg-card rounded-2xl p-8" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.08)"}}>
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{background: 'rgba(192,64,0,0.08)'}}>
+              <Icon name="Megaphone" size={22} fallback="Star" style={{color: '#c04000'}} />
+            </div>
+            <h3 className="font-display text-xl font-bold mb-3">Маркетинговый подход к найму</h3>
+            <p className="font-body text-muted-foreground leading-relaxed text-sm">Вакансия — такой же продукт, как и любой другой. Мы умеем её «упаковать» и донести до нужной аудитории.</p>
+          </div>
+          <div className="bg-card rounded-2xl p-8" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.08)"}}>
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{background: 'rgba(192,64,0,0.08)'}}>
+              <Icon name="RefreshCw" size={22} fallback="Star" style={{color: '#c04000'}} />
+            </div>
+            <h3 className="font-display text-xl font-bold mb-3">Адаптация к меняющимся условиям</h3>
+            <p className="font-body text-muted-foreground leading-relaxed text-sm">Рынок штормит — мы подстраиваем стратегию поиска под текущую реальность, а не действуем по шаблону.</p>
+          </div>
         </div>
       </section>
 
