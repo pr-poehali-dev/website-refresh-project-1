@@ -57,7 +57,7 @@ export default function AboutAnimation() {
           height: containerH,
           maskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
           WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
-          overflow: "visible",
+          overflow: "hidden",
         }}
       >
         <div
@@ -77,7 +77,8 @@ export default function AboutAnimation() {
                   marginBottom: GAP,
                   background: isChosen ? "rgba(192,64,0,0.06)" : "hsl(var(--card))",
                   borderColor: isChosen ? "#c04000" : "hsl(var(--border))",
-                  boxShadow: isChosen ? "0 0 0 2px #c04000, 0 8px 24px rgba(192,64,0,0.15)" : undefined,
+                  borderWidth: isChosen ? 2 : 1,
+                  boxShadow: isChosen ? "0 8px 24px rgba(192,64,0,0.15)" : undefined,
                 }}
               >
                 <div
