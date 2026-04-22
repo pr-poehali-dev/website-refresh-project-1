@@ -288,7 +288,7 @@ export default function Index() {
           </button>
 
           <div className="hidden md:flex items-center gap-8">
-            {[["home", "Главная"], ["about", "О нас"], ["cases", "Кейсы"], ["services", "Услуги"], ["contact", "Контакты"]].map(([id, label]) => (
+            {[["home", "Главная"], ["services", "О нас"], ["cases", "Кейсы"], ["contact", "Контакты"]].map(([id, label]) => (
               <button
                 key={id}
                 onClick={() => scrollTo(id)}
@@ -313,7 +313,7 @@ export default function Index() {
 
         {menuOpen && (
           <div className="md:hidden bg-card border-b border-border px-6 py-4 flex flex-col gap-4">
-            {[["home", "Главная"], ["cases", "Кейсы"], ["services", "Услуги"], ["contact", "Контакты"]].map(([id, label]) => (
+            {[["home", "Главная"], ["services", "О нас"], ["cases", "Кейсы"], ["contact", "Контакты"]].map(([id, label]) => (
               <button key={id} onClick={() => scrollTo(id)} className="font-body text-sm uppercase tracking-widest text-left text-muted-foreground hover:text-neon transition-colors">
                 {label}
               </button>
@@ -375,10 +375,8 @@ export default function Index() {
         <div className="absolute top-0 -left-48 w-[600px] h-[600px] rounded-full bg-[#c04000]/8 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 -right-48 w-[500px] h-[500px] rounded-full bg-[#c04000]/6 blur-3xl pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <span className="font-body text-xs text-neon uppercase tracking-widest">О нас</span>
-
         {/* Блок проблем — bento grid */}
-        <h2 className="font-display text-5xl font-bold mt-3 mb-8">Ищете надёжного сотрудника, но при этом :</h2>
+        <h2 className="font-display text-5xl font-bold mb-8">Ищете надёжного сотрудника, но при этом :</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-20" style={{gridTemplateRows: "auto"}}>
           <FadeCard delay={0} className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
@@ -500,8 +498,7 @@ export default function Index() {
       {/* ABOUT */}
       <section id="services" className="py-24 max-w-7xl mx-auto px-6">
         <div className="mb-8">
-          <span className="font-body text-xs uppercase tracking-widest" style={{color: '#c04000'}}>О нас</span>
-          <h2 className="font-display text-5xl font-bold mt-3">Почему наш подход работает</h2>
+          <h2 className="font-display text-5xl font-bold">Почему наш подход работает</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
