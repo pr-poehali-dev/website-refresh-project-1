@@ -429,7 +429,7 @@ export default function Index() {
               <Icon name="AlertCircle" size={20} className="text-red-500" />
             </div>
             <div>
-              <span className="inline-block bg-neon text-white font-body font-semibold px-5 py-2 rounded-full text-base mb-2">В результате:</span>
+              <UnderlineText>В результате:</UnderlineText>
               <p className="font-body text-base text-foreground/75 leading-relaxed">Вы тратите время на бесконечный отбор, упускаете лучших и рискуете взять того, кто красиво говорит, но не приносит результата.</p>
             </div>
           </FadeCard>
