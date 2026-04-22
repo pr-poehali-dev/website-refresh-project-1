@@ -718,7 +718,7 @@ export default function Index() {
             HR<span className="text-neon">·</span>ИРК
           </span>
           <span className="font-body text-xs text-muted-foreground">
-            © 2008–2026 HR-Иркутск. Рекрутинговое агентство.
+            © 2008–2026 Перспектива. Рекрутинговое агентство.
           </span>
           <div className="flex items-center gap-4">
             <button className="font-body text-xs text-muted-foreground hover:text-neon transition-colors">
