@@ -499,7 +499,7 @@ export default function Index() {
 
       {/* ABOUT */}
       <section id="services" className="py-24 max-w-7xl mx-auto px-6">
-        <div className="mb-16">
+        <div className="mb-8">
           <span className="font-body text-xs uppercase tracking-widest" style={{color: '#c04000'}}>О нас</span>
           <h2 className="font-display text-5xl font-bold mt-3">Почему наш подход работает</h2>
         </div>
