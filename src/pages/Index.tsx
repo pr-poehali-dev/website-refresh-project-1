@@ -199,23 +199,18 @@ function UnderlineText({ children }: { children: React.ReactNode }) {
 
 function FadeCard({ className, style, delay = 0, children, onClick }: { className?: string; style?: React.CSSProperties; delay?: number; children: React.ReactNode; onClick?: () => void }) {
   const { ref, inView } = useInView(0.1);
-  const [appeared, setAppeared] = useState(false);
-  useEffect(() => { if (inView) setTimeout(() => setAppeared(true), (delay + 0.55) * 1000); }, [inView]);
   return (
     <div
       ref={ref}
-      onClick={onClick}
-      className={className}
       style={{
-        ...style,
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(28px)",
-        transition: appeared
-          ? undefined
-          : `opacity 0.55s ease ${delay}s, transform 0.55s ease ${delay}s`,
+        transition: `opacity 0.55s ease ${delay}s, transform 0.55s ease ${delay}s`,
       }}
     >
-      {children}
+      <div onClick={onClick} className={className} style={style}>
+        {children}
+      </div>
     </div>
   );
 }
