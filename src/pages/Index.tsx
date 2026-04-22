@@ -533,7 +533,7 @@ export default function Index() {
               <Icon name="Megaphone" size={18} fallback="Star" className="text-white" />
             </div>
             <h3 className="font-display text-lg font-bold mb-2 text-white">Специализация рекрутеров по направлениям</h3>
-            <p className="font-body text-white/80 leading-relaxed text-base">Вашу вакансию ведёт не случайный менеджер, а эксперт, который разбирается в вашей сфере. Он знает специфику, говорит с кандидатами на одном языке и понимает, где искать нужных людей.</p>
+            <p className="font-body text-white/80 leading-relaxed text-base">Вашу вакансию ведёт эксперт в вашей сфере. Находит нужных людей быстрее и точнее, потому что знает рынок изнутри.</p>
           </FadeCard>
           <FadeCard delay={0.3} className="case-card rounded-xl p-5 group cursor-default overflow-hidden" style={{background: '#c04000'}}>
             <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style={{background: 'rgba(255,255,255,0.15)'}}>
