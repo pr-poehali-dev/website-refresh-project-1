@@ -429,7 +429,7 @@ export default function Index() {
               <Icon name="AlertCircle" size={20} className="text-red-500" />
             </div>
             <div className="border-l-4 pl-4" style={{borderColor: '#c04000'}}>
-              <p className="font-body font-semibold text-foreground mb-2">В результате:</p>
+              <p className="font-body font-semibold mb-2" style={{color: '#c04000'}}>В результате:</p>
               <p className="font-body text-base text-foreground/75 leading-relaxed">Вы тратите время на бесконечный отбор, упускаете лучших и рискуете взять того, кто красиво говорит, но не приносит результата.</p>
             </div>
           </FadeCard>
