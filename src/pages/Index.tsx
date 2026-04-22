@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
+import AboutAnimation from "@/components/AboutAnimation";
 
 
 
@@ -503,13 +504,16 @@ export default function Index() {
           <h2 className="font-display text-5xl font-bold mt-3">Почему наш подход работает</h2>
         </div>
 
-        <div className="max-w-3xl mb-16">
-          <p className="font-body text-lg text-foreground/75 leading-relaxed mb-6">
-            Рынок труда за последние годы изменился до неузнаваемости. Кандидаты стали требовательнее, скорость принятия решений выросла, а старые методы поиска перестали давать результат. Мы прошли через все эти изменения и научились работать в новых условиях.
-          </p>
-          <p className="font-body text-lg text-foreground/75 leading-relaxed">
-            Сегодня мы совмещаем 18-летнюю экспертизу подбора персонала с современными инструментами маркетинга и продаж. Вакансия — такой же продукт, как и любой другой. Мы умеем её «упаковать» и донести до нужной аудитории. Сделать заметной именно для <span style={{color: '#c04000'}}>Вашего</span> кандидата, который, возможно, не находился в активном поиске работы.
-          </p>
+        <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
+          <div>
+            <p className="font-body text-lg text-foreground/75 leading-relaxed mb-6">
+              Рынок труда за последние годы изменился до неузнаваемости. Кандидаты стали требовательнее, скорость принятия решений выросла, а старые методы поиска перестали давать результат. Мы прошли через все эти изменения и научились работать в новых условиях.
+            </p>
+            <p className="font-body text-lg text-foreground/75 leading-relaxed">
+              Сегодня мы совмещаем 18-летнюю экспертизу подбора персонала с современными инструментами маркетинга и продаж. Вакансия — такой же продукт, как и любой другой. Мы умеем её «упаковать» и донести до нужной аудитории. Сделать заметной именно для <span style={{color: '#c04000'}}>Вашего</span> кандидата, который, возможно, не находился в активном поиске работы.
+            </p>
+          </div>
+          <AboutAnimation />
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
