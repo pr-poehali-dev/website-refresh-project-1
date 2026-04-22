@@ -233,11 +233,33 @@ function StatsSection() {
 export default function Index() {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
     setActiveSection(id);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleSubmit = async () => {
+    if (!formData.name.trim() || !formData.phone.trim()) return;
+    setFormStatus('sending');
+    try {
+      const res = await fetch('https://functions.poehali.dev/093a5946-7475-4880-9fc3-f0afd7cd23cc', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setFormStatus('success');
+        setFormData({ name: '', phone: '', message: '' });
+      } else {
+        setFormStatus('error');
+      }
+    } catch {
+      setFormStatus('error');
+    }
   };
 
   return (
@@ -585,24 +607,49 @@ export default function Index() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <input
-                type="text"
-                placeholder="Ваше имя"
-                className="bg-background border border-border rounded-xl px-5 py-4 font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:border-neon/60 transition-colors"
-              />
-              <input
-                type="tel"
-                placeholder="Телефон"
-                className="bg-background border border-border rounded-xl px-5 py-4 font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:border-neon/60 transition-colors"
-              />
-              <textarea
-                rows={4}
-                placeholder="Опишите вакансию или задачу"
-                className="bg-background border border-border rounded-xl px-5 py-4 font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:border-neon/60 transition-colors resize-none"
-              />
-              <button className="bg-neon text-white font-body font-semibold py-4 rounded-xl hover:opacity-90 transition-all hover:scale-[1.02] text-base mt-1">
-                Отправить заявку →
-              </button>
+              {formStatus === 'success' ? (
+                <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
+                  <div className="w-14 h-14 rounded-full bg-neon/15 flex items-center justify-center">
+                    <Icon name="CheckCircle" size={28} className="text-neon" />
+                  </div>
+                  <p className="font-display text-2xl font-bold">Заявка отправлена!</p>
+                  <p className="font-body text-muted-foreground">Мы свяжемся с вами в течение 2 часов.</p>
+                </div>
+              ) : (
+                <>
+                  <input
+                    type="text"
+                    placeholder="Ваше имя"
+                    value={formData.name}
+                    onChange={e => setFormData(p => ({ ...p, name: e.target.value }))}
+                    className="bg-background border border-border rounded-xl px-5 py-4 font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:border-neon/60 transition-colors"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Телефон"
+                    value={formData.phone}
+                    onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))}
+                    className="bg-background border border-border rounded-xl px-5 py-4 font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:border-neon/60 transition-colors"
+                  />
+                  <textarea
+                    rows={4}
+                    placeholder="Опишите вакансию или задачу"
+                    value={formData.message}
+                    onChange={e => setFormData(p => ({ ...p, message: e.target.value }))}
+                    className="bg-background border border-border rounded-xl px-5 py-4 font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:border-neon/60 transition-colors resize-none"
+                  />
+                  {formStatus === 'error' && (
+                    <p className="font-body text-sm text-red-400">Что-то пошло не так. Попробуйте ещё раз.</p>
+                  )}
+                  <button
+                    onClick={handleSubmit}
+                    disabled={formStatus === 'sending' || !formData.name.trim() || !formData.phone.trim()}
+                    className="bg-neon text-white font-body font-semibold py-4 rounded-xl hover:opacity-90 transition-all hover:scale-[1.02] text-base mt-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100"
+                  >
+                    {formStatus === 'sending' ? 'Отправляем...' : 'Отправить заявку →'}
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>
