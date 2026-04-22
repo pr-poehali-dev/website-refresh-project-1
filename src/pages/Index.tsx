@@ -381,20 +381,20 @@ export default function Index() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-20" style={{gridTemplateRows: "auto"}}>
           <FadeCard delay={0} className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
-              <Icon name="UserX" size={20} className="text-red-400" />
-            </div>
-            <div>
-              <p className="font-body font-semibold text-foreground mb-2">Профильные кандидаты не откликаются вообще</p>
-              <p className="font-body text-base text-foreground/65 leading-relaxed">Вы разместили вакансию на HH, за неделю пришло 40 откликов. 38 — мимо (нет опыта, хотят удалёнку, не читали требования). А те двое, кто подходит, не ответили на звонок.</p>
-            </div>
-          </FadeCard>
-          <FadeCard delay={0.1} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
-            <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="Bot" size={20} className="text-red-400" />
             </div>
             <div>
               <p className="font-body font-semibold text-foreground mb-2">Кандидаты пишут резюме с помощью ChatGPT</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Красивое резюме — а на деле человек не помнит половины терминов. Время потрачено зря.</p>
+            </div>
+          </FadeCard>
+          <FadeCard delay={0.1} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+            <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
+              <Icon name="UserX" size={20} className="text-red-400" />
+            </div>
+            <div>
+              <p className="font-body font-semibold text-foreground mb-2">Профильные кандидаты не откликаются вообще</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Вы разместили вакансию на HH, за неделю пришло 40 откликов. 38 — мимо (нет опыта, хотят удалёнку, не читали требования). А те двое, кто подходит, не ответили на звонок.</p>
             </div>
           </FadeCard>
           <FadeCard delay={0.05} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
