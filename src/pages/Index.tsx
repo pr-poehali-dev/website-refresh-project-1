@@ -578,6 +578,34 @@ export default function Index() {
         </div>
       </section>
 
+      {/* STEPS */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-16">
+            <span className="font-body text-xs text-neon uppercase tracking-widest">Как мы работаем</span>
+            <h2 className="font-display text-5xl font-bold mt-3">ЭТАПЫ РАБОТЫ</h2>
+          </div>
+          <div className="flex flex-col gap-0">
+            {[
+              { n: "01", title: "Получите чёткий портрет кандидата и рыночную вилку зарплат", desc: "Вместе с вами детально прорабатываем требования к кандидату. Вы получаете актуальный срез зарплат по рынку Иркутска, чтобы точно знать, сколько стоит нужный специалист." },
+              { n: "02", title: "Знайте реалистичные сроки закрытия вакансии", desc: "Фиксируем прозрачный план работ с прогнозом по времени. Вы понимаете, когда ждать первых финалистов и когда сотрудник выйдет на работу." },
+              { n: "03", title: "Получите внимание сильных кандидатов, даже если ваш бюджет не выше рынка", desc: "Упаковываем вашу вакансию и компанию так, чтобы предложение выделялось. Используем прямой поиск и рекомендации, чтобы достучаться до пассивных кандидатов." },
+              { n: "04", title: "Получайте только проверенных финалистов — без потока случайных резюме", desc: "Проводим многоступенчатый отбор: интервью по компетенциям, тестовые задания, проверка рекомендаций. Вы не тратите время на отсев." },
+              { n: "05", title: "Встречайтесь с лучшими и выбирайте, опираясь на факты", desc: "К каждому финалисту прилагаем подробное заключение: сильные стороны, зоны роста, проверенные данные. Вы принимаете решение на основе объективной информации, а не интуиции." },
+              { n: "06", title: "Предлагайте оффер и спокойно ждите выхода сотрудника", desc: "Помогаем сформулировать предложение, фиксируем условия и держим контакт с кандидатом до первого рабочего дня. Если на испытательном сроке что-то не складывается — бесплатно находим замену." },
+            ].map((step, i) => (
+              <FadeCard key={i} delay={i * 0.07} className="group grid md:grid-cols-[120px_1fr] gap-6 items-start py-8 border-b border-border last:border-0">
+                <span className="font-display text-7xl font-bold text-neon/20 group-hover:text-neon/40 transition-colors leading-none">{step.n}</span>
+                <div className="pt-2">
+                  <h3 className="font-display text-xl font-bold mb-2">{step.title}</h3>
+                  <p className="font-body text-muted-foreground leading-relaxed">{step.desc}</p>
+                </div>
+              </FadeCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-24 bg-card/30">
         <div className="max-w-5xl mx-auto px-6">
