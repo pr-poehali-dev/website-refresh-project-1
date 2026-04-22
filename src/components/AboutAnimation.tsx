@@ -1,67 +1,107 @@
+import { useEffect, useRef, useState } from "react";
+
 const CARDS = [
   { name: "Алексей М.", role: "Менеджер по продажам", exp: "5 лет" },
   { name: "Ирина К.", role: "Бухгалтер", exp: "8 лет" },
   { name: "Дмитрий Р.", role: "Инженер-технолог", exp: "3 года" },
   { name: "Наталья С.", role: "HR-специалист", exp: "6 лет" },
   { name: "Сергей В.", role: "Руководитель отдела", exp: "10 лет" },
+  { name: "Юлия Т.", role: "Финансовый аналитик", exp: "4 года" },
+  { name: "Павел Н.", role: "Главный бухгалтер", exp: "12 лет" },
 ];
 
-const CHOSEN = 2;
+const CARD_HEIGHT = 72;
+const CARD_GAP = 12;
+const STEP = CARD_HEIGHT + CARD_GAP;
+const VISIBLE = 5;
+const CHOSEN_INDEX = 2;
+const SPEED = 0.4;
 
 export default function AboutAnimation() {
-  return (
-    <div className="relative w-full flex flex-col items-center justify-center min-h-[420px] overflow-hidden select-none">
-      <style>{`
-        @keyframes cardFloat {
-          0%   { transform: translateY(0px); opacity: 0.55; }
-          50%  { transform: translateY(-10px); opacity: 0.65; }
-          100% { transform: translateY(0px); opacity: 0.55; }
-        }
-        @keyframes cardChosen {
-          0%, 100% { box-shadow: 0 0 0 2px #c04000, 0 8px 32px rgba(192,64,0,0.18); transform: scale(1.06); }
-          50%       { box-shadow: 0 0 0 3px #c04000, 0 12px 40px rgba(192,64,0,0.28); transform: scale(1.08); }
-        }
-        @keyframes checkPop {
-          0%   { transform: scale(0.5); opacity: 0; }
-          60%  { transform: scale(1.2); opacity: 1; }
-          100% { transform: scale(1); opacity: 1; }
-        }
-        @keyframes tagPulse {
-          0%, 100% { opacity: 0.9; }
-          50%       { opacity: 0.55; }
-        }
-        .card-float-0 { animation: cardFloat 5.0s ease-in-out infinite 0.0s; }
-        .card-float-1 { animation: cardFloat 5.5s ease-in-out infinite 0.6s; }
-        .card-float-2 { animation: cardChosen 3s ease-in-out infinite; }
-        .card-float-3 { animation: cardFloat 4.8s ease-in-out infinite 1.8s; }
-        .card-float-4 { animation: cardFloat 5.2s ease-in-out infinite 2.4s; }
-        .check-pop { animation: checkPop 0.5s cubic-bezier(.36,.07,.19,.97) forwards 0.3s; opacity: 0; }
-        .tag-pulse { animation: tagPulse 2.5s ease-in-out infinite; }
-      `}</style>
+  const [offset, setOffset] = useState(0);
+  const [chosen, setChosen] = useState<number | null>(null);
+  const [paused, setPaused] = useState(false);
+  const rafRef = useRef<number>();
+  const offsetRef = useRef(0);
+  const pauseRef = useRef(false);
+  const pauseTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
-      <div className="mb-6 text-xs font-body uppercase tracking-widest text-foreground/35 flex items-center gap-2">
+  const totalCards = CARDS.length;
+  const totalHeight = totalCards * STEP;
+
+  useEffect(() => {
+    const animate = () => {
+      if (!pauseRef.current) {
+        offsetRef.current = (offsetRef.current + SPEED) % totalHeight;
+        setOffset(offsetRef.current);
+
+        const centerCard = Math.floor((offsetRef.current + CHOSEN_INDEX * STEP) / STEP) % totalCards;
+        const prev = chosen;
+        if (centerCard !== prev) {
+          setChosen(centerCard);
+          pauseRef.current = true;
+          setPaused(true);
+          if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+          pauseTimerRef.current = setTimeout(() => {
+            pauseRef.current = false;
+            setPaused(false);
+          }, 1800);
+        }
+      }
+      rafRef.current = requestAnimationFrame(animate);
+    };
+    rafRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+    };
+  }, []);
+
+  const visibleCards = [];
+  for (let i = 0; i < VISIBLE + 2; i++) {
+    const rawIndex = Math.floor(offset / STEP) + i;
+    const cardIndex = ((rawIndex % totalCards) + totalCards) % totalCards;
+    const y = i * STEP - (offset % STEP);
+    visibleCards.push({ card: CARDS[cardIndex], y, cardIndex });
+  }
+
+  const containerHeight = VISIBLE * STEP - CARD_GAP;
+
+  return (
+    <div className="relative w-full flex flex-col items-center justify-center min-h-[420px] select-none">
+      <div className="mb-5 text-xs font-body uppercase tracking-widest text-foreground/35 flex items-center gap-2">
         <span className="w-8 h-px bg-foreground/20 inline-block" />
         поток кандидатов
         <span className="w-8 h-px bg-foreground/20 inline-block" />
       </div>
 
-      <div className="flex flex-col gap-3 w-full max-w-[320px]">
-        {CARDS.map((c, i) => {
-          const isChosen = i === CHOSEN;
+      {/* Контейнер с масками сверху и снизу */}
+      <div
+        className="relative w-full max-w-[320px] overflow-hidden"
+        style={{
+          height: containerHeight,
+          maskImage: "linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)",
+        }}
+      >
+        {visibleCards.map(({ card, y, cardIndex }, i) => {
+          const isChosen = paused && cardIndex === chosen;
           return (
             <div
               key={i}
-              className={`card-float-${i} rounded-2xl px-5 py-4 flex items-center gap-4 border`}
-              style={isChosen ? {
-                background: "rgba(192,64,0,0.06)",
-                borderColor: "#c04000",
-              } : {
-                background: "hsl(var(--card))",
-                borderColor: "hsl(var(--border))",
+              className="absolute left-0 right-0 rounded-2xl px-5 flex items-center gap-4 border transition-all duration-300"
+              style={{
+                top: y,
+                height: CARD_HEIGHT,
+                background: isChosen ? "rgba(192,64,0,0.06)" : "hsl(var(--card))",
+                borderColor: isChosen ? "#c04000" : "hsl(var(--border))",
+                boxShadow: isChosen ? "0 0 0 2px #c04000, 0 8px 32px rgba(192,64,0,0.18)" : undefined,
+                transform: isChosen ? "scale(1.04)" : "scale(1)",
+                zIndex: isChosen ? 2 : 1,
               }}
             >
               <div
-                className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
+                className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
                 style={isChosen ? {
                   background: "rgba(192,64,0,0.15)",
                   color: "#c04000",
@@ -70,22 +110,22 @@ export default function AboutAnimation() {
                   color: "hsl(var(--muted-foreground))",
                 }}
               >
-                {c.name[0]}{c.name.split(" ")[1][0]}
+                {card.name[0]}{card.name.split(" ")[1][0]}
               </div>
 
               <div className="flex-1 min-w-0">
                 <p
                   className="font-body font-semibold text-sm truncate"
-                  style={isChosen ? { color: "#c04000" } : { color: "hsl(var(--foreground) / 0.7)" }}
+                  style={{ color: isChosen ? "#c04000" : "hsl(var(--foreground) / 70%)" }}
                 >
-                  {c.name}
+                  {card.name}
                 </p>
-                <p className="font-body text-xs text-foreground/50 truncate">{c.role} · {c.exp}</p>
+                <p className="font-body text-xs text-foreground/45 truncate">{card.role} · {card.exp}</p>
               </div>
 
               {isChosen ? (
                 <div
-                  className="check-pop w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
+                  className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ background: "#c04000" }}
                 >
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -93,16 +133,21 @@ export default function AboutAnimation() {
                   </svg>
                 </div>
               ) : (
-                <div className="w-7 h-7 rounded-full flex-shrink-0" style={{ border: "1px solid hsl(var(--border))", opacity: 0.4 }} />
+                <div className="w-7 h-7 rounded-full flex-shrink-0" style={{ border: "1px solid hsl(var(--border))", opacity: 0.3 }} />
               )}
             </div>
           );
         })}
       </div>
 
+      {/* Подпись */}
       <div
-        className="mt-6 tag-pulse rounded-full px-4 py-1.5 text-xs font-body font-semibold"
-        style={{ background: "rgba(192,64,0,0.1)", color: "#c04000" }}
+        className="mt-5 rounded-full px-4 py-1.5 text-xs font-body font-semibold transition-opacity duration-500"
+        style={{
+          background: "rgba(192,64,0,0.1)",
+          color: "#c04000",
+          opacity: paused ? 1 : 0.3,
+        }}
       >
         Ваш кандидат найден
       </div>
