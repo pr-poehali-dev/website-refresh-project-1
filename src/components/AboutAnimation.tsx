@@ -52,7 +52,7 @@ export default function AboutAnimation() {
   return (
     <div className="relative w-full flex flex-col items-center justify-center min-h-[420px] select-none">
       <div
-        className="relative w-full max-w-[320px]"
+        className="relative w-full max-w-[420px]"
         style={{
           height: containerH,
           maskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
