@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
+
+
 const HERO_BG = "https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/files/0ab03755-f179-4741-8a6f-18114a72a3d4.jpg";
 
 const stats = [
@@ -194,6 +196,25 @@ function UnderlineText({ children }: { children: React.ReactNode }) {
   );
 }
 
+function FadeCard({ className, style, delay = 0, children, onClick }: { className?: string; style?: React.CSSProperties; delay?: number; children: React.ReactNode; onClick?: () => void }) {
+  const { ref, inView } = useInView(0.1);
+  return (
+    <div
+      ref={ref}
+      onClick={onClick}
+      className={className}
+      style={{
+        ...style,
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0)" : "translateY(28px)",
+        transition: `opacity 0.55s ease ${delay}s, transform 0.55s ease ${delay}s`,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
 function StatsSection() {
   const { ref, inView } = useInView(0.15);
   return (
@@ -336,8 +357,7 @@ export default function Index() {
         {/* Блок проблем — bento grid */}
         <h2 className="font-display text-5xl font-bold mt-3 mb-8">Ищете надёжного сотрудника, но при этом :</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-20" style={{gridTemplateRows: "auto"}}>
-          {/* Широкая карточка — на 2 колонки */}
-          <div className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+          <FadeCard delay={0} className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="UserX" size={20} className="text-red-400" />
             </div>
@@ -345,9 +365,8 @@ export default function Index() {
               <p className="font-body font-semibold text-foreground mb-2">Профильные кандидаты не откликаются вообще</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Вы разместили вакансию на HH, за неделю пришло 40 откликов. 38 — мимо (нет опыта, хотят удалёнку, не читали требования). А те двое, кто подходит, не ответили на звонок.</p>
             </div>
-          </div>
-          {/* Узкая карточка */}
-          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+          </FadeCard>
+          <FadeCard delay={0.1} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="Bot" size={20} className="text-red-400" />
             </div>
@@ -355,9 +374,8 @@ export default function Index() {
               <p className="font-body font-semibold text-foreground mb-2">Кандидаты пишут резюме с помощью ChatGPT</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Красивое резюме — а на деле человек не помнит половины терминов. Время потрачено зря.</p>
             </div>
-          </div>
-          {/* Узкая карточка */}
-          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+          </FadeCard>
+          <FadeCard delay={0.05} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="TrendingUp" size={20} className="text-red-400" />
             </div>
@@ -365,9 +383,8 @@ export default function Index() {
               <p className="font-body font-semibold text-foreground mb-2">Нет объективных данных по уровню з/п</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Боитесь продешевить и упустить лучших — или переплатить просто «хорошему рассказчику».</p>
             </div>
-          </div>
-          {/* Широкая карточка — на 2 колонки */}
-          <div className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+          </FadeCard>
+          <FadeCard delay={0.1} className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="Timer" size={20} className="text-red-400" />
             </div>
@@ -375,9 +392,8 @@ export default function Index() {
               <p className="font-body font-semibold text-foreground mb-2">Вы теряете сильных кандидатов из-за пауз</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Пока вы взвешиваете, сравниваете и назначаете ещё одно собеседование — сильный кандидат уже принял предложение от другой компании.</p>
             </div>
-          </div>
-          {/* Узкая карточка */}
-          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+          </FadeCard>
+          <FadeCard delay={0.15} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="ShieldQuestion" size={20} className="text-red-400" />
             </div>
@@ -385,9 +401,8 @@ export default function Index() {
               <p className="font-body font-semibold text-foreground mb-2">Сложно проверить компетенции кандидата</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Кто реально справится с задачами, а кто просто прошёл курс «как пройти собеседование»?</p>
             </div>
-          </div>
-          {/* Акцентная карточка */}
-          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+          </FadeCard>
+          <FadeCard delay={0.2} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="AlertCircle" size={20} className="text-red-500" />
             </div>
@@ -395,14 +410,13 @@ export default function Index() {
               <UnderlineText>В результате:</UnderlineText>
               <p className="font-body text-base text-foreground/75 leading-relaxed">Вы тратите время на бесконечный отбор, упускаете лучших и рискуете взять того, кто красиво говорит, но не приносит результата.</p>
             </div>
-          </div>
+          </FadeCard>
         </div>
 
         {/* Блок решений — bento grid */}
         <h2 className="font-display text-5xl font-bold text-neon mb-8">Наймите сотрудников, в которых не ошибетесь</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {/* Узкая */}
-          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+          <FadeCard delay={0} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
               <Icon name="BadgeCheck" size={20} className="text-neon" />
             </div>
@@ -410,9 +424,8 @@ export default function Index() {
               <p className="font-body font-semibold text-foreground mb-2">Оцениваем реальный опыт кандидата</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Глубинные интервью, тестовые задания и проверка фактов — вы встречаетесь только с теми, чей опыт подтверждён.</p>
             </div>
-          </div>
-          {/* Широкая — на 2 колонки */}
-          <div className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+          </FadeCard>
+          <FadeCard delay={0.1} className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
               <Icon name="Search" size={20} className="text-neon" />
             </div>
@@ -420,9 +433,8 @@ export default function Index() {
               <p className="font-body font-semibold text-foreground mb-2">Привлекаем лучших через «упаковку» вакансии</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Используем маркетинговые инструменты и прямой поиск, чтобы выходить на пассивных кандидатов. Умеем так презентовать вакансию, что откликаются даже те, кто не планировал менять место.</p>
             </div>
-          </div>
-          {/* Широкая — на 2 колонки */}
-          <div className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+          </FadeCard>
+          <FadeCard delay={0.05} className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
               <Icon name="Zap" size={20} className="text-neon" />
             </div>
@@ -430,9 +442,8 @@ export default function Index() {
               <p className="font-body font-semibold text-foreground mb-2">Не даём потерять финалиста на финише</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Держим постоянный контакт с финалистом, первыми узнаём о встречных предложениях. Помогаем найти компромисс, чтобы сделка состоялась на выгодных для вас условиях.</p>
             </div>
-          </div>
-          {/* Узкая */}
-          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+          </FadeCard>
+          <FadeCard delay={0.1} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
               <Icon name="BarChart2" size={20} className="text-neon" />
             </div>
@@ -440,9 +451,8 @@ export default function Index() {
               <p className="font-body font-semibold text-foreground mb-2">Даём актуальную аналитику по зарплатам</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Знаем реальные вилки и ожидания кандидатов в Иркутске — через нас ежемесячно проходят десятки офферов.</p>
             </div>
-          </div>
-          {/* Узкая */}
-          <div className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
+          </FadeCard>
+          <FadeCard delay={0.15} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
             <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
               <Icon name="ClipboardCheck" size={20} className="text-neon" />
             </div>
@@ -450,9 +460,8 @@ export default function Index() {
               <p className="font-body font-semibold text-foreground mb-2">Находим тех, кто приносит результат</p>
               <p className="font-body text-base text-foreground/65 leading-relaxed">Ориентируемся не на «красивый опыт», а на способность решать ваши бизнес-задачи.</p>
             </div>
-          </div>
-          {/* Широкая финальная */}
-          <div className="col-span-1 md:col-span-1 flex flex-col gap-4 bg-neon rounded-2xl p-7 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+          </FadeCard>
+          <FadeCard delay={0.2} className="col-span-1 md:col-span-1 flex flex-col gap-4 bg-neon rounded-2xl p-7 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
             <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
               <Icon name="ArrowRight" size={20} className="text-white" />
             </div>
@@ -460,7 +469,7 @@ export default function Index() {
               <p className="font-body font-semibold text-white mb-2">Готовы начать?</p>
               <p className="font-body text-base text-white/80 leading-relaxed mb-4">Расскажите о вакансии — стартуем в день обращения.</p>
             </div>
-          </div>
+          </FadeCard>
         </div>
         </div>
       </section>
