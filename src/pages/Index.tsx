@@ -503,8 +503,8 @@ export default function Index() {
           <h2 className="font-display text-5xl font-bold mt-3">Почему наш подход работает</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <p className="font-body text-lg text-foreground/75 leading-relaxed">
+        <div className="max-w-3xl mb-16">
+          <p className="font-body text-lg text-foreground/75 leading-relaxed mb-6">
             Рынок труда за последние годы изменился до неузнаваемости. Кандидаты стали требовательнее, скорость принятия решений выросла, а старые методы поиска перестали давать результат. Мы прошли через все эти изменения и научились работать в новых условиях.
           </p>
           <p className="font-body text-lg text-foreground/75 leading-relaxed">
