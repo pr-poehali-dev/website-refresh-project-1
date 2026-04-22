@@ -524,8 +524,8 @@ export default function Index() {
             <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{background: 'rgba(192,64,0,0.08)'}}>
               <Icon name="Megaphone" size={22} fallback="Star" style={{color: '#c04000'}} />
             </div>
-            <h3 className="font-display text-xl font-bold mb-3">Маркетинговый подход к найму</h3>
-            <p className="font-body text-muted-foreground leading-relaxed text-sm">Вакансия — такой же продукт, как и любой другой. Мы умеем её «упаковать» и донести до нужной аудитории.</p>
+            <h3 className="font-display text-xl font-bold mb-3">Специализация рекрутеров по направлениям</h3>
+            <p className="font-body text-muted-foreground leading-relaxed text-sm">Вашу вакансию ведёт не случайный менеджер, а эксперт, который разбирается в вашей сфере. Он знает специфику, говорит с кандидатами на одном языке и понимает, где искать нужных людей.</p>
           </div>
           <div className="bg-card rounded-2xl p-8" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.08)"}}>
             <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{background: 'rgba(192,64,0,0.08)'}}>
