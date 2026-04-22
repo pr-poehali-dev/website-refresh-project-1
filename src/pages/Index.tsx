@@ -555,7 +555,7 @@ export default function Index() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cases.map((c) => (
-              <div key={c.id} className="case-card card-hover bg-card border border-border rounded-2xl p-7 flex flex-col group">
+              <div key={c.id} className="case-card bg-card border border-border rounded-2xl p-7 flex flex-col group hover:-translate-y-2 hover:shadow-xl hover:shadow-black/10 hover:border-neon/30 transition-all duration-300">
                 <div className="flex items-start justify-between mb-5">
                   <span className="inline-block bg-neon/10 border border-neon/20 text-neon font-body text-xs uppercase tracking-widest px-3 py-1 rounded-full">
                     {c.tag}
