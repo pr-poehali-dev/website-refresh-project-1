@@ -526,21 +526,21 @@ export default function Index() {
               <Icon name="MapPin" size={18} fallback="Star" className="text-white" />
             </div>
             <h3 className="font-display text-lg font-bold mb-2 text-white">Глубокое знание локального рынка</h3>
-            <p className="font-body text-white/80 leading-relaxed text-sm">Мы понимаем, кто, где и за сколько работает в Иркутске и области. Это экономит ваше время на старте.</p>
+            <p className="font-body text-white/80 leading-relaxed text-base">Мы понимаем, кто, где и за сколько работает в Иркутске и области. Это экономит ваше время на старте.</p>
           </FadeCard>
           <FadeCard delay={0.15} className="case-card rounded-xl p-5 group cursor-default overflow-hidden" style={{background: '#c04000'}}>
             <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style={{background: 'rgba(255,255,255,0.15)'}}>
               <Icon name="Megaphone" size={18} fallback="Star" className="text-white" />
             </div>
             <h3 className="font-display text-lg font-bold mb-2 text-white">Специализация рекрутеров по направлениям</h3>
-            <p className="font-body text-white/80 leading-relaxed text-sm">Вашу вакансию ведёт не случайный менеджер, а эксперт, который разбирается в вашей сфере. Он знает специфику, говорит с кандидатами на одном языке и понимает, где искать нужных людей.</p>
+            <p className="font-body text-white/80 leading-relaxed text-base">Вашу вакансию ведёт не случайный менеджер, а эксперт, который разбирается в вашей сфере. Он знает специфику, говорит с кандидатами на одном языке и понимает, где искать нужных людей.</p>
           </FadeCard>
           <FadeCard delay={0.3} className="case-card rounded-xl p-5 group cursor-default overflow-hidden" style={{background: '#c04000'}}>
             <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style={{background: 'rgba(255,255,255,0.15)'}}>
               <Icon name="RefreshCw" size={18} fallback="Star" className="text-white" />
             </div>
             <h3 className="font-display text-lg font-bold mb-2 text-white">Адаптация к меняющимся условиям</h3>
-            <p className="font-body text-white/80 leading-relaxed text-sm">Рынок штормит — мы подстраиваем стратегию поиска под текущую реальность, а не действуем по шаблону.</p>
+            <p className="font-body text-white/80 leading-relaxed text-base">Рынок штормит — мы подстраиваем стратегию поиска под текущую реальность, а не действуем по шаблону.</p>
           </FadeCard>
         </div>
       </section>
