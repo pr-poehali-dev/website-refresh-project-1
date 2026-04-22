@@ -24,7 +24,7 @@ def handler(event: dict, context) -> dict:
     if not name or not phone:
         return {'statusCode': 400, 'headers': headers, 'body': json.dumps({'error': 'Заполните имя и телефон'})}
 
-    smtp_host = os.environ.get('SMTP_HOST', 'smtp.yandex.ru')
+    smtp_host = 'smtp.yandex.ru'
     smtp_port = int(os.environ.get('SMTP_PORT', '465'))
     smtp_user = os.environ.get('SMTP_USER')
     smtp_password = os.environ.get('SMTP_PASSWORD')
