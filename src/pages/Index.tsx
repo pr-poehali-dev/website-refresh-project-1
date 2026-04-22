@@ -384,8 +384,8 @@ export default function Index() {
               <Icon name="Bot" size={20} className="text-red-400" />
             </div>
             <div>
-              <p className="font-body font-semibold text-foreground mb-2">Кандидаты пишут резюме с помощью ChatGPT</p>
-              <p className="font-body text-base text-foreground/65 leading-relaxed">Красивое резюме — а на деле человек не помнит половины терминов. Время потрачено зря.</p>
+              <p className="font-body font-semibold text-foreground mb-2">Кандидаты пишут резюме с помощью ChatGPT — и вы тратите время впустую</p>
+              <p className="font-body text-base text-foreground/65 leading-relaxed">Красиво написано, грамотно, всё по шаблону. На собеседовании выясняется: человек не помнит половины того, что указал. Вы уже потратили час на звонок, согласование и ожидание — и снова начинаете с нуля.</p>
             </div>
           </FadeCard>
           <FadeCard delay={0.1} className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 8px 32px rgba(192,64,0,0.12), 0 2px 8px rgba(192,64,0,0.06)"}}>
