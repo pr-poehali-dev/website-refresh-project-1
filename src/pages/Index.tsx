@@ -288,7 +288,7 @@ export default function Index() {
           </button>
 
           <div className="hidden md:flex items-center gap-8">
-            {[["home", "Главная"], ["services", "О нас"], ["cases", "Кейсы"], ["contact", "Контакты"]].map(([id, label]) => (
+            {[["home", "Главная"], ["services", "О нас"], ["steps", "Этапы"], ["cases", "Кейсы"], ["contact", "Контакты"]].map(([id, label]) => (
               <button
                 key={id}
                 onClick={() => scrollTo(id)}
@@ -313,7 +313,7 @@ export default function Index() {
 
         {menuOpen && (
           <div className="md:hidden bg-card border-b border-border px-6 py-4 flex flex-col gap-4">
-            {[["home", "Главная"], ["services", "О нас"], ["cases", "Кейсы"], ["contact", "Контакты"]].map(([id, label]) => (
+            {[["home", "Главная"], ["services", "О нас"], ["steps", "Этапы"], ["cases", "Кейсы"], ["contact", "Контакты"]].map(([id, label]) => (
               <button key={id} onClick={() => scrollTo(id)} className="font-body text-sm uppercase tracking-widest text-left text-muted-foreground hover:text-neon transition-colors">
                 {label}
               </button>
@@ -539,7 +539,7 @@ export default function Index() {
       </section>
 
       {/* STEPS */}
-      <section className="py-24">
+      <section id="steps" className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <span className="font-body text-xs text-neon uppercase tracking-widest">Как мы работаем</span>
