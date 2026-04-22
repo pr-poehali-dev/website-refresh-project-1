@@ -428,7 +428,7 @@ export default function Index() {
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="AlertCircle" size={20} className="text-red-500" />
             </div>
-            <div className="border-l-4 border-neon pl-4">
+            <div className="border-l-4 pl-4" style={{borderColor: '#c04000'}}>
               <p className="font-body font-semibold text-foreground mb-2">В результате:</p>
               <p className="font-body text-base text-foreground/75 leading-relaxed">Вы тратите время на бесконечный отбор, упускаете лучших и рискуете взять того, кто красиво говорит, но не приносит результата.</p>
             </div>
