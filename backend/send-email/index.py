@@ -28,7 +28,7 @@ def handler(event: dict, context) -> dict:
     smtp_port = int(os.environ.get('SMTP_PORT', '465'))
     smtp_user = os.environ.get('SMTP_USER')
     smtp_password = os.environ.get('SMTP_PASSWORD')
-    to_email = 'di@hr-irk.ru'
+    to_email = 'hr.jax@yandex.ru'
 
     html = f"""
     <h2>Новая заявка с сайта hr-irk.ru</h2>
