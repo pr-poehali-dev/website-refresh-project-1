@@ -202,15 +202,16 @@ function FadeCard({ className, style, delay = 0, children, onClick }: { classNam
   return (
     <div
       ref={ref}
+      onClick={onClick}
+      className={className}
       style={{
+        ...style,
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(28px)",
         transition: `opacity 0.55s ease ${delay}s, transform 0.55s ease ${delay}s`,
       }}
     >
-      <div onClick={onClick} className={className} style={style}>
-        {children}
-      </div>
+      {children}
     </div>
   );
 }
