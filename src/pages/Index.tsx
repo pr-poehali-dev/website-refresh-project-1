@@ -521,26 +521,26 @@ export default function Index() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          <FadeCard delay={0} className="case-card bg-card border border-border rounded-2xl p-8 group cursor-default overflow-hidden">
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors" style={{background: 'rgba(192,64,0,0.08)'}}>
-              <Icon name="MapPin" size={22} fallback="Star" style={{color: '#c04000'}} />
+          <FadeCard delay={0} className="case-card rounded-2xl p-8 group cursor-default overflow-hidden" style={{background: '#c04000'}}>
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{background: 'rgba(255,255,255,0.15)'}}>
+              <Icon name="MapPin" size={22} fallback="Star" className="text-white" />
             </div>
-            <h3 className="font-display text-xl font-bold mb-3">Глубокое знание локального рынка</h3>
-            <p className="font-body text-muted-foreground leading-relaxed text-sm max-h-0 overflow-hidden opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">Мы понимаем, кто, где и за сколько работает в Иркутске и области. Это экономит ваше время на старте.</p>
+            <h3 className="font-display text-2xl font-bold mb-3 text-white">Глубокое знание локального рынка</h3>
+            <p className="font-body text-white/80 leading-relaxed text-base max-h-0 overflow-hidden opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">Мы понимаем, кто, где и за сколько работает в Иркутске и области. Это экономит ваше время на старте.</p>
           </FadeCard>
-          <FadeCard delay={0.15} className="case-card bg-card border border-border rounded-2xl p-8 group cursor-default overflow-hidden">
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors" style={{background: 'rgba(192,64,0,0.08)'}}>
-              <Icon name="Megaphone" size={22} fallback="Star" style={{color: '#c04000'}} />
+          <FadeCard delay={0.15} className="case-card rounded-2xl p-8 group cursor-default overflow-hidden" style={{background: '#c04000'}}>
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{background: 'rgba(255,255,255,0.15)'}}>
+              <Icon name="Megaphone" size={22} fallback="Star" className="text-white" />
             </div>
-            <h3 className="font-display text-xl font-bold mb-3">Специализация рекрутеров по направлениям</h3>
-            <p className="font-body text-muted-foreground leading-relaxed text-sm max-h-0 overflow-hidden opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">Вашу вакансию ведёт не случайный менеджер, а эксперт, который разбирается в вашей сфере. Он знает специфику, говорит с кандидатами на одном языке и понимает, где искать нужных людей.</p>
+            <h3 className="font-display text-2xl font-bold mb-3 text-white">Специализация рекрутеров по направлениям</h3>
+            <p className="font-body text-white/80 leading-relaxed text-base max-h-0 overflow-hidden opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">Вашу вакансию ведёт не случайный менеджер, а эксперт, который разбирается в вашей сфере. Он знает специфику, говорит с кандидатами на одном языке и понимает, где искать нужных людей.</p>
           </FadeCard>
-          <FadeCard delay={0.3} className="case-card bg-card border border-border rounded-2xl p-8 group cursor-default overflow-hidden">
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors" style={{background: 'rgba(192,64,0,0.08)'}}>
-              <Icon name="RefreshCw" size={22} fallback="Star" style={{color: '#c04000'}} />
+          <FadeCard delay={0.3} className="case-card rounded-2xl p-8 group cursor-default overflow-hidden" style={{background: '#c04000'}}>
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{background: 'rgba(255,255,255,0.15)'}}>
+              <Icon name="RefreshCw" size={22} fallback="Star" className="text-white" />
             </div>
-            <h3 className="font-display text-xl font-bold mb-3">Адаптация к меняющимся условиям</h3>
-            <p className="font-body text-muted-foreground leading-relaxed text-sm max-h-0 overflow-hidden opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">Рынок штормит — мы подстраиваем стратегию поиска под текущую реальность, а не действуем по шаблону.</p>
+            <h3 className="font-display text-2xl font-bold mb-3 text-white">Адаптация к меняющимся условиям</h3>
+            <p className="font-body text-white/80 leading-relaxed text-base max-h-0 overflow-hidden opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">Рынок штормит — мы подстраиваем стратегию поиска под текущую реальность, а не действуем по шаблону.</p>
           </FadeCard>
         </div>
       </section>
