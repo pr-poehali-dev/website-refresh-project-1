@@ -3,10 +3,23 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import pg8000.native
+
+
+def save_to_db(name, phone, message):
+    try:
+        con = pg8000.native.Connection(dsn=os.environ['DATABASE_URL'])
+        con.run(
+            "INSERT INTO leads (name, phone, message) VALUES (:name, :phone, :msg)",
+            name=name, phone=phone, msg=message or None
+        )
+        con.close()
+    except Exception:
+        pass
 
 
 def handler(event: dict, context) -> dict:
-    """Отправляет заявку с сайта на почту di@hr-irk.ru"""
+    """Отправляет заявку с сайта на почту и сохраняет в базу данных"""
     headers = {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -24,6 +37,10 @@ def handler(event: dict, context) -> dict:
     if not name or not phone:
         return {'statusCode': 400, 'headers': headers, 'body': json.dumps({'error': 'Заполните имя и телефон'})}
 
+    # Сохраняем в базу
+    save_to_db(name, phone, message)
+
+    # Отправляем письмо
     smtp_host = 'smtp.yandex.ru'
     smtp_port = int(os.environ.get('SMTP_PORT', '465'))
     smtp_user = os.environ.get('SMTP_USER')
