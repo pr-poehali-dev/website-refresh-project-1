@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import AboutAnimation from "@/components/AboutAnimation";
+import CaseModal, { type CaseData } from "@/components/CaseModal";
 
 
 
@@ -13,15 +14,103 @@ const stats = [
   { value: "14 дней", label: "средний срок подбора, старт поиска в день обращения", icon: "Timer", desc: "от заявки до оффера", footnote: true },
 ];
 
-const cases = [
+const cases: CaseData[] = [
   {
     id: 1,
-    tag: "Производство",
-    title: "Завод «СибМет»",
-    desc: "Завод терял контракты из-за нехватки инженеров. Закрыли 12 позиций за 25 дней — производство восстановлено в срок.",
-    result: "12 специалистов",
-    duration: "25 дней",
-    icon: "Factory",
+    tag: "Торговля",
+    title: "Подбор главного бухгалтера для розничной сети автозапчастей",
+    desc: "Предыдущие кандидаты не справлялись с объёмом и спецификой розницы. Нашли специалиста с релевантным опытом и закрыли позицию за 16 дней.",
+    result: "1 специалист",
+    duration: "16 дней",
+    icon: "Calculator",
+    fullContent: {
+      situation: {
+        title: "Ситуация клиента",
+        text: "Розничная сеть автозапчастей искала главного бухгалтера. На первый взгляд — стандартная позиция, но по факту:",
+        items: [
+          "несколько торговых точек",
+          "высокая операционная нагрузка",
+          "товарный учет и складские остатки",
+          "необходимость держать под контролем всю финансовую картину",
+          "предыдущие кандидаты не справлялись с объёмом и спецификой розницы",
+        ],
+      },
+      target: {
+        title: "Кого искали на самом деле",
+        text: "Формально — главный бухгалтер. Фактически — специалист, который:",
+        items: [
+          "имеет опыт в розничной сети (желательно с товарным учетом)",
+          "понимает специфику учета автозапчастей",
+          "умеет работать с большим количеством операций",
+          "выстраивает процессы, а не просто «ведёт учет»",
+          "способен держать под контролем финансовую дисциплину",
+        ],
+      },
+      preparation: {
+        title: "Что сделали до старта поиска",
+        text: "Перед запуском:",
+        items: [
+          "сформировали портрет кандидата с акцентом на розничный опыт",
+          "уточнили структуру компании и объём операций",
+          "определили ключевые зоны риска (учет товара, сверки, нагрузка)",
+          "убрали из требований второстепенные критерии",
+        ],
+      },
+      vacancy: {
+        title: "Как переписали вакансию",
+        text: "Сместили акцент на:",
+        items: [
+          "масштаб и структуру бизнеса",
+          "уровень ответственности",
+          "реальные задачи (а не формальные обязанности)",
+          "понятную зону влияния",
+        ],
+      },
+      search: {
+        title: "Как искали",
+        text: "Использовали комбинированный подход с упором на точечный поиск:",
+        items: [
+          "подбор кандидатов из розничных сетей и компаний с товарным учетом",
+          "работа с релевантным опытом, а не «универсальными бухгалтерами»",
+          "персонализированные приглашения",
+        ],
+      },
+      funnel: [
+        { label: "Приглашения", value: "32" },
+        { label: "Первичных контактов", value: "21" },
+        { label: "Собеседований", value: "14" },
+        { label: "Кандидатов в шорт-листе", value: "5" },
+        { label: "Представлено клиенту", value: "3" },
+        { label: "Вышел на работу", value: "1" },
+      ],
+      challenges: {
+        title: "Основные сложности",
+        items: [
+          "важно было сочетание: розница + управленческий уровень",
+          "высокая нагрузка — не все кандидаты готовы к такому объёму",
+          "кандидаты с опытом в автозапчастях — узкий сегмент",
+          "необходимо было оценить системность и внимательность, а не только опыт",
+        ],
+      },
+      outcome: {
+        title: "Результат",
+        text: "Позиция закрыта за 16 дней. Кандидат:",
+        items: [
+          "имеет релевантный опыт в розничной сети",
+          "быстро погрузился в процессы",
+          "взял под контроль учет и финансовую дисциплину",
+        ],
+      },
+      conclusion: {
+        title: "Вывод",
+        text: "В подборе главного бухгалтера для розницы ключевую роль играет не просто опыт, а понимание операционной нагрузки и товарного учета. Результат в этом кейсе обеспечили:",
+        items: [
+          "точный профиль кандидата",
+          "фокус на релевантном опыте",
+          "качественная оценка на этапе интервью",
+        ],
+      },
+    },
   },
   {
     id: 2,
@@ -234,6 +323,7 @@ function StatsSection() {
 export default function Index() {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeCase, setActiveCase] = useState<CaseData | null>(null);
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
@@ -264,6 +354,7 @@ export default function Index() {
   };
 
   return (
+    <>
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
 
       {/* NAV */}
@@ -579,7 +670,11 @@ export default function Index() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cases.map((c) => (
-              <div key={c.id} className="case-card bg-card border border-border rounded-2xl p-7 flex flex-col group hover:-translate-y-2 hover:shadow-xl hover:shadow-black/10 hover:border-neon/30 transition-all duration-300">
+              <div
+                key={c.id}
+                onClick={() => setActiveCase(c)}
+                className="case-card bg-card border border-border rounded-2xl p-7 flex flex-col group hover:-translate-y-2 hover:shadow-xl hover:shadow-black/10 hover:border-neon/30 transition-all duration-300 cursor-pointer"
+              >
                 <div className="flex items-start justify-between mb-5">
                   <span className="inline-block bg-neon/10 border border-neon/20 text-neon font-body text-xs uppercase tracking-widest px-3 py-1 rounded-full">
                     {c.tag}
@@ -589,19 +684,26 @@ export default function Index() {
                   </div>
                 </div>
 
-                <h3 className="font-display text-2xl font-bold mb-3">{c.title}</h3>
+                <h3 className="font-display text-xl font-bold mb-3">{c.title}</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{c.desc}</p>
 
-                <div className="flex items-center gap-4 pt-5 border-t border-border">
-                  <div>
-                    <div className="font-display text-xl font-bold text-neon">{c.result}</div>
-                    <div className="font-body text-xs text-muted-foreground">результат</div>
+                <div className="flex items-center justify-between pt-5 border-t border-border">
+                  <div className="flex items-center gap-4">
+                    <div>
+                      <div className="font-display text-xl font-bold text-neon">{c.result}</div>
+                      <div className="font-body text-xs text-muted-foreground">результат</div>
+                    </div>
+                    <div className="w-px h-8 bg-border" />
+                    <div>
+                      <div className="font-display text-xl font-bold">{c.duration}</div>
+                      <div className="font-body text-xs text-muted-foreground">срок</div>
+                    </div>
                   </div>
-                  <div className="w-px h-8 bg-border" />
-                  <div>
-                    <div className="font-display text-xl font-bold">{c.duration}</div>
-                    <div className="font-body text-xs text-muted-foreground">срок</div>
-                  </div>
+                  {c.fullContent && (
+                    <span className="flex items-center gap-1 font-body text-xs text-neon group-hover:gap-2 transition-all">
+                      Подробнее <Icon name="ArrowRight" size={14} />
+                    </span>
+                  )}
                 </div>
               </div>
             ))}
@@ -728,5 +830,8 @@ export default function Index() {
         </div>
       </footer>
     </div>
+
+    <CaseModal case_={activeCase} onClose={() => setActiveCase(null)} />
+    </>
   );
 }
