@@ -1026,6 +1026,7 @@ export default function Index() {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeCase, setActiveCase] = useState<CaseData | null>(null);
+  const [casePage, setCasePage] = useState(0);
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
@@ -1370,46 +1371,83 @@ export default function Index() {
             <h2 className="font-display text-5xl font-bold mt-3">НАШИ КЕЙСЫ</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cases.map((c) => (
-              <div
-                key={c.id}
-                onClick={() => setActiveCase(c)}
-                className="case-card bg-card border border-border rounded-2xl p-7 flex flex-col group hover:-translate-y-2 hover:shadow-xl hover:shadow-black/10 hover:border-neon/30 transition-all duration-300 cursor-pointer"
-              >
-                <div className="flex items-start justify-between mb-5">
-                  <span className="inline-block bg-neon/10 border border-neon/20 text-neon font-body text-xs uppercase tracking-widest px-3 py-1 rounded-full">
-                    {c.tag}
-                  </span>
-                  <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-neon/10 transition-colors">
-                    <Icon name={c.icon} size={18} className="text-muted-foreground group-hover:text-neon transition-colors" fallback="Briefcase" />
-                  </div>
+          {(() => {
+            const perPage = 9;
+            const totalPages = Math.ceil(cases.length / perPage);
+            const pageCases = cases.slice(casePage * perPage, casePage * perPage + perPage);
+            return (
+              <>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {pageCases.map((c) => (
+                    <div
+                      key={c.id}
+                      onClick={() => setActiveCase(c)}
+                      className="case-card bg-card border border-border rounded-2xl p-7 flex flex-col group hover:-translate-y-2 hover:shadow-xl hover:shadow-black/10 hover:border-neon/30 transition-all duration-300 cursor-pointer"
+                    >
+                      <div className="flex items-start justify-between mb-5">
+                        <span className="inline-block bg-neon/10 border border-neon/20 text-neon font-body text-xs uppercase tracking-widest px-3 py-1 rounded-full">
+                          {c.tag}
+                        </span>
+                        <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-neon/10 transition-colors">
+                          <Icon name={c.icon} size={18} className="text-muted-foreground group-hover:text-neon transition-colors" fallback="Briefcase" />
+                        </div>
+                      </div>
+
+                      <h3 className="font-display text-xl font-bold mb-3">{c.title}</h3>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{c.desc}</p>
+
+                      <div className="flex items-center justify-between pt-5 border-t border-border">
+                        <div className="flex items-center gap-4">
+                          <div>
+                            <div className="font-display text-xl font-bold text-neon">{c.result}</div>
+                            <div className="font-body text-xs text-muted-foreground">результат</div>
+                          </div>
+                          <div className="w-px h-8 bg-border" />
+                          <div>
+                            <div className="font-display text-xl font-bold">{c.duration}</div>
+                            <div className="font-body text-xs text-muted-foreground">срок</div>
+                          </div>
+                        </div>
+                        {c.fullContent && (
+                          <span className="flex items-center gap-1 font-body text-xs text-neon group-hover:gap-2 transition-all">
+                            Подробнее <Icon name="ArrowRight" size={14} />
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
-                <h3 className="font-display text-xl font-bold mb-3">{c.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{c.desc}</p>
-
-                <div className="flex items-center justify-between pt-5 border-t border-border">
-                  <div className="flex items-center gap-4">
-                    <div>
-                      <div className="font-display text-xl font-bold text-neon">{c.result}</div>
-                      <div className="font-body text-xs text-muted-foreground">результат</div>
-                    </div>
-                    <div className="w-px h-8 bg-border" />
-                    <div>
-                      <div className="font-display text-xl font-bold">{c.duration}</div>
-                      <div className="font-body text-xs text-muted-foreground">срок</div>
-                    </div>
+                {totalPages > 1 && (
+                  <div className="flex items-center justify-center gap-2 mt-12">
+                    <button
+                      onClick={() => { setCasePage(p => Math.max(0, p - 1)); document.getElementById('cases')?.scrollIntoView({ behavior: 'smooth' }); }}
+                      disabled={casePage === 0}
+                      className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-muted-foreground hover:border-neon/50 hover:text-neon transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                    >
+                      <Icon name="ChevronLeft" size={18} />
+                    </button>
+                    {Array.from({ length: totalPages }, (_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => { setCasePage(i); document.getElementById('cases')?.scrollIntoView({ behavior: 'smooth' }); }}
+                        className={`w-10 h-10 rounded-xl border font-body text-sm transition-all ${casePage === i ? 'border-neon bg-neon/10 text-neon' : 'border-border text-muted-foreground hover:border-neon/50 hover:text-neon'}`}
+                      >
+                        {i + 1}
+                      </button>
+                    ))}
+                    <button
+                      onClick={() => { setCasePage(p => Math.min(totalPages - 1, p + 1)); document.getElementById('cases')?.scrollIntoView({ behavior: 'smooth' }); }}
+                      disabled={casePage === totalPages - 1}
+                      className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-muted-foreground hover:border-neon/50 hover:text-neon transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                    >
+                      <Icon name="ChevronRight" size={18} />
+                    </button>
                   </div>
-                  {c.fullContent && (
-                    <span className="flex items-center gap-1 font-body text-xs text-neon group-hover:gap-2 transition-all">
-                      Подробнее <Icon name="ArrowRight" size={14} />
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+                )}
+              </>
+            );
+          })()}
         </div>
       </section>
 
