@@ -2127,25 +2127,12 @@ export default function Index() {
           </div>
 
           {(() => {
-            const allTags = ["Все", ...Array.from(new Set(cases.map(c => c.tag)))];
-            const filtered = caseTag === "Все" ? cases : cases.filter(c => c.tag === caseTag);
+            const filtered = cases;
             const perPage = 9;
             const totalPages = Math.ceil(filtered.length / perPage);
             const pageCases = filtered.slice(casePage * perPage, casePage * perPage + perPage);
             return (
               <>
-                <div className="flex flex-wrap gap-2 mb-10">
-                  {allTags.map(tag => (
-                    <button
-                      key={tag}
-                      onClick={() => { setCaseTag(tag); setCasePage(0); }}
-                      className={`font-body text-xs uppercase tracking-widest px-4 py-2 rounded-full border transition-all ${caseTag === tag ? 'bg-neon/10 border-neon text-neon' : 'border-border text-muted-foreground hover:border-neon/50 hover:text-neon'}`}
-                    >
-                      {tag}
-                    </button>
-                  ))}
-                </div>
-
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {pageCases.map((c) => (
                     <div
