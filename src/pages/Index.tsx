@@ -17,7 +17,7 @@ const stats = [
 const cases: CaseData[] = [
   {
     id: 1,
-    tag: "Торговля",
+    tag: "Бухгалтерия",
     title: "Подбор главного бухгалтера для розничной сети автозапчастей",
     desc: "Предыдущие кандидаты не справлялись с объёмом и спецификой розницы. Нашли специалиста с релевантным опытом и закрыли позицию за 13 дней.",
     result: "1 специалист",
@@ -399,7 +399,7 @@ const cases: CaseData[] = [
   },
   {
     id: 5,
-    tag: "Производство",
+    tag: "Бухгалтерия",
     title: "За 14 дней нашли главного бухгалтера в производственную компанию",
     desc: "Предыдущие кандидаты не справлялись или быстро уходили. Нашли специалиста, который взял весь финансовый блок и прошёл испытательный срок.",
     result: "1 специалист",
@@ -1234,7 +1234,7 @@ const cases: CaseData[] = [
   },
   {
     id: 15,
-    tag: "Торговля",
+    tag: "Бухгалтерия",
     title: "Подбор главного бухгалтера в крупную торговую компанию за 12 дней на частичную занятость",
     desc: "Частичная занятость и зарплата чуть ниже рынка — сильные кандидаты отсеивались сразу. Нашли специалиста, для которого стабильность важнее цифры в оффере.",
     result: "1 специалист",
@@ -2686,12 +2686,23 @@ export default function Index() {
           </div>
 
           {(() => {
-            const filtered = cases;
+            const filtered = caseTag === "Все" ? cases : cases.filter(c => c.tag === caseTag);
             const perPage = 9;
             const totalPages = Math.ceil(filtered.length / perPage);
             const pageCases = filtered.slice(casePage * perPage, casePage * perPage + perPage);
             return (
               <>
+                <div className="flex flex-wrap gap-2 mb-10">
+                  {["Все", "Бухгалтерия"].map(tag => (
+                    <button
+                      key={tag}
+                      onClick={() => { setCaseTag(tag); setCasePage(0); }}
+                      className={`font-body text-xs uppercase tracking-widest px-4 py-2 rounded-full border transition-all ${caseTag === tag ? 'bg-neon/10 border-neon text-neon' : 'border-border text-muted-foreground hover:border-neon/50 hover:text-neon'}`}
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {pageCases.map((c) => (
                     <div
