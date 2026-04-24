@@ -1027,6 +1027,7 @@ export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeCase, setActiveCase] = useState<CaseData | null>(null);
   const [casePage, setCasePage] = useState(0);
+  const [caseTag, setCaseTag] = useState("Все");
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
@@ -1366,17 +1367,31 @@ export default function Index() {
       {/* CASES */}
       <section id="cases" className="py-24 bg-card/30">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
+          <div className="mb-10">
             <span className="font-body text-xs text-neon uppercase tracking-widest">Результаты в цифрах</span>
             <h2 className="font-display text-5xl font-bold mt-3">НАШИ КЕЙСЫ</h2>
           </div>
 
           {(() => {
+            const allTags = ["Все", ...Array.from(new Set(cases.map(c => c.tag)))];
+            const filtered = caseTag === "Все" ? cases : cases.filter(c => c.tag === caseTag);
             const perPage = 9;
-            const totalPages = Math.ceil(cases.length / perPage);
-            const pageCases = cases.slice(casePage * perPage, casePage * perPage + perPage);
+            const totalPages = Math.ceil(filtered.length / perPage);
+            const pageCases = filtered.slice(casePage * perPage, casePage * perPage + perPage);
             return (
               <>
+                <div className="flex flex-wrap gap-2 mb-10">
+                  {allTags.map(tag => (
+                    <button
+                      key={tag}
+                      onClick={() => { setCaseTag(tag); setCasePage(0); }}
+                      className={`font-body text-xs uppercase tracking-widest px-4 py-2 rounded-full border transition-all ${caseTag === tag ? 'bg-neon/10 border-neon text-neon' : 'border-border text-muted-foreground hover:border-neon/50 hover:text-neon'}`}
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {pageCases.map((c) => (
                     <div
