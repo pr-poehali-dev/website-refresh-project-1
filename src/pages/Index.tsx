@@ -1043,7 +1043,7 @@ const cases: CaseData[] = [
   },
   {
     id: 13,
-    tag: "Продажи",
+    tag: "Маркетплейсы",
     title: "Подбор менеджера по работе с Ozon в компанию по продаже автозапчастей за 9 дней",
     desc: "Кабинет создан, но продажи нули. На рынке в основном специалисты по Wildberries. Нашли именно Ozon-эксперта, способного запустить продажи с нуля.",
     result: "1 специалист",
@@ -2791,7 +2791,7 @@ export default function Index() {
             return (
               <>
                 <div className="flex flex-wrap gap-2 mb-10">
-                  {["Все", "Продажи", "Бухгалтерия"].map(tag => (
+                  {["Все", "Продажи", "Маркетплейсы", "Бухгалтерия"].map(tag => (
                     <button
                       key={tag}
                       onClick={() => { setCaseTag(tag); setCasePage(0); }}
