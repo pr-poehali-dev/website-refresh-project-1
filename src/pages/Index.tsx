@@ -2889,7 +2889,7 @@ export default function Index() {
             return (
               <>
                 <div className="flex flex-wrap gap-2 mb-10">
-                  {["Все", "Продажи", "Управляющие", "Маркетплейсы", "Бухгалтерия"].map(tag => (
+                  {["Все", "Бухгалтерия", "Продажи", "Управляющие", "Маркетплейсы"].map(tag => (
                     <button
                       key={tag}
                       onClick={() => { setCaseTag(tag); setCasePage(0); }}
