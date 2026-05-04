@@ -3525,6 +3525,24 @@ export default function Index() {
       {/* CASES */}
       <section id="cases" className="py-24 bg-card/30">
         <div className="max-w-7xl mx-auto px-6">
+          {/* Director Quote */}
+          <div className="mb-14 bg-card border border-border rounded-2xl p-8 flex gap-6 items-start max-w-3xl">
+            <img
+              src="https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/bucket/8448447f-6a48-4e6e-b0cd-1bbdcb25a5d0.png"
+              alt="Щепина Ирина"
+              className="w-16 h-16 rounded-full object-cover object-top flex-shrink-0 border-2 border-neon/30"
+            />
+            <div>
+              <p className="font-body text-base text-foreground/90 leading-relaxed mb-4">
+                «Мы не делаем ставку на готовые базы резюме — они теряют актуальность за пару месяцев. Вместо этого под каждую вакансию включаем технологии маркетинга и продаж: упаковываем, работаем с воронкой, ищем точечно. А ещё за 18 лет мы хорошо изучили местный рынок и часто просто знаем, кому ваше предложение может быть интересно уже сегодня. Так к вам приходят те, кто действительно готов к переменам, а не те, кто обновил резюме «на всякий случай».»
+              </p>
+              <div>
+                <span className="font-display text-sm font-semibold text-foreground">Щепина Ирина</span>
+                <span className="font-body text-xs text-muted-foreground ml-2">директор кадрового агентства «Перспектива»</span>
+              </div>
+            </div>
+          </div>
+
           <div className="mb-10">
             <span className="font-body text-xs text-neon uppercase tracking-widest">Результаты в цифрах</span>
             <h2 className="font-display text-5xl font-bold mt-3">НАШИ КЕЙСЫ</h2>
