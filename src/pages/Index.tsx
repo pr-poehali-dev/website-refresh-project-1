@@ -3488,11 +3488,35 @@ export default function Index() {
             <h3 className="font-display text-lg font-bold mb-2 text-white">Адаптация к меняющимся условиям</h3>
             <p className="font-body text-white/80 leading-relaxed text-base">Рынок штормит — мы подстраиваем стратегию поиска под текущую реальность, а не действуем по шаблону.</p>
           </FadeCard>
-          <FadeCard delay={0.4} className="col-span-3 rounded-xl p-5 cursor-default overflow-hidden" style={{background: '#c04000'}}>
-            <p className="font-body text-white/90 leading-relaxed text-base">
-              Мы не делаем ставку на готовые базы резюме — они теряют актуальность за пару месяцев. Вместо этого под каждую вакансию включаем технологии маркетинга и продаж: упаковываем, работаем с воронкой, ищем точечно. А ещё за 18 лет мы хорошо изучили местный рынок и часто просто знаем, кому ваше предложение может быть интересно уже сегодня. Так к вам приходят те, кто действительно готов к переменам, а не те, кто обновил резюме «на всякий случай».
-            </p>
-          </FadeCard>
+        </div>
+      </section>
+
+      {/* TEZISY */}
+      <section className="py-16 border-t border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="flex gap-5 items-start">
+              <span className="font-display text-5xl font-bold text-foreground/10 leading-none select-none">01</span>
+              <div>
+                <h4 className="font-display text-lg font-bold mb-2">Не базы — живой поиск</h4>
+                <p className="font-body text-base text-foreground/65 leading-relaxed">Готовые базы резюме теряют актуальность за пару месяцев. Под каждую вакансию мы запускаем отдельную воронку с маркетинговыми инструментами и прямым поиском.</p>
+              </div>
+            </div>
+            <div className="flex gap-5 items-start">
+              <span className="font-display text-5xl font-bold text-foreground/10 leading-none select-none">02</span>
+              <div>
+                <h4 className="font-display text-lg font-bold mb-2">Знаем рынок изнутри</h4>
+                <p className="font-body text-base text-foreground/65 leading-relaxed">За 18 лет мы изучили локальный рынок так, что часто просто знаем — кому ваше предложение будет интересно уже сегодня.</p>
+              </div>
+            </div>
+            <div className="flex gap-5 items-start">
+              <span className="font-display text-5xl font-bold text-foreground/10 leading-none select-none">03</span>
+              <div>
+                <h4 className="font-display text-lg font-bold mb-2">Приходят те, кто готов</h4>
+                <p className="font-body text-base text-foreground/65 leading-relaxed">К вам приходят те, кто действительно готов к переменам — а не те, кто обновил резюме «на всякий случай».</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
