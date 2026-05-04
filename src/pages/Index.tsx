@@ -3440,7 +3440,7 @@ export default function Index() {
               <Icon name="ArrowRight" size={20} className="text-white" />
             </div>
             <div>
-              <p className="font-body font-semibold text-white mb-2">Готовы начать?</p>
+              <p className="font-body font-semibold text-white mb-2 text-lg">Готовы начать?</p>
               <p className="font-body text-base text-white/80 leading-relaxed mb-4">Расскажите о вакансии — стартуем в день обращения.</p>
             </div>
           </FadeCard>
