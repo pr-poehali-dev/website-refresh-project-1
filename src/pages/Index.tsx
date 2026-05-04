@@ -3530,7 +3530,7 @@ export default function Index() {
             {/* Photo */}
             <div className="relative mb-0">
               <img
-                src="https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/bucket/8448447f-6a48-4e6e-b0cd-1bbdcb25a5d0.png"
+                src="https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/bucket/614b82a2-19fd-470d-a724-e2ebc330f9b4.jpg"
                 alt="Щепина Ирина"
                 className="w-52 h-52 rounded-full object-cover object-[center_15%] border-4 border-background shadow-lg"
               />
