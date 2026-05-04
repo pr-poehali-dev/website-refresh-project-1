@@ -3523,33 +3523,8 @@ export default function Index() {
       </section>
 
       {/* CASES */}
-      <section id="cases" className="pt-4 pb-24 bg-card/30">
+      <section id="cases" className="py-24 bg-card/30">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Director Quote */}
-          <div className="mb-10 flex flex-col items-center text-center max-w-2xl mx-auto">
-            {/* Photo */}
-            <div className="relative mb-0">
-              <img
-                src="https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/files/2699f4d9-caea-476c-9f63-dab0344db00c.jpg"
-                alt="Щепина Ирина"
-                className="w-64 h-64 rounded-full object-cover object-[center_10%] border-4 border-background shadow-lg"
-              />
-            </div>
-            {/* Name plate */}
-            <div className="bg-[#c04000] px-10 py-3 -mt-1 mb-8">
-              <div className="font-display text-xl font-semibold text-white tracking-wide">Щепина Ирина</div>
-              <div className="font-body text-sm text-white/85">директор кадрового агентства «Перспектива»</div>
-            </div>
-            {/* Quote text */}
-            <div className="relative px-6">
-              <span className="absolute -top-2 -left-0 font-display text-6xl text-foreground/15 leading-none select-none">"</span>
-              <p className="font-body text-xl italic text-foreground/80 leading-relaxed text-center">
-                Мы не делаем ставку на готовые базы резюме — они теряют актуальность за пару месяцев. Вместо этого под каждую вакансию включаем технологии маркетинга и продаж: упаковываем, работаем с воронкой, ищем точечно. А ещё за 18 лет мы хорошо изучили местный рынок и часто просто знаем, кому ваше предложение может быть интересно уже сегодня. Так к вам приходят те, кто действительно готов к переменам, а не те, кто обновил резюме «на всякий случай».
-              </p>
-              <span className="absolute -bottom-6 -right-0 font-display text-6xl text-foreground/15 leading-none select-none">"</span>
-            </div>
-          </div>
-
           <div className="mb-10">
             <span className="font-body text-xs text-neon uppercase tracking-widest">Результаты в цифрах</span>
             <h2 className="font-display text-5xl font-bold mt-3">НАШИ КЕЙСЫ</h2>
