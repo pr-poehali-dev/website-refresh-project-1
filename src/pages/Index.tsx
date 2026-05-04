@@ -3523,7 +3523,7 @@ export default function Index() {
       </section>
 
       {/* CASES */}
-      <section id="cases" className="pt-12 pb-24 bg-card/30">
+      <section id="cases" className="pt-4 pb-24 bg-card/30">
         <div className="max-w-7xl mx-auto px-6">
           {/* Director Quote */}
           <div className="mb-10 flex flex-col items-center text-center max-w-2xl mx-auto">
@@ -3532,14 +3532,13 @@ export default function Index() {
               <img
                 src="https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/bucket/8448447f-6a48-4e6e-b0cd-1bbdcb25a5d0.png"
                 alt="Щепина Ирина"
-                className="w-48 h-48 rounded-full object-cover object-top border-4 border-background shadow-lg"
-                style={{ imageRendering: 'crisp-edges' }}
+                className="w-52 h-52 rounded-full object-cover object-[center_15%] border-4 border-background shadow-lg"
               />
             </div>
             {/* Name plate */}
-            <div className="bg-[#c04000] px-8 py-2 -mt-1 mb-8">
-              <div className="font-display text-base font-semibold text-white tracking-wide">Щепина Ирина</div>
-              <div className="font-body text-xs text-white/80">директор кадрового агентства «Перспектива»</div>
+            <div className="bg-[#c04000] px-10 py-3 -mt-1 mb-8">
+              <div className="font-display text-xl font-semibold text-white tracking-wide">Щепина Ирина</div>
+              <div className="font-body text-sm text-white/85">директор кадрового агентства «Перспектива»</div>
             </div>
             {/* Quote text */}
             <div className="relative px-6">
