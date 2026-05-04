@@ -3492,15 +3492,11 @@ export default function Index() {
       </section>
 
       {/* QUOTE */}
-      <section className="py-16 bg-card/50">
+      <section className="py-20 bg-foreground">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="relative px-8">
-            <span className="absolute -top-4 -left-2 font-display text-8xl text-foreground/10 leading-none select-none">"</span>
-            <p className="font-body text-2xl md:text-3xl text-foreground/80 leading-relaxed italic">
-              Мы не делаем ставку на готовые базы резюме — они теряют актуальность за пару месяцев. Вместо этого под каждую вакансию включаем технологии маркетинга и продаж: упаковываем, работаем с воронкой, ищем точечно. А ещё за 18 лет мы хорошо изучили местный рынок и часто просто знаем, кому ваше предложение может быть интересно уже сегодня. Так к вам приходят те, кто действительно готов к переменам, а не те, кто обновил резюме «на всякий случай».
-            </p>
-            <span className="absolute -bottom-8 -right-2 font-display text-8xl text-foreground/10 leading-none select-none">"</span>
-          </div>
+          <p className="font-body text-2xl md:text-3xl text-background leading-relaxed font-normal">
+            Мы не делаем ставку на готовые базы резюме — они теряют актуальность за пару месяцев. Вместо этого под каждую вакансию включаем технологии маркетинга и продаж: упаковываем, работаем с воронкой, ищем точечно. А ещё за 18 лет мы хорошо изучили местный рынок и часто просто знаем, кому ваше предложение может быть интересно уже сегодня. Так к вам приходят те, кто действительно готов к переменам, а не те, кто обновил резюме «на всякий случай».
+          </p>
         </div>
       </section>
 
