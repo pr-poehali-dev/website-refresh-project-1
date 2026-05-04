@@ -3523,16 +3523,17 @@ export default function Index() {
       </section>
 
       {/* CASES */}
-      <section id="cases" className="py-24 bg-card/30">
+      <section id="cases" className="pt-12 pb-24 bg-card/30">
         <div className="max-w-7xl mx-auto px-6">
           {/* Director Quote */}
-          <div className="mb-14 flex flex-col items-center text-center max-w-2xl mx-auto">
+          <div className="mb-10 flex flex-col items-center text-center max-w-2xl mx-auto">
             {/* Photo */}
             <div className="relative mb-0">
               <img
                 src="https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/bucket/8448447f-6a48-4e6e-b0cd-1bbdcb25a5d0.png"
                 alt="Щепина Ирина"
-                className="w-36 h-36 rounded-full object-cover object-top border-4 border-background shadow-lg"
+                className="w-48 h-48 rounded-full object-cover object-top border-4 border-background shadow-lg"
+                style={{ imageRendering: 'crisp-edges' }}
               />
             </div>
             {/* Name plate */}
@@ -3541,9 +3542,9 @@ export default function Index() {
               <div className="font-body text-xs text-white/80">директор кадрового агентства «Перспектива»</div>
             </div>
             {/* Quote text */}
-            <div className="relative px-4">
+            <div className="relative px-6">
               <span className="absolute -top-2 -left-0 font-display text-6xl text-foreground/15 leading-none select-none">"</span>
-              <p className="font-body text-lg italic text-foreground/80 leading-relaxed text-center">
+              <p className="font-body text-xl italic text-foreground/80 leading-relaxed text-center">
                 Мы не делаем ставку на готовые базы резюме — они теряют актуальность за пару месяцев. Вместо этого под каждую вакансию включаем технологии маркетинга и продаж: упаковываем, работаем с воронкой, ищем точечно. А ещё за 18 лет мы хорошо изучили местный рынок и часто просто знаем, кому ваше предложение может быть интересно уже сегодня. Так к вам приходят те, кто действительно готов к переменам, а не те, кто обновил резюме «на всякий случай».
               </p>
               <span className="absolute -bottom-6 -right-0 font-display text-6xl text-foreground/15 leading-none select-none">"</span>
