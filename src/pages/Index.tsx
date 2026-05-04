@@ -3532,7 +3532,7 @@ export default function Index() {
               <img
                 src="https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/bucket/614b82a2-19fd-470d-a724-e2ebc330f9b4.jpg"
                 alt="Щепина Ирина"
-                className="w-52 h-52 rounded-full object-cover object-[center_15%] border-4 border-background shadow-lg"
+                className="w-64 h-64 rounded-full object-cover object-[center_10%] border-4 border-background shadow-lg"
               />
             </div>
             {/* Name plate */}
