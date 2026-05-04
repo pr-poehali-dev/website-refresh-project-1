@@ -3526,20 +3526,27 @@ export default function Index() {
       <section id="cases" className="py-24 bg-card/30">
         <div className="max-w-7xl mx-auto px-6">
           {/* Director Quote */}
-          <div className="mb-14 bg-card border border-border rounded-2xl p-8 flex gap-6 items-start max-w-3xl">
-            <img
-              src="https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/bucket/8448447f-6a48-4e6e-b0cd-1bbdcb25a5d0.png"
-              alt="Щепина Ирина"
-              className="w-16 h-16 rounded-full object-cover object-top flex-shrink-0 border-2 border-neon/30"
-            />
-            <div>
-              <p className="font-body text-base text-foreground/90 leading-relaxed mb-4">
-                «Мы не делаем ставку на готовые базы резюме — они теряют актуальность за пару месяцев. Вместо этого под каждую вакансию включаем технологии маркетинга и продаж: упаковываем, работаем с воронкой, ищем точечно. А ещё за 18 лет мы хорошо изучили местный рынок и часто просто знаем, кому ваше предложение может быть интересно уже сегодня. Так к вам приходят те, кто действительно готов к переменам, а не те, кто обновил резюме «на всякий случай».»
+          <div className="mb-14 flex flex-col items-center text-center max-w-2xl mx-auto">
+            {/* Photo */}
+            <div className="relative mb-0">
+              <img
+                src="https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/bucket/8448447f-6a48-4e6e-b0cd-1bbdcb25a5d0.png"
+                alt="Щепина Ирина"
+                className="w-36 h-36 rounded-full object-cover object-top border-4 border-background shadow-lg"
+              />
+            </div>
+            {/* Name plate */}
+            <div className="bg-[#c04000] px-8 py-2 -mt-1 mb-8">
+              <div className="font-display text-base font-semibold text-white tracking-wide">Щепина Ирина</div>
+              <div className="font-body text-xs text-white/80">директор кадрового агентства «Перспектива»</div>
+            </div>
+            {/* Quote text */}
+            <div className="relative px-4">
+              <span className="absolute -top-2 -left-0 font-display text-6xl text-foreground/15 leading-none select-none">"</span>
+              <p className="font-body text-lg italic text-foreground/80 leading-relaxed text-center">
+                Мы не делаем ставку на готовые базы резюме — они теряют актуальность за пару месяцев. Вместо этого под каждую вакансию включаем технологии маркетинга и продаж: упаковываем, работаем с воронкой, ищем точечно. А ещё за 18 лет мы хорошо изучили местный рынок и часто просто знаем, кому ваше предложение может быть интересно уже сегодня. Так к вам приходят те, кто действительно готов к переменам, а не те, кто обновил резюме «на всякий случай».
               </p>
-              <div>
-                <span className="font-display text-sm font-semibold text-foreground">Щепина Ирина</span>
-                <span className="font-body text-xs text-muted-foreground ml-2">директор кадрового агентства «Перспектива»</span>
-              </div>
+              <span className="absolute -bottom-6 -right-0 font-display text-6xl text-foreground/15 leading-none select-none">"</span>
             </div>
           </div>
 
