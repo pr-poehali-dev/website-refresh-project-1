@@ -3526,14 +3526,23 @@ export default function Index() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <button onClick={() => scrollTo("home")} className="flex items-center gap-2.5">
-            {/* Иконка двери — как в оригинальном логотипе */}
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="3" width="32" height="32" rx="3" fill="#c04000"/>
-              <rect x="10" y="8" width="18" height="22" rx="1.5" fill="white" opacity="0.15"/>
-              <rect x="10" y="8" width="18" height="22" rx="1.5" stroke="white" strokeWidth="2"/>
-              <rect x="10" y="8" width="9" height="22" rx="1.5" fill="white" opacity="0.1"/>
-              <line x1="10" y1="8" x2="10" y2="30" stroke="white" strokeWidth="2"/>
-              <circle cx="24" cy="19" r="1.5" fill="white"/>
+            {/* Буква П с открытой дверью внутри — как в оригинальном логотипе */}
+            <svg width="48" height="44" viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Левая стойка буквы П */}
+              <rect x="0" y="0" width="9" height="44" fill="#c04000"/>
+              {/* Правая стойка буквы П */}
+              <rect x="39" y="0" width="9" height="44" fill="#c04000"/>
+              {/* Перекладина буквы П */}
+              <rect x="0" y="0" width="48" height="9" fill="#c04000"/>
+              {/* Открытая дверь — створка уходит вглубь (перспектива) */}
+              {/* Проём двери */}
+              <rect x="14" y="9" width="20" height="35" fill="#c04000" opacity="0.25"/>
+              {/* Открытая створка двери (повёрнута в перспективе влево) */}
+              <path d="M14 9 L28 12 L28 44 L14 44 Z" fill="#c04000" opacity="0.55"/>
+              {/* Ручка двери на створке */}
+              <circle cx="26" cy="27" r="1.8" fill="#c04000"/>
+              {/* Тень/глубина проёма */}
+              <rect x="34" y="9" width="5" height="35" fill="#c04000" opacity="0.4"/>
             </svg>
             <div className="flex flex-col leading-none">
               <div className="flex items-baseline">
