@@ -3525,31 +3525,29 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo("home")} className="flex items-center gap-2.5">
-            {/* Буква П с открытой дверью внутри — как в оригинальном логотипе */}
-            <svg width="48" height="44" viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Левая стойка буквы П */}
-              <rect x="0" y="0" width="9" height="44" fill="#c04000"/>
-              {/* Правая стойка буквы П */}
-              <rect x="39" y="0" width="9" height="44" fill="#c04000"/>
-              {/* Перекладина буквы П */}
-              <rect x="0" y="0" width="48" height="9" fill="#c04000"/>
-              {/* Открытая дверь — створка уходит вглубь (перспектива) */}
-              {/* Проём двери */}
-              <rect x="14" y="9" width="20" height="35" fill="#c04000" opacity="0.25"/>
-              {/* Открытая створка двери (повёрнута в перспективе влево) */}
-              <path d="M14 9 L28 12 L28 44 L14 44 Z" fill="#c04000" opacity="0.55"/>
-              {/* Ручка двери на створке */}
-              <circle cx="26" cy="27" r="1.8" fill="#c04000"/>
-              {/* Тень/глубина проёма */}
-              <rect x="34" y="9" width="5" height="35" fill="#c04000" opacity="0.4"/>
-            </svg>
+          <button onClick={() => scrollTo("home")} className="flex items-center gap-1">
             <div className="flex flex-col leading-none">
-              <div className="flex items-baseline">
-                <span className="font-display text-[22px] font-black tracking-tight" style={{color: '#c04000'}}>П</span>
-                <span className="font-display text-[22px] font-black tracking-tight text-foreground">ЕРСПЕКТИВА</span>
+              <div className="flex items-end gap-0">
+                {/* Буква П с дверью внутри */}
+                <svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginBottom: '1px'}}>
+                  {/* Левая стойка П */}
+                  <rect x="0" y="0" width="5" height="28" fill="#c04000"/>
+                  {/* Правая стойка П */}
+                  <rect x="21" y="0" width="5" height="28" fill="#c04000"/>
+                  {/* Перекладина П */}
+                  <rect x="0" y="0" width="26" height="5" fill="#c04000"/>
+                  {/* Проём двери (тёмный фон) */}
+                  <rect x="5" y="5" width="16" height="23" fill="#c04000" opacity="0.15"/>
+                  {/* Открытая створка двери — уходит вглубь вправо */}
+                  <path d="M5 5 L5 28 L16 25 L16 7 Z" fill="#c04000" opacity="0.7"/>
+                  {/* Ручка на створке */}
+                  <circle cx="14" cy="17" r="1.3" fill="#c04000"/>
+                  {/* Правый косяк/глубина */}
+                  <rect x="17" y="5" width="4" height="23" fill="#c04000" opacity="0.35"/>
+                </svg>
+                <span className="font-display text-[22px] font-black tracking-tight text-foreground" style={{lineHeight: 1}}>ЕРСПЕКТИВА</span>
               </div>
-              <span className="font-body text-[9px] tracking-[0.25em] text-muted-foreground uppercase">кадровое агентство</span>
+              <span className="font-body text-[9px] tracking-[0.25em] text-muted-foreground uppercase mt-0.5">кадровое агентство</span>
             </div>
           </button>
 
