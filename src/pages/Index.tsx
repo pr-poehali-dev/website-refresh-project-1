@@ -3525,12 +3525,23 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo("home")} className="flex items-center">
-            <img
-              src="https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/bucket/887e11d3-7cf3-4574-8d59-0368a2dcc142.png"
-              alt="Перспектива — кадровое агентство"
-              className="h-10 w-auto object-contain"
-            />
+          <button onClick={() => scrollTo("home")} className="flex items-center gap-2.5">
+            {/* Иконка двери — как в оригинальном логотипе */}
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="32" height="32" rx="3" fill="#c04000"/>
+              <rect x="10" y="8" width="18" height="22" rx="1.5" fill="white" opacity="0.15"/>
+              <rect x="10" y="8" width="18" height="22" rx="1.5" stroke="white" strokeWidth="2"/>
+              <rect x="10" y="8" width="9" height="22" rx="1.5" fill="white" opacity="0.1"/>
+              <line x1="10" y1="8" x2="10" y2="30" stroke="white" strokeWidth="2"/>
+              <circle cx="24" cy="19" r="1.5" fill="white"/>
+            </svg>
+            <div className="flex flex-col leading-none">
+              <div className="flex items-baseline">
+                <span className="font-display text-[22px] font-black tracking-tight" style={{color: '#c04000'}}>П</span>
+                <span className="font-display text-[22px] font-black tracking-tight text-foreground">ЕРСПЕКТИВА</span>
+              </div>
+              <span className="font-body text-[9px] tracking-[0.25em] text-muted-foreground uppercase">кадровое агентство</span>
+            </div>
           </button>
 
           <div className="hidden md:flex items-center gap-8">
