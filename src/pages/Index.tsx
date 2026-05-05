@@ -3525,22 +3525,12 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo("home")} className="flex items-center gap-2">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Левая стойка */}
-              <rect x="2" y="4" width="5" height="28" rx="2.5" fill="#c04000"/>
-              {/* Правая стойка */}
-              <rect x="29" y="4" width="5" height="28" rx="2.5" fill="#c04000"/>
-              {/* Перекладина */}
-              <rect x="2" y="4" width="32" height="5" rx="2.5" fill="#c04000"/>
-              {/* Стрелка вперёд — движение, перспектива */}
-              <path d="M12 26 L18 14 L24 26" stroke="#c04000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <path d="M15 26 L18 19 L21 26" fill="#c04000" opacity="0.25"/>
-            </svg>
-            <div className="flex flex-col leading-none">
-              <span className="font-display text-xl font-bold tracking-wide text-foreground">ПЕРСПЕКТИВА</span>
-              <span className="font-body text-[9px] tracking-[0.2em] text-muted-foreground uppercase mt-0.5">кадровый центр</span>
-            </div>
+          <button onClick={() => scrollTo("home")} className="flex items-center">
+            <img
+              src="https://cdn.poehali.dev/projects/32fc6043-456c-426f-a7ea-92d970737be3/bucket/887e11d3-7cf3-4574-8d59-0368a2dcc142.png"
+              alt="Перспектива — кадровое агентство"
+              className="h-10 w-auto object-contain"
+            />
           </button>
 
           <div className="hidden md:flex items-center gap-8">
