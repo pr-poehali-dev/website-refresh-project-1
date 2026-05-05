@@ -3525,30 +3525,12 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo("home")} className="flex items-center gap-1">
-            <div className="flex flex-col leading-none">
-              <div className="flex items-end gap-0">
-                {/* Буква П с дверью внутри */}
-                <svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginBottom: '1px'}}>
-                  {/* Левая стойка П */}
-                  <rect x="0" y="0" width="5" height="28" fill="#c04000"/>
-                  {/* Правая стойка П */}
-                  <rect x="21" y="0" width="5" height="28" fill="#c04000"/>
-                  {/* Перекладина П */}
-                  <rect x="0" y="0" width="26" height="5" fill="#c04000"/>
-                  {/* Проём двери (тёмный фон) */}
-                  <rect x="5" y="5" width="16" height="23" fill="#c04000" opacity="0.15"/>
-                  {/* Открытая створка двери — уходит вглубь вправо */}
-                  <path d="M5 5 L5 28 L16 25 L16 7 Z" fill="#c04000" opacity="0.7"/>
-                  {/* Ручка на створке */}
-                  <circle cx="14" cy="17" r="1.3" fill="#c04000"/>
-                  {/* Правый косяк/глубина */}
-                  <rect x="17" y="5" width="4" height="23" fill="#c04000" opacity="0.35"/>
-                </svg>
-                <span className="font-display text-[22px] font-black tracking-tight text-foreground" style={{lineHeight: 1}}>ЕРСПЕКТИВА</span>
-              </div>
-              <span className="font-body text-[9px] tracking-[0.25em] text-muted-foreground uppercase mt-0.5">кадровое агентство</span>
+          <button onClick={() => scrollTo("home")} className="flex flex-col leading-none items-start">
+            <div className="flex items-baseline gap-0">
+              <span className="font-display text-[22px] font-black tracking-tight" style={{color: '#c04000'}}>П</span>
+              <span className="font-display text-[22px] font-black tracking-tight text-foreground">ЕРСПЕКТИВА</span>
             </div>
+            <span className="font-body text-[9px] tracking-[0.25em] text-muted-foreground uppercase mt-0.5">кадровое агентство</span>
           </button>
 
           <div className="hidden md:flex items-center gap-8">
