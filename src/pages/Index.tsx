@@ -5388,15 +5388,25 @@ export default function Index() {
               </FadeCard>
             ))}
           </div>
-          <div className="mt-14 flex flex-col sm:flex-row items-center gap-4 justify-center">
-            <button
-              onClick={() => scrollTo("contact")}
-              className="bg-neon text-white font-body font-semibold px-10 py-4 rounded-full hover:opacity-90 transition-all hover:scale-105 text-base"
-            >
-              Оставить заявку
-            </button>
-            <span className="font-body text-muted-foreground text-sm">Ответим в течение 1 рабочего дня</span>
-          </div>
+          <FadeCard
+            delay={0.3}
+            className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-6 bg-neon rounded-2xl p-8 cursor-pointer hover:opacity-90 transition-opacity"
+            onClick={() => scrollTo("contact")}
+          >
+            <div className="flex items-center gap-5">
+              <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                <Icon name="MessageCircle" size={22} className="text-white" />
+              </div>
+              <div>
+                <p className="font-body font-semibold text-white text-lg leading-tight">Готовы обсудить вашу вакансию?</p>
+                <p className="font-body text-white/80 text-sm mt-0.5">Стартуем в день обращения — ответим в течение 1 рабочего дня</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 bg-white/20 rounded-full px-6 py-3 shrink-0">
+              <span className="font-body font-semibold text-white text-sm">Оставить заявку</span>
+              <Icon name="ArrowRight" size={16} className="text-white" />
+            </div>
+          </FadeCard>
         </div>
       </section>
 
