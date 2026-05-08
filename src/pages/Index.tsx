@@ -5388,6 +5388,15 @@ export default function Index() {
               </FadeCard>
             ))}
           </div>
+          <div className="mt-14 flex flex-col sm:flex-row items-center gap-4 justify-center">
+            <button
+              onClick={() => scrollTo("contact")}
+              className="bg-neon text-white font-body font-semibold px-10 py-4 rounded-full hover:opacity-90 transition-all hover:scale-105 text-base"
+            >
+              Оставить заявку
+            </button>
+            <span className="font-body text-muted-foreground text-sm">Ответим в течение 1 рабочего дня</span>
+          </div>
         </div>
       </section>
 
