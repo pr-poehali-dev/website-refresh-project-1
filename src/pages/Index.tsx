@@ -5150,8 +5150,9 @@ export default function Index() {
           </div>
         </div>
 
-        {menuOpen && (
-          <div className="md:hidden bg-card border-b border-border px-4 py-5 flex flex-col gap-1">
+        <div
+          className={`md:hidden bg-card border-b border-border px-4 flex flex-col gap-1 overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? "max-h-[500px] py-5 opacity-100" : "max-h-0 py-0 opacity-0"}`}
+        >
             {[["home", "Главная"], ["services", "О нас"], ["steps", "Этапы"], ["cases", "Кейсы"], ["contact", "Контакты"]].map(([id, label]) => (
               <button
                 key={id}
@@ -5176,8 +5177,7 @@ export default function Index() {
                 Оставить заявку
               </button>
             </div>
-          </div>
-        )}
+        </div>
       </nav>
 
       {/* HERO */}
