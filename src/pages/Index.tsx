@@ -5121,7 +5121,7 @@ export default function Index() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="tel:89500808200"
-              className="font-body font-semibold text-sm text-foreground hover:text-neon transition-colors"
+              className="font-body font-bold text-base text-neon hover:opacity-80 transition-opacity tracking-wide"
             >
               8(950)08-08-200
             </a>
@@ -5145,6 +5145,12 @@ export default function Index() {
                 {label}
               </button>
             ))}
+            <a
+              href="tel:89500808200"
+              className="font-body font-bold text-lg text-neon tracking-wide"
+            >
+              8(950)08-08-200
+            </a>
           </div>
         )}
       </nav>
