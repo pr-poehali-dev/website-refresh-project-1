@@ -5562,15 +5562,19 @@ export default function Index() {
               </p>
               <div className="flex flex-col gap-4">
                 {[
-                  { icon: "Phone", text: "+7 (950) 08 08 200" },
-                  { icon: "Mail", text: "dir@hr-irk.ru" },
-                  { icon: "MapPin", text: "Иркутск, ул. Декабрьских Событий 55, офис 101" },
+                  { icon: "Phone", text: "+7 (950) 08 08 200", href: "tel:89500808200" },
+                  { icon: "Mail", text: "dir@hr-irk.ru", href: "mailto:dir@hr-irk.ru" },
+                  { icon: "MapPin", text: "Иркутск, ул. Декабрьских Событий 55, офис 101", href: null },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-neon/10 flex items-center justify-center flex-shrink-0">
                       <Icon name={item.icon} size={15} className="text-neon" fallback="Info" />
                     </div>
-                    <span className="font-body text-sm">{item.text}</span>
+                    {item.href ? (
+                      <a href={item.href} className="font-body text-sm hover:text-neon transition-colors">{item.text}</a>
+                    ) : (
+                      <span className="font-body text-sm">{item.text}</span>
+                    )}
                   </div>
                 ))}
               </div>
