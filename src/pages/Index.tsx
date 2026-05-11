@@ -5211,12 +5211,12 @@ export default function Index() {
       <StatsSection />
 
       {/* ABOUT */}
-      <section id="about" className="py-24 relative overflow-hidden">
+      <section id="about" className="py-12 md:py-24 relative overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Блок проблем — bento grid */}
-        <h2 className="font-display text-5xl font-bold mb-8">Ищете надёжного сотрудника, но при этом :</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-20" style={{gridTemplateRows: "auto"}}>
-          <FadeCard delay={0} hover className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
+        <h2 className="font-display text-3xl md:text-5xl font-bold mb-8">Ищете надёжного сотрудника, но при этом :</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+          <FadeCard delay={0} hover className="md:col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="Bot" size={20} className="text-red-400" />
             </div>
@@ -5225,7 +5225,7 @@ export default function Index() {
               <p className="font-body text-base text-foreground/65 leading-relaxed">Кандидат красиво расписал свой опыт, а на собеседовании выясняется, что резюме за него сделала нейросеть. Сам он уже не помнит половины терминов. Время в очередной раз потрачено зря.</p>
             </div>
           </FadeCard>
-          <FadeCard delay={0.1} hover className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
+          <FadeCard delay={0.1} hover className="flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="UserX" size={20} className="text-red-400" />
             </div>
@@ -5234,7 +5234,7 @@ export default function Index() {
               <p className="font-body text-base text-foreground/65 leading-relaxed">Вы разместили вакансию на HH, за неделю пришло 40 откликов. 38 — мимо (нет опыта, хотят удалёнку, не читали требования). А те двое, кто подходит, не ответили на звонок.</p>
             </div>
           </FadeCard>
-          <FadeCard delay={0.05} hover className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
+          <FadeCard delay={0.05} hover className="flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="TrendingUp" size={20} className="text-red-400" />
             </div>
@@ -5243,7 +5243,7 @@ export default function Index() {
               <p className="font-body text-base text-foreground/65 leading-relaxed">Боитесь продешевить и упустить лучших — или переплатить просто «хорошему рассказчику».</p>
             </div>
           </FadeCard>
-          <FadeCard delay={0.1} hover className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
+          <FadeCard delay={0.1} hover className="md:col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="Timer" size={20} className="text-red-400" />
             </div>
@@ -5252,7 +5252,7 @@ export default function Index() {
               <p className="font-body text-base text-foreground/65 leading-relaxed">Пока вы взвешиваете, сравниваете и назначаете ещё одно собеседование — сильный кандидат уже принял предложение от другой компании.</p>
             </div>
           </FadeCard>
-          <FadeCard delay={0.15} hover className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
+          <FadeCard delay={0.15} hover className="flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="ShieldQuestion" size={20} className="text-red-400" />
             </div>
@@ -5261,7 +5261,7 @@ export default function Index() {
               <p className="font-body text-base text-foreground/65 leading-relaxed">Кто реально справится с задачами, а кто просто прошёл курс «как пройти собеседование»?</p>
             </div>
           </FadeCard>
-          <FadeCard delay={0.2} hover className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
+          <FadeCard delay={0.2} hover className="flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
             <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Icon name="AlertCircle" size={20} className="text-red-500" />
             </div>
@@ -5273,9 +5273,9 @@ export default function Index() {
         </div>
 
         {/* Блок решений — bento grid */}
-        <h2 className="font-display text-5xl font-bold text-neon mb-8">Наймите сотрудников, в которых не ошибетесь</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <FadeCard delay={0} hover className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-neon mb-8">Наймите сотрудников, в которых не ошибетесь</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <FadeCard delay={0} hover className="flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
             <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
               <Icon name="BadgeCheck" size={20} className="text-neon" />
             </div>
@@ -5284,7 +5284,7 @@ export default function Index() {
               <p className="font-body text-base text-foreground/65 leading-relaxed">Глубинные интервью, тестовые задания и проверка фактов — вы встречаетесь только с теми, чей опыт подтверждён.</p>
             </div>
           </FadeCard>
-          <FadeCard delay={0.1} hover className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
+          <FadeCard delay={0.1} hover className="md:col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
             <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
               <Icon name="Search" size={20} className="text-neon" />
             </div>
@@ -5293,7 +5293,7 @@ export default function Index() {
               <p className="font-body text-base text-foreground/65 leading-relaxed">Используем маркетинговые инструменты и прямой поиск, чтобы выходить на пассивных кандидатов. Умеем так презентовать вакансию, что откликаются даже те, кто не планировал менять место.</p>
             </div>
           </FadeCard>
-          <FadeCard delay={0.05} hover className="col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
+          <FadeCard delay={0.05} hover className="md:col-span-2 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
             <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
               <Icon name="Zap" size={20} className="text-neon" />
             </div>
@@ -5302,7 +5302,7 @@ export default function Index() {
               <p className="font-body text-base text-foreground/65 leading-relaxed">Держим постоянный контакт с финалистом, первыми узнаём о встречных предложениях. Помогаем найти компромисс, чтобы сделка состоялась на выгодных для вас условиях.</p>
             </div>
           </FadeCard>
-          <FadeCard delay={0.1} hover className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
+          <FadeCard delay={0.1} hover className="flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
             <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
               <Icon name="BarChart2" size={20} className="text-neon" />
             </div>
@@ -5311,7 +5311,7 @@ export default function Index() {
               <p className="font-body text-base text-foreground/65 leading-relaxed">Знаем реальные вилки и ожидания кандидатов в Иркутске — через нас ежемесячно проходят десятки офферов.</p>
             </div>
           </FadeCard>
-          <FadeCard delay={0.15} hover className="col-span-1 flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
+          <FadeCard delay={0.15} hover className="flex flex-col gap-4 bg-card rounded-2xl p-7" style={{boxShadow: "0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04)"}}>
             <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
               <Icon name="ClipboardCheck" size={20} className="text-neon" />
             </div>
@@ -5334,12 +5334,12 @@ export default function Index() {
       </section>
 
       {/* ABOUT */}
-      <section id="services" className="py-24 max-w-7xl mx-auto px-6">
+      <section id="services" className="py-12 md:py-24 max-w-7xl mx-auto px-6">
         <div className="mb-8">
-          <h2 className="font-display text-5xl font-bold">Почему наш подход работает</h2>
+          <h2 className="font-display text-3xl md:text-5xl font-bold">Почему наш подход работает</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-12 md:mb-16">
           <div>
             <p className="font-body text-lg text-foreground/75 leading-relaxed mb-6">
               Рынок труда за последние годы изменился до неузнаваемости. Кандидаты стали требовательнее, скорость принятия решений выросла, а старые методы поиска перестали давать результат. Мы прошли через все эти изменения и научились работать в новых условиях.
@@ -5380,11 +5380,11 @@ export default function Index() {
       <HighlightText />
 
       {/* STEPS */}
-      <section id="steps" className="py-24">
+      <section id="steps" className="py-12 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <span className="font-body text-xs text-neon uppercase tracking-widest">Как мы работаем</span>
-            <h2 className="font-display text-5xl font-bold mt-3">ЭТАПЫ РАБОТЫ</h2>
+            <h2 className="font-display text-3xl md:text-5xl font-bold mt-3">ЭТАПЫ РАБОТЫ</h2>
           </div>
           <div className="flex flex-col gap-0">
             {[
@@ -5395,8 +5395,8 @@ export default function Index() {
               { n: "5", title: "Готовим подробное заключение на финалистов", desc: "Встречайтесь с мотивированными кандидатами и выбирайте лучшего, опираясь на объективные данные: сильные стороны, зоны роста, факты." },
               { n: "6", title: "Сопровождаем оффер и контролируем выход", desc: null },
             ].map((step, i) => (
-              <FadeCard key={i} delay={i * 0.07} className="group grid md:grid-cols-[100px_1fr] gap-6 items-start py-8 border-b border-border last:border-0">
-                <span className="font-display text-8xl font-bold text-neon leading-none">{step.n}</span>
+              <FadeCard key={i} delay={i * 0.07} className="group grid grid-cols-[60px_1fr] md:grid-cols-[100px_1fr] gap-4 md:gap-6 items-start py-8 border-b border-border last:border-0">
+                <span className="font-display text-5xl md:text-8xl font-bold text-neon leading-none">{step.n}</span>
                 <div className="pt-2">
                   <h3 className="font-display text-xl font-bold mb-2">{step.title}</h3>
                   {step.desc !== null
@@ -5430,11 +5430,11 @@ export default function Index() {
       </section>
 
       {/* CASES */}
-      <section id="cases" className="py-24 bg-card/30">
+      <section id="cases" className="py-12 md:py-24 bg-card/30">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-10">
             <span className="font-body text-xs text-neon uppercase tracking-widest">Результаты в цифрах</span>
-            <h2 className="font-display text-5xl font-bold mt-3">НАШИ КЕЙСЫ</h2>
+            <h2 className="font-display text-3xl md:text-5xl font-bold mt-3">НАШИ КЕЙСЫ</h2>
           </div>
 
           {(() => {
