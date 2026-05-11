@@ -5553,15 +5553,15 @@ export default function Index() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-24 max-w-7xl mx-auto px-6">
-        <div className="relative bg-card border border-neon/20 rounded-3xl p-10 md:p-16 overflow-hidden grain">
+      <section id="contact" className="py-12 md:py-24 max-w-7xl mx-auto px-6">
+        <div className="relative bg-card border border-neon/20 rounded-3xl p-6 md:p-16 overflow-hidden grain">
           <div className="absolute top-0 right-0 w-96 h-96 bg-neon/5 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-neon/5 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+          <div className="relative z-10 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
               <span className="font-body text-xs text-neon uppercase tracking-widest">Готовы начать?</span>
-              <h2 className="font-display text-5xl font-bold mt-3 mb-5">ОБСУДИМ<br />ВАШУ ЗАДАЧУ</h2>
+              <h2 className="font-display text-3xl md:text-5xl font-bold mt-3 mb-5">ОБСУДИМ<br />ВАШУ ЗАДАЧУ</h2>
               <p className="font-body text-muted-foreground leading-relaxed mb-8">
                 Оставьте заявку — в течение 2 часов мы свяжемся и расскажем, как быстро закрыть вашу вакансию.
               </p>
