@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import AboutAnimation from "@/components/AboutAnimation";
 import CaseModal, { type CaseData } from "@/components/CaseModal";
