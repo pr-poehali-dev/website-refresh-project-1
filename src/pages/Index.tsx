@@ -5118,12 +5118,20 @@ export default function Index() {
             ))}
           </div>
 
-          <button
-            onClick={() => scrollTo("contact")}
-            className="hidden md:block bg-neon text-white font-body font-medium text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity animate-pulse-glow"
-          >
-            Оставить заявку
-          </button>
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="tel:89500808200"
+              className="font-body font-semibold text-sm text-foreground hover:text-neon transition-colors"
+            >
+              8(950)08-08-200
+            </a>
+            <button
+              onClick={() => scrollTo("contact")}
+              className="bg-neon text-white font-body font-medium text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity animate-pulse-glow"
+            >
+              Оставить заявку
+            </button>
+          </div>
 
           <button className="md:hidden text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
             <Icon name={menuOpen ? "X" : "Menu"} size={24} />
