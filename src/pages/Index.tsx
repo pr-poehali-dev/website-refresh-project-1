@@ -5123,7 +5123,7 @@ export default function Index() {
               href="tel:89500808200"
               className="font-body font-bold text-base text-neon hover:opacity-80 transition-opacity tracking-wide"
             >
-              8(950)08-08-200
+              +7 (950) 08 08 200
             </a>
             <button
               onClick={() => scrollTo("contact")}
@@ -5149,7 +5149,7 @@ export default function Index() {
               href="tel:89500808200"
               className="font-body font-bold text-lg text-neon tracking-wide"
             >
-              8(950)08-08-200
+              +7 (950) 08 08 200
             </a>
           </div>
         )}
