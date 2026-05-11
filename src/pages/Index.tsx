@@ -5066,6 +5066,7 @@ export default function Index() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [pdConsent, setPdConsent] = useState(false);
   const [pdModalOpen, setPdModalOpen] = useState(false);
+  const [noCall, setNoCall] = useState(false);
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
@@ -5080,7 +5081,7 @@ export default function Index() {
       const res = await fetch('https://functions.poehali.dev/093a5946-7475-4880-9fc3-f0afd7cd23cc', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, noCall }),
       });
       if (res.ok) {
         setFormStatus('success');
@@ -5607,6 +5608,15 @@ export default function Index() {
                     onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))}
                     className="bg-background border border-border rounded-xl px-5 py-4 font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:border-neon/60 transition-colors"
                   />
+                  <label className="flex items-center gap-3 cursor-pointer bg-background border border-border rounded-xl px-5 py-3.5">
+                    <input
+                      type="checkbox"
+                      checked={noCall}
+                      onChange={e => setNoCall(e.target.checked)}
+                      className="w-4 h-4 accent-neon flex-shrink-0 cursor-pointer"
+                    />
+                    <span className="font-body text-sm text-muted-foreground">Не звоните — напишите мне</span>
+                  </label>
                   <textarea
                     rows={4}
                     placeholder="Опишите вакансию или задачу"
