@@ -5113,12 +5113,12 @@ export default function Index() {
             <span className="hidden sm:block font-body text-[9px] tracking-[0.25em] text-muted-foreground uppercase mt-0.5">кадровое агентство</span>
           </button>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-4 lg:gap-8">
             {[["home", "Главная"], ["services", "О нас"], ["steps", "Этапы"], ["cases", "Кейсы"], ["contact", "Контакты"]].map(([id, label]) => (
               <button
                 key={id}
                 onClick={() => scrollTo(id)}
-                className={`nav-link font-body text-sm uppercase tracking-widest transition-colors ${activeSection === id ? "text-neon active" : "text-muted-foreground hover:text-foreground"}`}
+                className={`nav-link font-body text-xs lg:text-sm uppercase tracking-wider lg:tracking-widest transition-colors ${activeSection === id ? "text-neon active" : "text-muted-foreground hover:text-foreground"}`}
               >
                 {label}
               </button>
@@ -5128,7 +5128,7 @@ export default function Index() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="tel:89500808200"
-              className="font-body font-bold text-base text-neon hover:opacity-80 transition-opacity tracking-wide"
+              className="font-body font-bold text-base text-neon hover:opacity-80 transition-opacity tracking-wide whitespace-nowrap"
             >
               +7 (950) 08 08 200
             </a>
