@@ -4956,7 +4956,7 @@ function StatCard({ value, label, delay, icon, desc, footnote, inView }: { value
   const count = useCountUp(value, 1500, inView);
   return (
     <div
-      className="group relative flex flex-col gap-4 p-7 rounded-2xl bg-card border border-border hover:border-neon/30 transition-all duration-500 hover:shadow-lg overflow-hidden"
+      className="group relative flex flex-col gap-3 p-4 md:p-7 rounded-2xl bg-card border border-border hover:border-neon/30 transition-all duration-500 hover:shadow-lg overflow-hidden"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(40px)",
@@ -4965,14 +4965,14 @@ function StatCard({ value, label, delay, icon, desc, footnote, inView }: { value
     >
       <div className="absolute inset-0 bg-gradient-to-br from-neon/0 to-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
       <div className="flex items-center justify-between">
-        <div className="w-10 h-10 rounded-xl bg-neon/10 flex items-center justify-center">
-          <Icon name={icon} size={18} className="text-neon" fallback="Star" />
+        <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-neon/10 flex items-center justify-center">
+          <Icon name={icon} size={16} className="text-neon" fallback="Star" />
         </div>
-        <span className="font-body text-xs text-muted-foreground/60 uppercase tracking-wider">{desc}</span>
+        <span className="font-body text-[10px] md:text-xs text-muted-foreground/60 uppercase tracking-wider leading-tight text-right">{desc}</span>
       </div>
       <div>
-        <div className="font-display text-5xl font-bold text-neon neon-glow leading-none mb-2">{count}</div>
-        <div className="font-body text-sm text-foreground/70 leading-tight">
+        <div className="font-display text-3xl md:text-5xl font-bold text-neon neon-glow leading-none mb-1">{count}</div>
+        <div className="font-body text-xs md:text-sm text-foreground/70 leading-tight">
           {footnote ? <>средний срок подбора<sup className="text-neon ml-0.5">*</sup>, старт поиска в день обращения</> : label}
         </div>
       </div>
