@@ -5398,12 +5398,12 @@ export default function Index() {
                 <Icon name="MessageCircle" size={22} className="text-white" />
               </div>
               <div>
-                <p className="font-body font-semibold text-white text-lg leading-tight">Готовы обсудить вашу вакансию?</p>
-                <p className="font-body text-white/80 text-sm mt-0.5">Стартуем в день обращения — ответим в течение 1 рабочего дня</p>
+                <p className="font-body font-semibold text-white text-lg leading-tight">Обсудить мою вакансию</p>
+                <p className="font-body text-white/80 text-sm mt-0.5">Дадим актуальный срез зарплат и подскажем, на какие условия стоит делать ставку сейчас</p>
               </div>
             </div>
             <div className="flex items-center gap-2 bg-white/20 rounded-full px-6 py-3 shrink-0">
-              <span className="font-body font-semibold text-white text-sm">Оставить заявку</span>
+              <span className="font-body font-semibold text-white text-sm">Заказать звонок</span>
               <Icon name="ArrowRight" size={16} className="text-white" />
             </div>
           </FadeCard>
