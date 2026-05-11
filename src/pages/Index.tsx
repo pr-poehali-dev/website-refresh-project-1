@@ -5104,13 +5104,13 @@ export default function Index() {
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
           <button onClick={() => scrollTo("home")} className="flex flex-col leading-none items-start">
             <div className="flex items-baseline gap-0">
-              <span className="font-display text-[22px] font-black tracking-tight" style={{color: '#c04000'}}>П</span>
-              <span className="font-display text-[22px] font-black tracking-tight text-foreground">ЕРСПЕКТИВА</span>
+              <span className="font-display text-[18px] md:text-[22px] font-black tracking-tight" style={{color: '#c04000'}}>П</span>
+              <span className="font-display text-[18px] md:text-[22px] font-black tracking-tight text-foreground">ЕРСПЕКТИВА</span>
             </div>
-            <span className="font-body text-[9px] tracking-[0.25em] text-muted-foreground uppercase mt-0.5">кадровое агентство</span>
+            <span className="hidden sm:block font-body text-[9px] tracking-[0.25em] text-muted-foreground uppercase mt-0.5">кадровое агентство</span>
           </button>
 
           <div className="hidden md:flex items-center gap-8">
@@ -5140,9 +5140,14 @@ export default function Index() {
             </button>
           </div>
 
-          <button className="md:hidden text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
-            <Icon name={menuOpen ? "X" : "Menu"} size={24} />
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <a href="tel:89500808200" className="flex items-center justify-center w-9 h-9 rounded-full bg-neon/10 text-neon">
+              <Icon name="Phone" size={16} />
+            </a>
+            <button className="text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
+              <Icon name={menuOpen ? "X" : "Menu"} size={24} />
+            </button>
+          </div>
         </div>
 
         {menuOpen && (
