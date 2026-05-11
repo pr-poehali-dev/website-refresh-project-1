@@ -5151,7 +5151,14 @@ export default function Index() {
         </div>
 
         <div
-          className={`md:hidden bg-card border-b border-border px-4 flex flex-col gap-1 overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? "max-h-[500px] py-5 opacity-100" : "max-h-0 py-0 opacity-0"}`}
+          className="md:hidden bg-card border-b border-border px-4 flex flex-col gap-1 overflow-hidden"
+          style={{
+            maxHeight: menuOpen ? "500px" : "0px",
+            paddingTop: menuOpen ? "20px" : "0px",
+            paddingBottom: menuOpen ? "20px" : "0px",
+            opacity: menuOpen ? 1 : 0,
+            transition: "max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out"
+          }}
         >
             {[["home", "Главная"], ["services", "О нас"], ["steps", "Этапы"], ["cases", "Кейсы"], ["contact", "Контакты"]].map(([id, label]) => (
               <button
