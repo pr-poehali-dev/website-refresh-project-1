@@ -5064,6 +5064,8 @@ export default function Index() {
   const [caseTag, setCaseTag] = useState("Все");
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [pdConsent, setPdConsent] = useState(false);
+  const [pdModalOpen, setPdModalOpen] = useState(false);
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
@@ -5615,9 +5617,27 @@ export default function Index() {
                   {formStatus === 'error' && (
                     <p className="font-body text-sm text-red-400">Что-то пошло не так. Попробуйте ещё раз.</p>
                   )}
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={pdConsent}
+                      onChange={e => setPdConsent(e.target.checked)}
+                      className="mt-0.5 w-4 h-4 accent-neon flex-shrink-0 cursor-pointer"
+                    />
+                    <span className="font-body text-xs text-muted-foreground leading-relaxed">
+                      Я согласен(-на) на обработку персональных данных в соответствии с{' '}
+                      <button
+                        type="button"
+                        onClick={() => setPdModalOpen(true)}
+                        className="text-neon underline underline-offset-2 hover:opacity-80 transition-opacity"
+                      >
+                        Политикой конфиденциальности
+                      </button>
+                    </span>
+                  </label>
                   <button
                     onClick={handleSubmit}
-                    disabled={formStatus === 'sending' || !formData.name.trim() || !formData.phone.trim()}
+                    disabled={formStatus === 'sending' || !formData.name.trim() || !formData.phone.trim() || !pdConsent}
                     className="bg-neon text-white font-body font-semibold py-4 rounded-xl hover:opacity-90 transition-all hover:scale-[1.02] text-base mt-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100"
                   >
                     {formStatus === 'sending' ? 'Отправляем...' : 'Отправить заявку →'}
@@ -5651,6 +5671,64 @@ export default function Index() {
     </div>
 
     <CaseModal case_={activeCase} onClose={() => setActiveCase(null)} />
+
+    {pdModalOpen && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setPdModalOpen(false)}>
+        <div className="bg-card border border-border rounded-2xl w-full max-w-2xl max-h-[80vh] flex flex-col" onClick={e => e.stopPropagation()}>
+          <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+            <h3 className="font-display text-lg font-bold">Политика конфиденциальности</h3>
+            <button onClick={() => setPdModalOpen(false)} className="text-muted-foreground hover:text-foreground transition-colors">
+              <Icon name="X" size={20} />
+            </button>
+          </div>
+          <div className="overflow-y-auto px-6 py-5 font-body text-sm text-muted-foreground leading-relaxed space-y-4">
+            <p><strong className="text-foreground">1. Общие положения</strong></p>
+            <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые ИП Щепиной Ириной Сергеевной (далее — Оператор).</p>
+            <p>1.1. Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</p>
+            <p>1.2. Настоящая политика применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта https://hr-irk.ru</p>
+            <p><strong className="text-foreground">2. Основные понятия</strong></p>
+            <p>2.1. Автоматизированная обработка персональных данных — обработка персональных данных с помощью средств вычислительной техники.</p>
+            <p>2.2. Блокирование персональных данных — временное прекращение обработки персональных данных.</p>
+            <p>2.3. Веб-сайт — совокупность графических и информационных материалов, а также программ для ЭВМ и баз данных, обеспечивающих их доступность в сети интернет по адресу https://hr-irk.ru</p>
+            <p>2.6. Обработка персональных данных — любое действие или совокупность действий, совершаемых с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение, извлечение, использование, передачу, обезличивание, блокирование, удаление, уничтожение персональных данных.</p>
+            <p>2.8. Персональные данные — любая информация, относящаяся прямо или косвенно к определенному Пользователю веб-сайта https://hr-irk.ru</p>
+            <p><strong className="text-foreground">3. Права и обязанности Оператора</strong></p>
+            <p>3.1. Оператор имеет право получать от субъекта персональных данных достоверную информацию и/или документы, содержащие персональные данные; самостоятельно определять состав и перечень мер, необходимых для обеспечения выполнения обязанностей, предусмотренных Законом о персональных данных.</p>
+            <p>3.2. Оператор обязан предоставлять субъекту персональных данных информацию, касающуюся обработки его персональных данных; организовывать обработку персональных данных в порядке, установленном действующим законодательством РФ; принимать меры для защиты персональных данных от неправомерного доступа.</p>
+            <p><strong className="text-foreground">4. Права и обязанности субъектов персональных данных</strong></p>
+            <p>4.1. Субъекты персональных данных имеют право получать информацию, касающуюся обработки их персональных данных; требовать уточнения, блокирования или уничтожения персональных данных; отзывать согласие на обработку персональных данных.</p>
+            <p>4.2. Субъекты персональных данных обязаны предоставлять Оператору достоверные данные о себе.</p>
+            <p><strong className="text-foreground">5. Принципы обработки персональных данных</strong></p>
+            <p>Обработка персональных данных осуществляется на законной и справедливой основе, ограничивается достижением конкретных, заранее определённых и законных целей. Обрабатываются только персональные данные, которые отвечают целям их обработки.</p>
+            <p><strong className="text-foreground">6. Цели обработки персональных данных</strong></p>
+            <p>Цель обработки: информирование Пользователя посредством отправки электронных писем. Персональные данные: фамилия, имя, отчество; электронный адрес; номера телефонов. Правовые основания: уставные документы Оператора.</p>
+            <p><strong className="text-foreground">7. Условия обработки персональных данных</strong></p>
+            <p>7.1. Обработка персональных данных осуществляется с согласия субъекта персональных данных на обработку его персональных данных.</p>
+            <p>7.4. Обработка необходима для исполнения договора, стороной которого является субъект персональных данных, а также для заключения договора по инициативе субъекта персональных данных.</p>
+            <p><strong className="text-foreground">8. Порядок сбора, хранения и передачи персональных данных</strong></p>
+            <p>8.1. Оператор обеспечивает сохранность персональных данных и принимает все возможные меры, исключающие доступ к ним неуполномоченных лиц.</p>
+            <p>8.2. Персональные данные Пользователя никогда, ни при каких условиях не будут переданы третьим лицам, за исключением случаев, связанных с исполнением действующего законодательства.</p>
+            <p>8.3. В случае выявления неточностей в персональных данных, Пользователь может актуализировать их, направив уведомление на адрес <strong>dir@hr-irk.ru</strong> с пометкой «Актуализация персональных данных».</p>
+            <p>8.4. Пользователь может в любой момент отозвать своё согласие на обработку персональных данных, направив уведомление на адрес <strong>dir@hr-irk.ru</strong> с пометкой «Отзыв согласия на обработку персональных данных».</p>
+            <p><strong className="text-foreground">9. Перечень действий с персональными данными</strong></p>
+            <p>9.1. Оператор осуществляет сбор, запись, систематизацию, накопление, хранение, уточнение, извлечение, использование, передачу, обезличивание, блокирование, удаление и уничтожение персональных данных.</p>
+            <p><strong className="text-foreground">11. Конфиденциальность персональных данных</strong></p>
+            <p>Оператор и иные лица, получившие доступ к персональным данным, обязаны не раскрывать третьим лицам и не распространять персональные данные без согласия субъекта персональных данных, если иное не предусмотрено федеральным законом.</p>
+            <p><strong className="text-foreground">12. Заключительные положения</strong></p>
+            <p>12.1. Пользователь может получить любые разъяснения по вопросам обработки персональных данных, обратившись по адресу <strong>dir@hr-irk.ru</strong></p>
+            <p>12.2. Политика действует бессрочно до замены её новой версией. Актуальная версия размещена по адресу: https://www.hr-irk.ru/soglashenie_na_ob</p>
+          </div>
+          <div className="px-6 py-4 border-t border-border">
+            <button
+              onClick={() => { setPdConsent(true); setPdModalOpen(false); }}
+              className="w-full bg-neon text-white font-body font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity text-sm"
+            >
+              Принимаю и закрываю
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
     </>
   );
 }
