@@ -5151,18 +5151,31 @@ export default function Index() {
         </div>
 
         {menuOpen && (
-          <div className="md:hidden bg-card border-b border-border px-6 py-4 flex flex-col gap-4">
+          <div className="md:hidden bg-card border-b border-border px-4 py-5 flex flex-col gap-1">
             {[["home", "Главная"], ["services", "О нас"], ["steps", "Этапы"], ["cases", "Кейсы"], ["contact", "Контакты"]].map(([id, label]) => (
-              <button key={id} onClick={() => scrollTo(id)} className="font-body text-sm uppercase tracking-widest text-left text-muted-foreground hover:text-neon transition-colors">
+              <button
+                key={id}
+                onClick={() => scrollTo(id)}
+                className={`font-body text-base text-left px-4 py-3 rounded-xl transition-colors ${activeSection === id ? "bg-neon/10 text-neon font-semibold" : "text-foreground hover:bg-neon/5 hover:text-neon"}`}
+              >
                 {label}
               </button>
             ))}
-            <a
-              href="tel:89500808200"
-              className="font-body font-bold text-lg text-neon tracking-wide"
-            >
-              +7 (950) 08 08 200
-            </a>
+            <div className="mt-3 pt-3 border-t border-border flex flex-col gap-3">
+              <a
+                href="tel:89500808200"
+                className="flex items-center gap-3 px-4 py-3 rounded-xl bg-neon/10 text-neon font-body font-bold text-base"
+              >
+                <Icon name="Phone" size={18} />
+                +7 (950) 08 08 200
+              </a>
+              <button
+                onClick={() => scrollTo("contact")}
+                className="bg-neon text-white font-body font-semibold text-base py-3 rounded-xl hover:opacity-90 transition-opacity"
+              >
+                Оставить заявку
+              </button>
+            </div>
           </div>
         )}
       </nav>
