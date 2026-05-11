@@ -5212,8 +5212,6 @@ export default function Index() {
 
       {/* ABOUT */}
       <section id="about" className="py-24 relative overflow-hidden">
-        <div className="absolute top-0 -left-48 w-[600px] h-[600px] rounded-full bg-[#c04000]/8 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 -right-48 w-[500px] h-[500px] rounded-full bg-[#c04000]/6 blur-3xl pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Блок проблем — bento grid */}
         <h2 className="font-display text-5xl font-bold mb-8">Ищете надёжного сотрудника, но при этом :</h2>
