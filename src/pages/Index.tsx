@@ -5562,9 +5562,9 @@ export default function Index() {
               </p>
               <div className="flex flex-col gap-4">
                 {[
-                  { icon: "Phone", text: "+7 (3952) 00-00-00" },
-                  { icon: "Mail", text: "hr@hr-irk.ru" },
-                  { icon: "MapPin", text: "Иркутск, ул. Ленина, 1" },
+                  { icon: "Phone", text: "+7 (950) 08 08 200" },
+                  { icon: "Mail", text: "dir@hr-irk.ru" },
+                  { icon: "MapPin", text: "Иркутск, ул. Декабрьских Событий 55, офис 101" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-neon/10 flex items-center justify-center flex-shrink-0">
