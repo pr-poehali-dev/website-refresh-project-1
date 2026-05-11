@@ -5667,9 +5667,7 @@ export default function Index() {
           <p className="font-body text-sm text-muted-foreground">* Срок на поиск линейного специалиста при условии, что условия по оплате не ниже среднерыночных.</p>
         </div>
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="font-display text-lg font-bold">
-            HR<span className="text-neon">·</span>ИРК
-          </span>
+
           <span className="font-body text-xs text-muted-foreground">
             © 2008–2026 Перспектива. Рекрутинговое агентство.
           </span>
