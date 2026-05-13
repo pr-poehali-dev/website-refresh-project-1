@@ -5141,8 +5141,9 @@ export default function Index() {
           </div>
 
           <div className="md:hidden flex items-center gap-3">
-            <a href="tel:89500808200" className="flex items-center justify-center w-9 h-9 rounded-full bg-neon/10 text-neon">
+            <a href="tel:89500808200" className="flex items-center gap-2 px-3 py-2 rounded-full bg-neon text-background font-semibold text-sm shadow-lg shadow-neon/30">
               <Icon name="Phone" size={16} />
+              <span>Позвонить</span>
             </a>
             <button className="text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
               <Icon name={menuOpen ? "X" : "Menu"} size={24} />
