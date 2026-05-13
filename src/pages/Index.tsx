@@ -5000,7 +5000,7 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
           <Icon name="Plus" size={14} />
         </span>
       </button>
-      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? "max-h-96" : "max-h-0"}`}>
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? "max-h-[2000px]" : "max-h-0"}`}>
         <p className="font-body text-foreground/70 leading-relaxed px-7 pb-6 border-t border-border/50 pt-4 ml-12">
           {answer}
         </p>
