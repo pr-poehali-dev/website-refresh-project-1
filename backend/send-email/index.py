@@ -33,6 +33,7 @@ def handler(event: dict, context) -> dict:
     name = body.get('name', '').strip()
     phone = body.get('phone', '').strip()
     message = body.get('message', '').strip()
+    no_call = body.get('noCall', False)
 
     if not name or not phone:
         return {'statusCode': 400, 'headers': headers, 'body': json.dumps({'error': 'Заполните имя и телефон'})}
@@ -47,11 +48,14 @@ def handler(event: dict, context) -> dict:
     smtp_password = os.environ.get('SMTP_PASSWORD')
     to_email = 'hr.jax@yandex.ru'
 
+    no_call_line = '<p><b>⚠️ Предпочитает:</b> Не звонить — написать</p>' if no_call else ''
+
     html = f"""
     <h2>Новая заявка с сайта hr-irk.ru</h2>
     <p><b>Имя:</b> {name}</p>
     <p><b>Телефон:</b> {phone}</p>
     <p><b>Сообщение:</b> {message or '—'}</p>
+    {no_call_line}
     """
 
     msg = MIMEMultipart('alternative')
